@@ -1,4 +1,386 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: white;
-  font-family: 'PT Root UI', sans-serif;
+  background-color: #faf2eb;
+  font-family: Helvetica, sans-serif;
+
+  margin: 0;
+  padding: 0 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+
+#header, #main {
+  width: 100%;
+  max-width: 1200px;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media screen and (orientation: portrait) {
+    justify-content: stretch;
+  }
+
+  padding: 30px 0;
+
+  .navigation, .social-links {
+    display:flex;
+    flex-direction: row;
+    gap: 10px;
+
+    .nav-link, .social-link {
+      background-color: #2b2b2b;
+      padding: 3px 20px;
+      border-radius: 100px;
+
+      @media screen and (orientation: portrait) {
+        padding: 3px 15px;
+      }
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 40px;
+
+      a {
+        text-decoration: none;
+        text-transform: lowercase;
+        font-size: 20px;
+        line-height: 30px;
+        vertical-align: middle;
+        word-break: keep-all;
+
+        font-family: 'MursGothic';
+        color: #fff;
+
+        @media screen and (orientation: portrait) {
+          font-size: 12px;
+          line-height: 12px;
+        }
+      }
+    }
+  }
+
+  .navigation {
+    gap: 10px;
+
+    @media screen and (orientation: portrait) {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .main-nav-link {
+      width: 97px;
+      background-color: #d9bdff;
+      background-image: url('../images/icons/logo.svg');
+      background-position: center;
+      border: 1px solid black;
+
+      a {
+        font-size: 0;
+      }
+    }
+  }
+
+  .social-links {
+    gap: 15px;
+
+    .social-link, .social-link > a {
+      width: 40px;
+      height: 40px;
+      font-size: 0;
+
+      background-color: #fff;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media screen and (orientation: portrait) {
+        display: none;
+        visibility: hidden;
+      }
+    }
+
+    .telegram-link {
+      background-image: url('../images/icons/telegram.svg');
+    }
+
+    .vk-link {
+      background-image: url('../images/icons/vk.svg');
+    }
+
+    .dzen-link {
+      background-image: url('../images/icons/dzen.svg');
+    }
+  }
+
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  gap: 25px;
+
+  font-family: 'MursGothic';
+
+  #main-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+
+    background-color: #fff;
+    border: 1px solid black;
+    padding: 65px 32px;
+    border-radius: 30px;
+
+    .main-banner-logo {
+      width: 100%;
+      max-width: 725px;
+      aspect-ratio: 725 / 150;
+      font-size: 0;
+
+      background-image: url('../images/icons/big-logo.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .main-banner-description {
+      font-size: 40px;
+      line-height: 40px;
+
+      @media screen and (orientation: portrait) {
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .form-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 25px;
+
+    #email-section {
+      flex-shrink: 1;
+      display: flex;
+      justify-content: stretch;
+
+      background-color: #2b2b2b;
+      border-radius: 30px;
+      padding: 40px 50px 110px;
+
+      max-width: 66%;
+      height: 270px;
+      width: 100%;
+
+      @media screen and (orientation: portrait) {
+        max-width: 100%;
+      }
+
+      #email-form {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+
+        color: #fff;
+
+        .email-form-header {
+          font-size: 25px;
+          line-height: 40px;;
+        }
+
+        .email-form-fields {
+          flex-grow: 1;
+          flex-shrink: 1;
+
+          display: flex;
+          flex-direction: row;
+          gap: 15px;
+          justify-content: stretch;
+
+          .email-field {
+            flex-grow: 1;
+            flex-shrink: 1;
+
+            width: 0;
+
+            background-color: transparent;
+            border: 1px solid white;
+            height: 60px;
+            border-radius: 100px;
+            padding: 0 30px;
+
+            color: white;
+            font-size: 18px;
+            line-height: 40px;
+            font-family: 'MursGothic';
+
+            @media screen and (orientation: portrait) {
+              height: 40px;
+              font-size: 10px;
+              padding: 0 20px;
+            }
+          }
+
+          .email-form-submit {
+            flex-shrink: 0;
+            flex-grow: 0;
+            width: 60px;
+            height: 60px;
+
+            background-color: transparent;
+            font-size: 0;
+            border-radius: 100px;
+
+            background-image: url('../images/icons/submit.svg');
+            background-size: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            @media screen and (orientation: portrait) {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+
+    .waves-sidebar {
+      flex-grow: 1;
+
+      display: block;
+      height: 270px;
+
+      background-image: url('../images/waves.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      border-radius: 30px;
+      border: 1px solid black;
+    }
+  }
+
+  .description-screen {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+
+    .description-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      max-width: 66%;
+      width: 100%;
+
+      @media screen and (orientation: portrait) {
+        max-width: 100%;
+      }
+
+      #description {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        @media screen and (orientation: portrait) {
+          gap: 30px;
+        }
+
+        background-color: #fff;
+        border-radius: 30px;
+        border: 1px solid black;
+
+        padding: 100px 60px;
+
+        #description-header {
+          font-size: 40px;
+          line-height: 40px;
+
+          @media screen and (orientation: portrait) {
+            font-size: 25px;
+            line-height: 25px;
+          }
+        }
+
+        #description-text {
+          max-width: 550px;
+          font-family: Helvetica;
+          font-size: 25px;
+          font-weight: lighter;
+
+          @media screen and (orientation: portrait) {
+            font-size: 18px;
+            list-style: 18px;
+          }
+        }
+      }
+
+      #keywords {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        padding: 70px 65px;
+        background-color: #d9bdff;
+        border-radius: 30px;
+        border: 1px solid black;
+
+        @media screen and (orientation: portrait) {
+          font-size: 20px;
+        }
+
+        .keyword {
+          background-color: #000;
+          border-radius: 145px;
+          padding: 6px 30px;
+
+          font-size: 25px;
+          color: #fff;
+
+          @media screen and (orientation: portrait) {
+            font-size: 18px;
+            padding: 4px 20px;
+          }
+        }
+      }
+    }
+
+    .wavy-girl {
+      flex-grow: 1;
+
+      background-image: url('../images/wavy-girl.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      border-radius: 30px;
+      border: 1px solid black;
+
+      @media screen and (orientation: portrait) {
+        display: none;
+      }
+    }
+  }
 }

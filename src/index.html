@@ -6,58 +6,59 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Сайт о велосипедах</h1>
-    
-    <h2>Разделы</h2>
-    <p><a href="/articles.html">Статьи</a></p>
-    <p><a href="/lifehacks.html">Лайфхаки </a></p>
-    <p><a href="/reminders.html">Памятки</a></p>
-    <p><a href="/tests.html">Тесты</a></p>
-    <p><a href="/search.html">Поиск</a></p>
-    <p><a href="/about-us.html">О нас</a></p>
+    <header id="header">
+      <nav class="navigation">
+        <div class="nav-link main-nav-link"><a href="/">Vell</a></div>
+        <div class="nav-link"><a href="#">о&nbsp;проекте</a></div>
+        <div class="nav-link"><a href="#">платформа</a></div>
+      </nav>
 
-    <!-- modify this form HTML and place wherever you want your form -->
-<form id="my-form" action="https://formspree.io/f/movqaqqw" method="POST">
-  <label>Email:</label>
-  <input type="email" name="email" />
-  <label>Message:</label>
-  <input type="text" name="message" />
-  <button id="my-form-button">Submit</button>
-  <p id="my-form-status"></p>
-</form>
+      <div class="social-links">
+        <div class="social-link telegram-link"><a href="#">Telegram</a></div>
+        <div class="social-link vk-link"><a href="#">VK</a></div>
+        <div class="social-link dzen-link"><a href="#">Яндекс Дзен</a></div>
+      </div>
+    </header>
 
-<!-- Place this script at the end of the body tag -->
-<script>
-  var form = document.getElementById("my-form");
-  
-  async function handleSubmit(event) {
-    event.preventDefault();
-    var status = document.getElementById("my-form-status");
-    var data = new FormData(event.target);
-    fetch(event.target.action, {
-      method: form.method,
-      body: data,
-      headers: {
-          'Accept': 'application/json'
-      }
-    }).then(response => {
-      if (response.ok) {
-        status.innerHTML = "Thanks for your submission!";
-        form.reset()
-      } else {
-        response.json().then(data => {
-          if (Object.hasOwn(data, 'errors')) {
-            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-          } else {
-            status.innerHTML = "Oops! There was a problem submitting your form"
-          }
-        })
-      }
-    }).catch(error => {
-      status.innerHTML = "Oops! There was a problem submitting your form"
-    });
-  }
-  form.addEventListener("submit", handleSubmit)
-</script>
+    <main id="main">
+      <section id="main-banner">
+        <h1 class="main-banner-logo">Vell</h1>
+        <div class="main-banner-description">Твой личный помощник <br /> в езде на велосипеде</div>
+      </section>
+
+      <div class="form-block">
+        <section id="email-section">
+          <form action="#" id="email-form">
+            <h2 class="email-form-header">Узнай первым о запуске!</h2>
+
+            <div class="email-form-fields">
+              <input type="email" placeholder="Введи свой e-mail" class="email-field">
+              <button type="submit" class="email-form-submit">Отправить</button>
+            </div>
+          </form>
+        </section>
+        <aside class="waves-sidebar"></div>
+      </div>
+
+      <div class="description-screen">
+        <div class="description-wrapper">
+          <section id="description">
+            <h3 id="description-header">Мы — медиа о велосипедах для активных и молодых душой горожан и горожанок.</h3>
+            <span id="description-text">Мы расскажем всё что нужно знать начинающему велосипедисту для езды по городу: от починки колеса до подбора стильных велосипедок.</span>
+          </section>
+          <section id="keywords">
+            <div class="keyword">починка</div>
+            <div class="keyword">обслуживание</div>
+            <div class="keyword">здоровье</div>
+            <div class="keyword">пдд</div>
+            <div class="keyword">тренировки</div>
+            <div class="keyword">и многое другое</div>
+          </section>
+        </div>
+        <aside class="wavy-girl"></aside>
+      </div>
+    </main>
+
+    <footer></footer>
   </body>
 </html>
