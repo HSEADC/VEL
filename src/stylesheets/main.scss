@@ -740,7 +740,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: start;
   gap: 80px;
   justify-content: space-between;
-  padding: 70px;
+  padding: 65px;
 
   @media screen and (orientation: portrait) {
     justify-content: space-evenly;
@@ -843,7 +843,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 350px;
+    max-width: 305px;
     gap: 75px;
 
     .project-links {
