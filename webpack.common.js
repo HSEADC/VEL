@@ -101,6 +101,10 @@ module.exports = {
       filename: './index.html'
     }),
 
+    new HtmlWebpackPlugin({
+      template: './src/article.html',
+      filename: './platform.html'
+    }),
 
     new HtmlWebpackPlugin({
       template: './src/sections/articles.html',
@@ -111,7 +115,6 @@ module.exports = {
       template: './src/sections/articles/1.html',
       filename: './articles/1.html'
     }),
-
 
     new HtmlWebpackPlugin({
       template: './src/sections/lifehacks.html',
@@ -128,30 +131,25 @@ module.exports = {
       filename: './lifehacks/2.html'
     }),
 
-
     new HtmlWebpackPlugin({
       template: './src/sections/reminders.html',
       filename: './reminders.html'
     }),
-
 
     new HtmlWebpackPlugin({
       template: './src/sections/tests.html',
       filename: './tests.html'
     }),
 
-
     new HtmlWebpackPlugin({
       template: './src/sections/search.html',
       filename: './search.html'
     }),
 
-
     new HtmlWebpackPlugin({
       template: './src/sections/about-us.html',
       filename: './about-us'
     }),
-
 
     // Article
     // new HtmlWebpackPlugin({
