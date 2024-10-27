@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-#header, #main, #article-main, #footer {
+#header, #main, #article-main, #about-us-main, #footer {
   width: 100%;
   max-width: 1280px;
   padding: 0 40px;
@@ -445,6 +445,96 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+#about-us-main {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  .about-us-with-sidebar {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+
+    @media screen and (orientation: portrait) {
+      flex-direction: column;
+    }
+
+    .about-us-sidebar {
+      flex-grow: 1;
+      flex-shrink: 1;
+      height: 333px;
+    }
+
+    #logo-sidebar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: black;
+      border: 1px solid black;
+      border-radius: 30px;
+
+      img {
+        width: 70%;
+      }
+    }
+
+    #bike-ride-sidebar {
+      @media screen and (orientation: portrait) {
+        display: none;
+        visibility: hidden;
+      }
+
+      img {
+        height: 100%;
+        background-color: black;
+        border: 1px solid black;
+        border-radius: 30px;
+      }
+    }
+  }
+
+  .about-us-block {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    flex-grow: 1;
+
+    max-width: 765px;
+    width: 100%;
+
+    @media screen and (orientation: portrait) {
+      max-width: none;
+    }
+
+    padding: 50px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 30px;
+
+    .about-us-header {
+      font-family: MursGothic;
+      font-size: 50px;
+      line-height: 50px;
+
+      @media screen and (orientation: portrait) {
+        font-size: 35px;
+        line-height: 35px;
+      }
+    }
+
+    .about-us-text {
+      font-family: Helvetica;
+      font-size: 20px;
+      max-width: 500px;
+
+      @media screen and (orientation: portrait) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
 #article-main {
   display: flex;
   flex-direction: column;
@@ -641,7 +731,7 @@ h1, h2, h3, h4, h5, h6 {
 #footer {
   min-height: 300px;
   background-color: #2b2b2b;
-  margin-top: 30px;
+  margin-top: 60px;
   border-radius: 30px 30px 0 0;
 
   display: flex;
@@ -753,7 +843,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 300px;
+    max-width: 350px;
     gap: 75px;
 
     .project-links {

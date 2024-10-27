@@ -8,8 +8,8 @@
   <body>
     <header id="header">
       <nav class="navigation">
-        <div class="nav-link main-nav-link active"><a href="/">Vell</a></div>
-        <div class="nav-link"><a href="/about-us.html">о&nbsp;проекте</a></div>
+        <div class="nav-link main-nav-link"><a href="/">Vell</a></div>
+        <div class="nav-link active"><a href="/about-us.html">о&nbsp;проекте</a></div>
         <div class="nav-link"><a href="/platform.html">платформа</a></div>
       </nav>
 
@@ -20,66 +20,25 @@
       </div>
     </header>
 
-    <main id="main">
-      <section id="main-banner">
-        <h1 class="main-banner-logo">Vell</h1>
-        <div class="main-banner-description">Твой личный помощник <br /> в езде на велосипеде</div>
-      </section>
-
-      <div class="form-block">
-        <section id="email-section">
-          <form action="https://formspree.io/f/movqaqqw" method="POST" id="email-form">
-            <h2 class="email-form-header">Узнай первым о запуске!</h2>
-
-            <div class="email-form-fields">
-              <input type="email" placeholder="Введи свой e-mail" class="email-field" name="email">
-              <button type="submit" class="email-form-submit">Отправить</button>
-            </div>
-
-            <div id="email-form-status"></div>
-          </form>
+    <main id="about-us-main">
+      <div class="about-us-with-sidebar">
+        <section id="about-project" class="about-us-block">
+          <h2 class="about-us-header">О&nbsp;проекте</h2>
+          <span class="about-us-text">Наше медиа призвано помочь начинающим велосипедистам освоиться в&nbsp;езде по&nbsp;городу, узнать все правила и нюансы, а&nbsp;также стать самым модным и&nbsp;увелолюбителем</span>
         </section>
-        <aside class="waves-sidebar"></div>
+        <section id="logo-sidebar" class="about-us-sidebar">
+          <img src="images/white-big-logo.svg" alt="Vell">
+        </section>
       </div>
-
-      <div class="description-screen">
-        <div class="description-wrapper">
-          <section id="description">
-            <h3 id="description-header">Мы — медиа о велосипедах для активных и молодых душой горожан и горожанок.</h3>
-            <span id="description-text">Мы расскажем всё что нужно знать начинающему велосипедисту для езды по городу: от починки колеса до подбора стильных велосипедок.</span>
-          </section>
-          <section id="keywords">
-            <div class="keyword">починка</div>
-            <div class="keyword">обслуживание</div>
-            <div class="keyword">здоровье</div>
-            <div class="keyword">пдд</div>
-            <div class="keyword">тренировки</div>
-            <div class="keyword">и многое другое</div>
-          </section>
-        </div>
-        <aside class="wavy-girl"></aside>
+      <div class="about-us-with-sidebar">
+        <section id="bike-ride-sidebar" class="about-us-sidebar">
+          <img src="images/bike-ride.png" alt="Bike Ride">
+        </section>
+        <section id="about-project" class="about-us-block">
+          <h2 class="about-us-header">О&nbsp;нас</h2>
+          <span class="about-us-text">Мы — Алёна, Вика и&nbsp;Катя. И&nbsp;мы любим велосипеды. Этот&nbsp;проект стал для&nbsp;нас тем ресурсом, в&nbsp;котором мы сами когда-то нуждались и отчасти до&nbsp;сих пор нуждаемся.</span>
+        </section>
       </div>
-
-      <section id="about-formats">
-        <div class="about-formats-header-container">
-          <h3 id="about-formats-header">Простым языком<br />и в удобных форматах</h3>
-        </div>
-
-        <div id="formats">
-          <div class="format">
-            <h4 class="format-header">Лайфхаки</h4>
-            <img src="images/formats/lifehacks.svg" alt="Lifehacks" class="format-image" />
-          </div>
-          <div class="format">
-            <h4 class="format-header">Статьи</h4>
-            <img src="images/formats/articles.svg" alt="Articles" class="format-image" />
-          </div>
-          <div class="format">
-            <h4 class="format-header">Маршруты</h4>
-            <img src="images/formats/routes.svg" alt="Routes" class="format-image" />
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer id="footer">
