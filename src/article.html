@@ -156,38 +156,5 @@
         </section>
       </footer>
     </div>
-
-    <script>
-      var form = document.getElementById("email-form");
-
-      async function handleSubmit(event) {
-        event.preventDefault();
-        var status = document.getElementById("email-form-status");
-
-        fetch(event.target.action, {
-          method: form.method,
-          body: new FormData(event.target),
-          headers: {
-              'Accept': 'application/json'
-          }
-        }).then(response => {
-          if (response.ok) {
-            status.innerHTML = "Спасибо! Будем держать в курсе событий";
-            form.reset()
-          } else {
-            response.json().then(data => {
-              if (Object.hasOwn(data, 'errors')) {
-                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-              } else {
-                status.innerHTML = "Что-то пошло не так"
-              }
-            })
-          }
-        }).catch(error => {
-          status.innerHTML = "Что-то пошло не так"
-        });
-      }
-      form.addEventListener("submit", handleSubmit)
-    </script>
   </body>
 </html>

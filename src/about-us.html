@@ -34,7 +34,7 @@
         <section id="bike-ride-sidebar" class="about-us-sidebar">
           <img src="images/bike-ride.png" alt="Bike Ride">
         </section>
-        <section id="about-project" class="about-us-block">
+        <section id="about-authors" class="about-us-block">
           <h2 class="about-us-header">О&nbsp;нас</h2>
           <span class="about-us-text">Мы — Алёна, Вика и&nbsp;Катя. И&nbsp;мы любим велосипеды. Этот&nbsp;проект стал для&nbsp;нас тем ресурсом, в&nbsp;котором мы сами когда-то нуждались и отчасти до&nbsp;сих пор нуждаемся.</span>
         </section>
@@ -92,38 +92,5 @@
         </div>
       </section>
     </footer>
-
-    <script>
-      var form = document.getElementById("email-form");
-
-      async function handleSubmit(event) {
-        event.preventDefault();
-        var status = document.getElementById("email-form-status");
-
-        fetch(event.target.action, {
-          method: form.method,
-          body: new FormData(event.target),
-          headers: {
-              'Accept': 'application/json'
-          }
-        }).then(response => {
-          if (response.ok) {
-            status.innerHTML = "Спасибо! Будем держать в курсе событий";
-            form.reset()
-          } else {
-            response.json().then(data => {
-              if (Object.hasOwn(data, 'errors')) {
-                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-              } else {
-                status.innerHTML = "Что-то пошло не так"
-              }
-            })
-          }
-        }).catch(error => {
-          status.innerHTML = "Что-то пошло не так"
-        });
-      }
-      form.addEventListener("submit", handleSubmit)
-    </script>
   </body>
 </html>
