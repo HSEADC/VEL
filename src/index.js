@@ -5,7 +5,7 @@ import './stylesheets/general.scss';
 import './stylesheets/main.scss'
 
 const initHeader = () => {
-    const currentPath = window.location.pathname.replace('/', '').toLowerCase();
+    const currentPath = window.location.pathname.toLowerCase().replace('/', '').replace('vell');
 
     document.querySelectorAll('.nav-button a').forEach(
         (element) => {
