@@ -7,10 +7,10 @@ var _document$getElementB;
 
 
 var initHeader = function initHeader() {
-  var currentPath = window.location.pathname.toLowerCase().replace('/', '').replace('vell');
+  var currentPath = window.location.pathname.toLowerCase().replace('/', '').replace('.html', '');
   document.querySelectorAll('.nav-button a').forEach(function (element) {
     var navPath = element.getAttribute('href').replace('/', '').replace('.html', '').toLowerCase();
-    if (currentPath && navPath === 'index.html' || currentPath.startsWith(navPath)) {
+    if (!currentPath && navPath === 'index' || currentPath.includes(navPath)) {
       element.parentNode.classList.add('active');
     }
   });
