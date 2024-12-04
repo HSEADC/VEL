@@ -1,0 +1,361 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #faf2eb;
+    font-family: Helvetica, sans-serif;
+
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+header,
+main,
+footer {
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 40px;
+}
+
+.hide-on-mobile {
+    @media screen and (orientation: portrait) {
+        display: none !important;
+    }
+}
+
+#header {
+    padding: 30px 30px 40px 40px;
+
+    @media screen and (orientation: portrait) {
+        justify-content: stretch;
+    }
+
+    .navigation {
+        display: grid;
+        grid-template-columns: 80px 1fr 80px;
+        grid-template-rows: 1fr;
+        // display: flex;
+        // flex-direction: row;
+        // gap: 10px;
+
+        @media screen and (orientation: portrait) {
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .nav-button {
+            background-color: #2b2b2b;
+            padding: 7px 20px 3px;
+            border-radius: 100px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 40px;
+
+            @media screen and (orientation: portrait) {
+                padding: 3px 15px;
+            }
+
+            a {
+                text-decoration: none;
+                text-transform: lowercase;
+                font-size: 15px;
+                line-height: 22.5px;
+                vertical-align: middle;
+                word-break: keep-all;
+
+                font-family: 'MursGothic';
+                color: #fff;
+
+                @media screen and (orientation: portrait) {
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+            }
+        }
+
+        .logo {
+            padding: 7px 14px 3px;
+
+            a {
+                text-transform: uppercase;
+                font-style: italic;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 24px;
+            }
+        }
+
+        .active {
+            background-color: #d9bdff;
+            border: 1px solid black;
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px;
+        }
+    }
+
+    .social-links {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+
+        @media screen and (orientation: portrait) {
+            display: none;
+            visibility: hidden;
+        }
+
+        .social-link {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                font-size: 0;
+            }
+        }
+    }
+}
+
+#main {
+    flex-grow: 1;
+}
+
+#footer {
+    justify-self: end;
+    min-height: 300px;
+    background-color: #2b2b2b;
+    border-radius: 30px 30px 0 0;
+    margin-top: 60px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    align-items: start;
+    gap: 80px;
+    justify-content: space-between;
+    padding: 65px;
+
+    @media screen and (orientation: portrait) {
+        justify-content: space-evenly;
+    }
+
+    #authors {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        #authors-header {
+            font-size: 30px;
+            font-family: MursGothic;
+            color: #fff;
+
+            @media screen and (orientation: portrait) {
+                display: none;
+                visibility: hidden;
+            }
+        }
+
+        .authors-container-desktop {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+
+            @media screen and (orientation: portrait) {
+                display: none;
+                visibility: hidden;
+            }
+
+            .authors-photos {
+                display: flex;
+                flex-direction: row;
+                margin-left: 15px;
+
+                .author-photo {
+                    font-size: 0;
+                    border-radius: 50%;
+                    border: 1px solid white;
+                    margin-left: -15px;
+                }
+            }
+
+            .authors-list {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                .author>a {
+                    font-size: 20px;
+                    font-family: Helvetica;
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .authors-container-mobile {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+
+            @media screen and (orientation: landscape) {
+                display: none;
+                visibility: hidden;
+            }
+
+            .authors-list {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                .author {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 25px;
+
+                    .author-photo {
+                        font-size: 0;
+                        border-radius: 50%;
+                        border: 1px solid white;
+                        margin-left: -15px;
+                    }
+
+                    a {
+                        font-size: 20px;
+                        font-family: Helvetica;
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    #footer-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 305px;
+        gap: 75px;
+
+        .project-links {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            @media screen and (orientation: portrait) {
+                align-items: center;
+            }
+
+            .project-link {
+                color: #fff;
+                font-size: 30px;
+                line-height: 30px;
+                text-decoration: none;
+            }
+        }
+
+        .footer-social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            @media screen and (orientation: portrait) {
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+
+            .social-link {
+                width: 40px;
+                height: 40px;
+                background-color: white;
+                border-radius: 50%;
+
+                @media screen and (orientation: portrait) {
+                    width: 70px;
+                    height: 70px;
+                }
+
+                a {
+                    font-size: 0;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, min(100%, 380px));
+    justify-content: space-between;
+    gap: 20px;
+
+    .list-item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+
+        background-color: white;
+
+        border: 1px solid black;
+        border-radius: 30px;
+        padding: 30px;
+
+        @media screen and (orientation: portrait) {
+            width: 100%;
+        }
+
+        .list-item-title {
+            a {
+                color: black;
+                text-decoration: none;
+            }
+
+            font-family: MursGothic;
+            font-size: 35px;
+            line-height: 35px;
+        }
+    }
+}
+
+#back-button {
+    width: 30px;
+    height: 30px;
+
+    border: 0;
+    border-radius: 15px;
+    background-color: black;
+    background-image: url('../images/icons/back-icon.svg');
+    font-size: 0;
+}

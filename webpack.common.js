@@ -1,10 +1,33 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const webpack = require('webpack')
-const path = require('path')
+const path = require('path');
+const { get } = require('http');
+
+const getTitle = (subpage = undefined) => {
+  if (!subpage) {
+    return 'Vell';
+  }
+
+  return [subpage, 'Vell'].join(' - ');
+}
+
+const getMeta = (title, link) => ({
+  'og:title': title,
+  'og:description': title,
+  'og:type': 'website',
+  'og.image': '',
+  'og:url': link,
+  'twitter:title': title,
+  'twitter:description': title,
+  'twitter:card': 'summary',
+  'twitter.image': '',
+  'twitter:url': link,
+});
 
 module.exports = {
   entry: {
@@ -95,65 +118,137 @@ module.exports = {
       chunkFilename: '[id].[contenthash].css'
     }),
 
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './src/images', to: 'images' }
+      ],
+    }),
+
     // Index
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: './index.html'
+      title: getTitle(),
+      template: './src/index.ejs',
+      filename: './index.html',
+      meta: getMeta('Главная', '/index.html'),
     }),
 
     new HtmlWebpackPlugin({
-      template: './src/article.html',
-      filename: './platform.html'
+      title: getTitle('Статьи'),
+      template: './src/sections/articles.ejs',
+      filename: './articles.html',
+      meta: getMeta('Статьи', '/articles.html'),
     }),
 
     new HtmlWebpackPlugin({
-      template: './src/about-us.html',
-      filename: './about-us.html'
+      title: getTitle('Article 1'),
+      template: './src/sections/articles/1.ejs',
+      filename: './articles/1.html',
+      meta: getMeta('Article 1', '/articles/1.html'),
     }),
 
     new HtmlWebpackPlugin({
-      template: './src/sections/articles.html',
-      filename: './articles.html'
+      title: getTitle('Article 2'),
+      template: './src/sections/articles/2.ejs',
+      filename: './articles/2.html',
+      meta: getMeta('Article 2', '/articles/2.html'),
     }),
 
     new HtmlWebpackPlugin({
-      template: './src/sections/articles/1.html',
-      filename: './articles/1.html'
+      title: getTitle('Article 3'),
+      template: './src/sections/articles/3.ejs',
+      filename: './articles/3.html',
+      meta: getMeta('Article 3', '/articles/3.html'),
     }),
 
     new HtmlWebpackPlugin({
-      template: './src/sections/lifehacks.html',
-      filename: './lifehacks.html'
+      title: getTitle('Лайфхаки'),
+      template: './src/sections/lifehacks.ejs',
+      filename: './lifehacks.html',
+      meta: getMeta('Лайфхаки', '/lifehacks.html'),
     }),
 
     new HtmlWebpackPlugin({
-      template: './src/sections/lifehacks/1.html',
-      filename: './lifehacks/1.html'
+      title: getTitle('Lifehack 1'),
+      template: './src/sections/lifehacks/1.ejs',
+      filename: './lifehacks/1.html',
+      meta: getMeta('Lifehack 1', '/lifehacks/1.html'),
     }),
 
     new HtmlWebpackPlugin({
-      template: './src/sections/lifehacks/2.html',
-      filename: './lifehacks/2.html'
+      title: getTitle('Lifehack 2'),
+      template: './src/sections/lifehacks/2.ejs',
+      filename: './lifehacks/2.html',
+      meta: getMeta('Lifehack 2', '/lifehacks/2.html'),
     }),
 
     new HtmlWebpackPlugin({
-      template: './src/sections/reminders.html',
-      filename: './reminders.html'
+      title: getTitle('Маршруты'),
+      template: './src/sections/routes.ejs',
+      filename: './routes.html',
+      meta: getMeta('Маршруты', '/routes.html'),
     }),
 
     new HtmlWebpackPlugin({
-      template: './src/sections/tests.html',
-      filename: './tests.html'
+      title: getTitle('Route 1'),
+      template: './src/sections/routes/1.ejs',
+      filename: './routes/1.html',
+      meta: getMeta('Route 1', '/routes/1.html'),
     }),
 
     new HtmlWebpackPlugin({
-      template: './src/sections/search.html',
-      filename: './search.html'
+      title: getTitle('Route 2'),
+      template: './src/sections/routes/2.ejs',
+      filename: './routes/2.html',
+      meta: getMeta('Route 2', '/routes/2.html'),
     }),
 
     new HtmlWebpackPlugin({
-      template: './src/sections/about-us.html',
-      filename: './about-us'
+      title: getTitle('Route 3'),
+      template: './src/sections/routes/3.ejs',
+      filename: './routes/3.html',
+      meta: getMeta('Route 3', '/routes/3.html'),
+    }),
+
+    new HtmlWebpackPlugin({
+      title: getTitle('Тесты'),
+      template: './src/sections/tests.ejs',
+      filename: './tests.html',
+      meta: getMeta('Тесты', '/tests.html'),
+    }),
+
+    new HtmlWebpackPlugin({
+      title: getTitle('Test 1'),
+      template: './src/sections/tests/1.ejs',
+      filename: './tests/1.html',
+      meta: getMeta('Test 1', '/tests/1.html'),
+    }),
+
+    new HtmlWebpackPlugin({
+      title: getTitle('Test 2'),
+      template: './src/sections/tests/2.ejs',
+      filename: './tests/2.html',
+      meta: getMeta('Test 2', '/tests/2.html'),
+    }),
+
+    new HtmlWebpackPlugin({
+      title: getTitle('Test 3'),
+      template: './src/sections/tests/3.ejs',
+      filename: './tests/3.html',
+      meta: getMeta('Test 3', '/tests/3.html'),
+    }),
+
+    new HtmlWebpackPlugin({
+      title: getTitle('Test 4'),
+      template: './src/sections/tests/4.ejs',
+      filename: './tests/4.html',
+      meta: getMeta('Test 4', '/tests/4.html'),
+    }),
+
+    new HtmlWebpackPlugin({
+      title: getTitle('О нас'),
+      template: './src/sections/about-us.ejs',
+      filename: './about-us.html',
+      meta: getMeta('О нас', '/about-us.html'),
     }),
 
     // Article
@@ -163,14 +258,23 @@ module.exports = {
     // }),
 
     // Partials
-    // new HtmlWebpackPartialsPlugin([
-    //   {
-    //     path: path.join(__dirname, './src/partials/analytics.html'),
-    //     location: 'analytics',
-    //     template_filename: '*',
-    //     priority: 'replace'
-    //   }
-    // ])
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/header.html'),
+        location: 'header',
+        template_filename: '*',
+        priority: 'replace',
+      }
+    ]),
+
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/footer.html'),
+        location: 'footer',
+        template_filename: '*',
+        priority: 'replace',
+      }
+    ])
   ],
   optimization: {
     minimizer: [new CssMinimizerPlugin()]
