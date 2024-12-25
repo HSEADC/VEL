@@ -127,6 +127,7 @@ module.exports = {
     // Index
     new HtmlWebpackPlugin({
       title: getTitle(),
+      favicon: './src/images/icons/favicon.svg',
       template: './src/index.ejs',
       filename: './index.html',
       meta: getMeta('Главная', '/index.html'),
@@ -141,6 +142,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       title: getTitle('Правила безопасности для велосипедистов'),
+      favicon: './src/images/icons/favicon.svg',
       template: './src/sections/articles/1.ejs',
       filename: './articles-1.html',
       meta: getMeta('Article 1', '/articles-1.html'),
@@ -162,6 +164,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       title: getTitle('Лайфхаки'),
+      favicon: './src/images/icons/favicon.svg',
       template: './src/sections/lifehacks.ejs',
       filename: './lifehacks.html',
       meta: getMeta('Лайфхаки', '/lifehacks.html'),
@@ -190,6 +193,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       title: getTitle('Ищем природу в городе'),
+      favicon: './src/images/icons/favicon.svg',
       template: './src/sections/routes/1.ejs',
       filename: './routes-1.html',
       meta: getMeta('Route 1', '/routes-1.html'),
@@ -260,6 +264,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       title: getTitle('Стайл-гайд'),
+      favicon: './src/images/icons/favicon.svg',
       template: './src/style-guide.ejs',
       filename: './style-guide.html',
       meta: getMeta('Стайл-гайд', '/style-guide.html'),
