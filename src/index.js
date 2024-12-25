@@ -24,5 +24,5 @@ const initHeader = () => {
 document.addEventListener('DOMContentLoaded', initHeader)
 
 document.getElementById('back-button')?.addEventListener('click', () => {
-    window.history.back();
+    window.location = 'index.html';
 })
