@@ -1,31 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%= htmlWebpackPlugin.tags.headTags %>
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <header></header>
 
-    <main id="main">
-      <div class="sub-nav">
-        <button id="back-button">Back</button>
-      </div>
-      <div class="list">
-        <div class="list-item">
-          <h4 class="list-item-title"><a href="routes-1.html">Route 1</a></h4>
-        </div>
-        <div class="list-item">
-          <h4 class="list-item-title"><a href="routes-2.html">Route 2</a></h4>
-        </div>
-        <div class="list-item">
-          <h4 class="list-item-title"><a href="routes-3.html">Route 3</a></h4>
-        </div>
-      </div>
-    </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%= htmlWebpackPlugin.tags.headTags %>
+    <title>
+      <%= htmlWebpackPlugin.options.title %>
+    </title>
+</head>
 
-    <footer></footer>
-  </body>
+<body class="routes-body">
+  <header></header>
+
+  <div class="banner">
+    <h1 class="page-header">Маршруты</h1>
+    <p>Лучшие велосипедные путешествия — от&nbsp;городских улиц до&nbsp;живописных троп. Читай и отправляйся
+      в&nbsp;путь!</p>
+  </div>
+
+  <main id="main">
+    <div class="filters">
+      <a class="filter active" href="#">всё</a>
+      <a class="filter" href="#">экипировка</a>
+      <a class="filter" href="#">безопасность</a>
+      <a class="filter" href="#">аксессуары</a>
+      <a class="filter" href="#">виды велосипедов</a>
+      <a class="filter" href="#">здоровье</a>
+      <a class="filter" href="#">тренировки</a>
+    </div>
+    <div class="routes-grid">
+      <div class="route-card route-card-v1">
+        <div class="tags">
+          <span class="tag">городской</span>
+          <span class="tag">исторический</span>
+        </div>
+        <div class="card-info">
+          <div class="title">Парк Горького — Воробьевы горы</div>
+          <div class="details">Сложность: низкая, 6 км, 45 минут (с остановками)</div>
+        </div>
+      </div>
+      <div class="route-card route-card-v2">
+        <div class="tags">
+          <span class="tag">спортивный</span>
+          <span class="tag">городской</span>
+        </div>
+        <div class="card-info">
+          <div class="title">Кусково — Химки</div>
+          <div class="details">Сложность: низкая, 6 км, 45 минут (с остановками)</div>
+        </div>
+      </div>
+      <div class="route-card route-card-v1">
+        <div class="tags">
+          <span class="tag">городской</span>
+          <span class="tag">исторический</span>
+        </div>
+        <div class="card-info">
+          <div class="title">Парк Горького — Воробьевы горы</div>
+          <div class="details">Сложность: низкая, 6 км, 45 минут (с остановками)</div>
+        </div>
+      </div>
+      <div class="route-card route-card-v2">
+        <div class="tags">
+          <span class="tag">спортивный</span>
+          <span class="tag">городской</span>
+        </div>
+        <div class="card-info">
+          <div class="title">Кусково — Химки</div>
+          <div class="details">Сложность: низкая, 6 км, 45 минут (с остановками)</div>
+        </div>
+      </div>
+      <div class="route-card route-card-v1">
+        <div class="tags">
+          <span class="tag">городской</span>
+          <span class="tag">исторический</span>
+        </div>
+        <div class="card-info">
+          <div class="title">Парк Горького — Воробьевы горы</div>
+          <div class="details">Сложность: низкая, 6 км, 45 минут (с остановками)</div>
+        </div>
+      </div>
+      <div class="route-card route-card-v2">
+        <div class="tags">
+          <span class="tag">спортивный</span>
+          <span class="tag">городской</span>
+        </div>
+        <div class="card-info">
+          <div class="title">Кусково — Химки</div>
+          <div class="details">Сложность: низкая, 6 км, 45 минут (с остановками)</div>
+        </div>
+      </div>
+      <div class="route-card route-card-v1">
+        <div class="tags">
+          <span class="tag">городской</span>
+          <span class="tag">исторический</span>
+        </div>
+        <div class="card-info">
+          <div class="title">Парк Горького — Воробьевы горы</div>
+          <div class="details">Сложность: низкая, 6 км, 45 минут (с остановками)</div>
+        </div>
+      </div>
+      <div class="route-card route-card-v2">
+        <div class="tags">
+          <span class="tag">спортивный</span>
+          <span class="tag">городской</span>
+        </div>
+        <div class="card-info">
+          <div class="title">Кусково — Химки</div>
+          <div class="details">Сложность: низкая, 6 км, 45 минут (с остановками)</div>
+        </div>
+      </div>
+      <div class="route-card route-card-v1">
+        <div class="tags">
+          <span class="tag">городской</span>
+          <span class="tag">исторический</span>
+        </div>
+        <div class="card-info">
+          <div class="title">Парк Горького — Воробьевы горы</div>
+          <div class="details">Сложность: низкая, 6 км, 45 минут (с остановками)</div>
+        </div>
+      </div>
+  </main>
+
+  <footer></footer>
+</body>
+
 </html>

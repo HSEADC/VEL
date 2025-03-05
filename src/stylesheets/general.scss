@@ -10,6 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: stretch;
 
     min-height: 100vh;
 }
@@ -52,7 +53,7 @@ main {
     margin-top: 40px;
     margin-left: 50px;
     width: 100px;
-    
+
     background-color: transparent;
     padding: 0;
     border: 0;
@@ -64,11 +65,13 @@ main {
 
 header {
     width: 100%;
-    
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
+    background-color: rgba(42, 59, 39, 0.8);
+
+    z-index: 1;
 
     @media screen and (orientation: portrait) {
         justify-content: stretch;
@@ -77,11 +80,12 @@ header {
     nav {
         width: 100%;
         max-width: 1280px;
-        padding: 25px 40px 20px;
+        padding: 20px 30px;
 
         display: grid;
-        grid-template-columns: 135px 1fr 135px;
+        grid-template-columns: 235px 1fr 235px;
         grid-template-rows: 1fr;
+        align-items: center;
 
         @media screen and (orientation: portrait) {
             width: 100%;
@@ -90,9 +94,11 @@ header {
         }
 
 
-        .logo {
+        .logo-container {
+            max-height: 32px;
+
             img {
-                height: 32px;
+                max-height: 32px;
             }
         }
 
@@ -100,37 +106,24 @@ header {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            align-items: end;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
 
             .nav-button {
-                background-color: #2b2b2b;
-                padding: 5px 20px 3px;
-                border-radius: 100px;
+                padding: 4px 15px;
+                text-decoration: none;
+                text-transform: lowercase;
+                font-size: 20px;
+                vertical-align: middle;
+                word-break: keep-all;
 
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                height: 32px;
+                font-family: 'SFPro';
+                color: #fff;
 
                 @media screen and (orientation: portrait) {
-                    padding: 3px 15px;
-                }
-
-                a {
-                    text-decoration: none;
-                    text-transform: lowercase;
-                    font-size: 15px;
-                    vertical-align: middle;
-                    word-break: keep-all;
-
-                    font-family: 'MursGothic';
-                    color: #fff;
-
-                    @media screen and (orientation: portrait) {
-                        font-size: 12px;
-                        line-height: 12px;
-                    }
+                    font-size: 12px;
+                    line-height: 12px;
                 }
             }
 
@@ -144,26 +137,39 @@ header {
             }
         }
 
-
-        .social-links {
+        .search-box {
+            box-sizing: border-box;
             display: flex;
             flex-direction: row;
-            gap: 15px;
+            height: 32px;
 
-            @media screen and (orientation: portrait) {
-                display: none;
-                visibility: hidden;
+            border-radius: 10px;
+
+            input.search-input {
+                max-width: 195px;
+                display: block;
+                border: 1px solid #FFD95E;
+                border-radius: 10px 0 0 10px;
+                background-color: #FAF3ED;
+
+                font-family: SFPro;
+                font-size: 15px;
+                padding: 6px 15px;
             }
 
-            .social-link {
-                border-radius: 50%;
-                width: 32px;
-                height: 32px;
+            .search-input:focus {
+                outline-width: 0;
+            }
+
+            .search-button {
+                width: 40px;
+                border: 1px solid #FFD95E;
+                border-radius: 0 10px 10px 0;
+                background-color: #FFD95E;
 
                 img {
-                    width: 100%;
-                    height: 100%;
-                    font-size: 0;
+                    width: 15px;
+                    height: 15px;
                 }
             }
         }
@@ -260,7 +266,7 @@ header {
             border-radius: 30px;
             padding: 10px 25px;
             width: fit-content;
-            
+
             font-family: SFPro;
             font-size: 15px;
             color: #fff;
@@ -300,7 +306,7 @@ header {
     .reminder {
         background-color: #798872;
         border-radius: 30px;
-        
+
         max-width: 928px;
         width: 100%;
 
@@ -341,7 +347,8 @@ header {
     flex-direction: column;
     align-items: center;
 
-    .teaser-intro, .teaser-ending {
+    .teaser-intro,
+    .teaser-ending {
         max-width: 1280px;
         width: 100%;
 
@@ -519,27 +526,26 @@ header {
 
 footer {
     width: 100%;
-    background-color: #000;
+    background-color: #2A3B27;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
     .footer-wrapper {
-        max-width: 1280px;
+        max-width: 1320px;
         width: 100%;
 
         justify-self: end;
         min-height: 300px;
-    
+
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap-reverse;
+        flex-direction: column;
         align-items: start;
-        gap: 80px;
+        gap: 40px;
         justify-content: space-between;
-        padding: 65px;
-    
+        padding: 50px 40px 32px;
+
         @media screen and (orientation: portrait) {
             justify-content: space-evenly;
         }
@@ -637,13 +643,13 @@ footer {
             }
         }
 
-        #footer-links {
+        .footer-links {
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            max-width: 305px;
-            gap: 75px;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 40px;
+            width: 100%;
 
             .project-links {
                 display: flex;
@@ -662,9 +668,101 @@ footer {
                 }
             }
 
-            .footer-social-links {
+            #email-section {
+                display: flex;
+
+                width: 100%;
+                max-width: 600px;
+
+                @media screen and (orientation: portrait) {
+                    max-width: 100%;
+                }
+
+                #email-form {
+                    max-width: 600px;
+                    width: 100%;
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: stretch;
+                    gap: 20px;
+
+                    color: #fff;
+
+                    .email-form-header {
+                        font-size: 30px;
+                        font-family: MursGothic;
+                        font-weight: normal;
+                    }
+
+                    .email-form-fields {
+                        flex-grow: 1;
+                        flex-shrink: 1;
+
+                        display: flex;
+                        flex-direction: row;
+                        gap: 6px;
+                        justify-content: stretch;
+
+                        .email-field {
+                            flex-grow: 1;
+                            flex-shrink: 1;
+
+                            width: 0;
+
+                            background-color: #70805D;
+                            height: 50px;
+                            border-radius: 10px;
+                            padding: 0 20px;
+                            border: 0;
+
+                            color: white;
+                            font-size: 20px;
+                            line-height: 40px;
+                            font-family: SFPro;
+                        }
+
+                        .email-field::placeholder {
+                            color: white;
+                        }
+
+                        .email-form-submit {
+                            width: 160px;
+                            height: 50px;
+
+                            background-color: transparent;
+                            font-size: 20px;
+                            color: black;
+                            border: 0;
+                            border-radius: 10px;
+                            background-color: #FFD95E;
+                        }
+                    }
+                }
+            }
+
+            .footer-nav {
+                width: 116px !important;
                 display: flex;
                 flex-direction: column;
+                justify-content: stretch;
+                gap: 15px;
+    
+                .nav-button {
+                    text-decoration: none;
+                    text-transform: lowercase;
+                    font-size: 20px;
+                    vertical-align: middle;
+                    word-break: keep-all;
+    
+                    font-family: 'SFPro';
+                    color: #fff;
+                }
+            }
+
+            .footer-social-links {
+                display: flex;
+                flex-direction: row;
                 gap: 10px;
 
                 @media screen and (orientation: portrait) {
@@ -675,13 +773,8 @@ footer {
                 .social-link {
                     width: 40px;
                     height: 40px;
-                    background-color: white;
+                    background-color: #70805D;
                     border-radius: 50%;
-
-                    @media screen and (orientation: portrait) {
-                        width: 70px;
-                        height: 70px;
-                    }
 
                     a {
                         font-size: 0;
@@ -729,6 +822,7 @@ footer {
         gap: 50px;
         width: 100%;
     }
+
     .main-title {
         font-size: 50px;
         font-weight: normal;
@@ -738,7 +832,7 @@ footer {
     .row-list {
         width: 100%;
         display: flex;
-        
+
         display: grid;
         grid-template-columns: auto auto;
         column-gap: 180px;
@@ -754,7 +848,8 @@ footer {
             gap: 20px;
         }
 
-        .grid-guide, .photos-guide {
+        .grid-guide,
+        .photos-guide {
             max-width: 600px;
             width: 100%;
         }

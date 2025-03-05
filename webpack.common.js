@@ -184,12 +184,12 @@ module.exports = {
     //   meta: getMeta('Lifehack 2', '/lifehacks-2.html'),
     // }),
 
-    // new HtmlWebpackPlugin({
-    //   title: getTitle('Маршруты'),
-    //   template: './src/sections/routes.ejs',
-    //   filename: './routes.html',
-    //   meta: getMeta('Маршруты', '/routes.html'),
-    // }),
+    new HtmlWebpackPlugin({
+      title: getTitle('Маршруты'),
+      template: './src/sections/routes.ejs',
+      filename: './routes.html',
+      meta: getMeta('Маршруты', '/routes.html'),
+    }),
 
     new HtmlWebpackPlugin({
       title: getTitle('Ищем природу в городе'),

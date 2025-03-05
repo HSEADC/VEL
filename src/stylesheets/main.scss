@@ -1,3 +1,43 @@
+$green: #70805D;
+
+.banner {
+  flex-grow: 4;
+  width: 100%;
+  height: 480px;
+  margin-top: -72px;
+  padding-top: 72px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $green;
+  background-image: url('../images/routes/routes.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  h1 {
+    font-family: MursGothic;
+    font-weight: normal;
+    font-size: 60px;
+    color: #FFD95E;
+
+    margin: 0;
+  }
+
+  p {
+    max-width: 600px;
+    font-family: SFPro;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+
+    margin: 0;
+  }
+}
+
 #main {
   display: flex;
   flex: 1;
@@ -42,113 +82,94 @@
     }
   }
 
-  .form-block {
+  .filters {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    gap: 15px;
     justify-content: space-between;
-    gap: 25px;
+    padding: 20px 40px;
 
-    #email-section {
-      flex-shrink: 1;
-      display: flex;
-      justify-content: stretch;
+    .filter {
+      font-family: SFPro;
+      font-size: 20px;
+      text-decoration: none;
+      color: black;
+      padding: 2px 10px 5px;
+    }
 
-      background-color: #2b2b2b;
-      border-radius: 30px;
-      padding: 40px 50px 110px;
+    .active {
+      background-color: #2A3B27;
+      color: #FFD95E;
+      border-radius: 10px;
+    }
+  }
 
-      max-width: 66%;
-      height: 270px;
+  .routes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 380px);
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 110px;
+
+    .route-card {
       width: 100%;
+      max-width: 380px;
+      aspect-ratio: 32 / 27;
 
-      @media screen and (orientation: portrait) {
-        max-width: 100%;
+      border-radius: 20px;
+      padding: 20px;
+      overflow: hidden;
+
+      background-color: #70805D;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      display: grid;
+      grid-template-rows: 25px auto 25px;
+      align-items: center;
+
+      .tags {
+        display: flex;
+        gap: 10px;
+        z-index: 1;
+
+        .tag {
+          background: white;
+          border-radius: 10px;
+          padding: 5px 10px;
+          font-size: 15px;
+          font-family: SFPro;
+        }
       }
 
-      #email-form {
-        flex-grow: 1;
+      .card-info {
         display: flex;
         flex-direction: column;
-        align-items: stretch;
-        gap: 20px;
+        gap: 15px;
 
-        color: #fff;
-
-        .email-form-header {
+        .title {
           font-size: 25px;
-          line-height: 40px;;
+          color: white;
+          z-index: 1;
+          font-family: MursGothic;
         }
-
-        .email-form-fields {
-          flex-grow: 1;
-          flex-shrink: 1;
-
-          display: flex;
-          flex-direction: row;
-          gap: 15px;
-          justify-content: stretch;
-
-          .email-field {
-            flex-grow: 1;
-            flex-shrink: 1;
-
-            width: 0;
-
-            background-color: transparent;
-            border: 1px solid white;
-            height: 60px;
-            border-radius: 100px;
-            padding: 0 30px;
-
-            color: white;
-            font-size: 18px;
-            line-height: 40px;
-            font-family: 'MursGothic';
-
-            @media screen and (orientation: portrait) {
-              height: 40px;
-              font-size: 10px;
-              padding: 0 20px;
-            }
-          }
-
-          .email-form-submit {
-            flex-shrink: 0;
-            flex-grow: 0;
-            width: 60px;
-            height: 60px;
-
-            background-color: transparent;
-            font-size: 0;
-            border-radius: 100px;
-
-            background-image: url('../images/icons/submit.svg');
-            background-size: 50%;
-            background-position: center;
-            background-repeat: no-repeat;
-
-            @media screen and (orientation: portrait) {
-              width: 40px;
-              height: 40px;
-            }
-          }
+  
+        .details {
+          font-size: 18px;
+          color: white;
+          z-index: 1;
+          font-family: SFPro;
         }
       }
     }
 
-    .waves-sidebar {
-      flex-grow: 1;
+    .route-card-v1 {
+      background-image: url('../images/icons/route-card-v1.svg');
+    }
 
-      display: block;
-      height: 270px;
-
-      background-image: url('../images/waves.svg');
-      background-repeat: no-repeat;
-      background-size: cover;
-
-      border-radius: 30px;
-      border: 1px solid black;
+    .route-card-v2 {
+      background-image: url('../images/icons/route-card-v2.svg');
     }
   }
 
@@ -415,4 +436,8 @@
       }
     }
   }
+}
+
+.routes-body {
+  background-color: #FAF3ED;
 }
