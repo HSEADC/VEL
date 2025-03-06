@@ -6,6 +6,13 @@ var _document$getElementB;
 
 
 
+
+
+
+
+
+
+
 var initHeader = function initHeader() {
   var currentPath = window.location.pathname.toLowerCase().replace('/', '').replace('.html', '');
   document.querySelectorAll('.nav-button a').forEach(function (element) {

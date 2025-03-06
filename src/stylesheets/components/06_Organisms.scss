@@ -1,0 +1,32 @@
+.O_Header {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(42, 59, 39, 0.8);
+
+    z-index: 1;
+
+    @media screen and (orientation: portrait) {
+        justify-content: stretch;
+    }
+}
+
+.O_FooterRow {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+.O_MainContent {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: stretch;
+
+    font-family: 'MursGothic';
+}

@@ -1,0 +1,77 @@
+.W_HeaderNav {
+    width: 100%;
+    max-width: 1280px;
+    padding: 20px 30px;
+
+    display: grid;
+    grid-template-columns: 235px 1fr 235px;
+    grid-template-rows: 1fr;
+    align-items: center;
+
+
+    @media screen and (orientation: portrait) {
+        width: 100%;
+        grid-template-columns: 60px 1fr 60px;
+        justify-content: space-between;
+    }
+
+    .search-box {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        height: 32px;
+
+        border-radius: 10px;
+
+        input.search-input {
+            max-width: 195px;
+            display: block;
+            border: 1px solid #FFD95E;
+            border-radius: 10px 0 0 10px;
+            background-color: #FAF3ED;
+
+            font-family: SFPro;
+            font-size: 15px;
+            padding: 6px 15px;
+        }
+
+        .search-input:focus {
+            outline-width: 0;
+        }
+
+        .search-button {
+            width: 40px;
+            border: 1px solid #FFD95E;
+            border-radius: 0 10px 10px 0;
+            background-color: #FFD95E;
+
+            img {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
+
+.W_EmailWrapper {
+    display: flex;
+
+    width: 100%;
+    max-width: 600px;
+
+    @media screen and (orientation: portrait) {
+        max-width: 100%;
+    }
+
+    .W_EmailSection {
+        max-width: 600px;
+        width: 100%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+
+        color: #fff;
+    }
+}
