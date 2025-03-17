@@ -5,3 +5,12 @@
     gap: 15px;
     margin-bottom: 110px;
 }
+
+.C_Lifehacks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 270px);
+    gap: 15px;
+    
+    margin-top: 40px;
+    margin-bottom: 90px;
+}

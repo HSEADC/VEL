@@ -1,7 +1,55 @@
 .Q_RouteCardV1 {
-    background-image: url('../../images/icons/route-card-v1.svg');
+  background-image: url('../../images/icons/route-card-v1.svg');
 }
 
 .Q_RouteCardV2 {
-    background-image: url('../../images/icons/route-card-v2.svg');
+  background-image: url('../../images/icons/route-card-v2.svg');
 }
+
+.Q_LifehackBG1 {
+  background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-1.webp');
+
+  &:hover {
+    background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-1-active.webp');
+  }
+}
+
+.Q_LifehackBG2 {
+  background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-2.webp');
+
+  &:hover {
+    background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-2-active.webp');
+  }
+}
+
+.Q_LifehackBG3 {
+    background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-3.webp');
+  
+    &:hover {
+      background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-3-active.webp');
+    }
+  }
+
+  .Q_LifehackBG4 {
+    background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-4.webp');
+  
+    &:hover {
+      background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-4-active.webp');
+    }
+  }
+
+  .Q_LifehackBG5 {
+    background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-5.webp');
+  
+    &:hover {
+      background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-5-active.webp');
+    }
+  }
+
+  .Q_LifehackBG6 {
+    background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-6.webp');
+  
+    &:hover {
+      background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-6-active.webp');
+    }
+  }

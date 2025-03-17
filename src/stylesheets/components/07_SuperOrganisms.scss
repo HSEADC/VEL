@@ -24,97 +24,97 @@
             justify-content: space-evenly;
         }
 
-        // #authors {
-        //     display: flex;
-        //     flex-direction: column;
-        //     gap: 20px;
+        #authors {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
 
-        //     #authors-header {
-        //         font-size: 30px;
-        //         font-family: MursGothic;
-        //         font-weight: normal;
-        //         color: #fff;
+            #authors-header {
+                font-size: 30px;
+                font-family: MursGothic;
+                font-weight: normal;
+                color: #fff;
 
-        //         @media screen and (orientation: portrait) {
-        //             display: none;
-        //             visibility: hidden;
-        //         }
-        //     }
+                @media screen and (orientation: portrait) {
+                    display: none;
+                    visibility: hidden;
+                }
+            }
 
-        //     .authors-container-desktop {
-        //         display: flex;
-        //         flex-direction: row;
-        //         gap: 20px;
+            .authors-container-desktop {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
 
-        //         @media screen and (orientation: portrait) {
-        //             display: none;
-        //             visibility: hidden;
-        //         }
+                @media screen and (orientation: portrait) {
+                    display: none;
+                    visibility: hidden;
+                }
 
-        //         .authors-photos {
-        //             display: flex;
-        //             flex-direction: row;
-        //             margin-left: 15px;
+                .authors-photos {
+                    display: flex;
+                    flex-direction: row;
+                    margin-left: 15px;
 
-        //             .author-photo {
-        //                 font-size: 0;
-        //                 border-radius: 50%;
-        //                 border: 1px solid white;
-        //                 margin-left: -15px;
-        //             }
-        //         }
+                    .author-photo {
+                        font-size: 0;
+                        border-radius: 50%;
+                        border: 1px solid white;
+                        margin-left: -15px;
+                    }
+                }
 
-        //         .authors-list {
-        //             display: flex;
-        //             flex-direction: column;
-        //             gap: 8px;
+                .authors-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
 
-        //             .author>a {
-        //                 font-size: 20px;
-        //                 font-family: SFPro;
-        //                 color: #fff;
-        //                 text-decoration: none;
-        //             }
-        //         }
-        //     }
+                    .author>a {
+                        font-size: 20px;
+                        font-family: SFPro;
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+            }
 
-        //     .authors-container-mobile {
-        //         display: flex;
-        //         flex-direction: row;
-        //         gap: 20px;
+            .authors-container-mobile {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
 
-        //         @media screen and (orientation: landscape) {
-        //             display: none;
-        //             visibility: hidden;
-        //         }
+                @media screen and (orientation: landscape) {
+                    display: none;
+                    visibility: hidden;
+                }
 
-        //         .authors-list {
-        //             display: flex;
-        //             flex-direction: column;
-        //             gap: 8px;
+                .authors-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
 
-        //             .author {
-        //                 display: flex;
-        //                 flex-direction: row;
-        //                 align-items: center;
-        //                 gap: 25px;
+                    .author {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 25px;
 
-        //                 .author-photo {
-        //                     font-size: 0;
-        //                     border-radius: 50%;
-        //                     border: 1px solid white;
-        //                     margin-left: -15px;
-        //                 }
+                        .author-photo {
+                            font-size: 0;
+                            border-radius: 50%;
+                            border: 1px solid white;
+                            margin-left: -15px;
+                        }
 
-        //                 a {
-        //                     font-size: 20px;
-        //                     font-family: SFPro;
-        //                     color: #fff;
-        //                     text-decoration: none;
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
+                        a {
+                            font-size: 20px;
+                            font-family: SFPro;
+                            color: #fff;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

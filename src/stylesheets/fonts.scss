@@ -1,36 +1,13 @@
 @font-face {
-  font-family: 'PT Root UI';
-  src: url('../fonts/pt-root-ui_bold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'PT Root UI';
-  src: url('../fonts/pt-root-ui_regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'PT Root UI';
-  src: url('../fonts/pt-root-ui_medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'PT Root UI';
-  src: url('../fonts/pt-root-ui_light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
   font-family: MursGothic;
   src: url('../fonts/MursGothic-WideMedium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
+}
+
+@font-face {
+  font-family: MursGothicDemi;
+  src: url('../fonts/MursGothic-MassiveDemi.woff2') format('woff2');
 }
 
 @font-face {

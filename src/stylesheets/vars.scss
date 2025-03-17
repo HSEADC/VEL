@@ -1,0 +1,23 @@
+:root {
+    --white: #FDFFFE;
+    --yellow: #F3D472;
+    --dark: #2E3338;
+    --green: #9DAB8C;
+    --dark-white: #F1EFE9;
+    --blue: #C1CDD7;
+
+    --h1-font: bold 56px MursGothicDemi;
+    --h2-font: bold 36px MursGothicDemi;
+    --h3-font: bold 24px MursGothicDemi;
+    --caption-font: normal 14px SFPro;
+    --general-text: normal 20px SFPro;
+}
+
+@media (orientation: portrait) {
+    :root {
+        --h1-font: bold 32px MursGothicDemi;
+        --h2-font: bold 24px MursGothicDemi;
+        --h3-font: bold 18px MursGothicDemi;
+        --caption-font: normal 10px SFPro;
+    }
+}

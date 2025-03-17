@@ -3,6 +3,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const JsonMinimizerPlugin = require("json-minimizer-webpack-plugin");
 
 const webpack = require('webpack')
 const path = require('path');
@@ -109,7 +110,14 @@ module.exports = {
         options: {
           name: 'fonts/[name].[ext]'
         }
-      }
+      },
+      {
+        test: /\.json$/i,
+        type: "asset/resource",
+        generator: {
+          filename: 'api/[name].[ext]'
+        }
+      },
     ]
   },
   plugins: [
@@ -120,7 +128,8 @@ module.exports = {
 
     new CopyWebpackPlugin({
       patterns: [
-        { from: './src/images', to: 'images' }
+        { from: './src/images', to: 'images' },
+        { from: './src/api', to: 'api' }
       ],
     }),
 
@@ -168,6 +177,7 @@ module.exports = {
       template: './src/sections/lifehacks.ejs',
       filename: './lifehacks.html',
       meta: getMeta('Лайфхаки', '/lifehacks.html'),
+      inject: false,
     }),
 
     // new HtmlWebpackPlugin({
@@ -260,15 +270,6 @@ module.exports = {
     //   template: './src/articles/superorganisms/S_Popup.html',
     //   filename: './superorganisms/S_Popup.html'
     // }),
-    
-
-    new HtmlWebpackPlugin({
-      title: getTitle('Стайл-гайд'),
-      favicon: './src/images/icons/favicon.svg',
-      template: './src/style-guide.ejs',
-      filename: './style-guide.html',
-      meta: getMeta('Стайл-гайд', '/style-guide.html'),
-    }),
 
     // Partials
     new HtmlWebpackPartialsPlugin([
@@ -287,9 +288,12 @@ module.exports = {
         template_filename: '*',
         priority: 'replace',
       }
-    ])
+    ]),
   ],
   optimization: {
-    minimizer: [new CssMinimizerPlugin()]
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new JsonMinimizerPlugin(),
+    ]
   }
 }

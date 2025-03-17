@@ -6,60 +6,32 @@
     <%= htmlWebpackPlugin.tags.headTags %>
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
-  <body class="bg-black">
+  <body>
     <header></header>
+    
+    <div class="M_PageBanner">
+      <h1 class="A_H1">Лайфхаки</h1>
+      <p class="A_PageBannerDescription">
+        Собрали короткие и полезные<br />советы в&nbsp;карточках
+      </p>
+    </div>
 
-    <main class="teaser">
-      <button id="back-button"><img src="images/icons/arrow-back.svg" alt="Назад"></button>
+    <main class="O_MainContent">
+      <h2 class="A_H2">Выбор редакции</h2>
+      <div id="editor_choice_list" class="C_Lifehacks"></div>
 
-      <div class="teaser-block">
-        <div class="list">
-          <div>
-            <a href="#" class="card">
-              <img src="images/lifehacks/panties-lifehack.svg" alt="Снимай трусы">
-              <div class="card-info">
-                <div class="card-description">
-                  Велосипедки — не просто шорты. Они сделаны из дышащей 
-                  и не сковывающей движения ткани, а также имеют специальные 
-                  уплотнения для гигиены и защиты от кочек. Наличие нижнего белья
-                  может привести к натиранию и поту.
-                </div>
-              </div>
-              <div class="card-keywords">
-                <div class="card-keyword">экипировка</div>
-              </div>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="card">
-              <img src="images/lifehacks/tape-lifehack.svg" alt="Поможет изолента">
-              <div class="card-info">
-                <div class="card-description">
-                  При проезде по неровностям цепь бьется о нижнее перо велосипеда. На металле остаются сколы,
-                  да и звук этого удара неприятный. Можно решить эту проблему покупкой специальной защиты пера,
-                  или воспользоваться подручными средствами —  изолентой.
-                </div>
-              </div>
-              <div class="card-keywords">
-                <div class="card-keyword">починка</div>
-              </div>
-            </a>
-          </div>
-          <div>
-            <a href="#" class="card">
-              <img src="images/lifehacks/wheels-lifehack.svg" alt="Меняй колеса">
-              <div class="card-info">
-                <div class="card-description">
-                  Чем больше шипов и шире резина — тем лучше сцепление.
-                  Замена шин в сезон холодов поможет справиться с грязью и гололёдом.
-                </div>
-              </div>
-              <div class="card-keywords">
-                <div class="card-keyword">обслуживание</div>
-              </div>
-            </a>
-          </div>
-        </div>
+      <h2 class="A_H2">Все лайфхаки</h2>
+      <div class="M_Filters">
+        <a class="A_Filter A_FilterActive" href="#">все</a>
+        <a class="A_Filter" href="#">экипировка</a>
+        <a class="A_Filter" href="#">безопасность</a>
+        <a class="A_Filter" href="#">аксессуары</a>
+        <a class="A_Filter" href="#">виды велосипедов</a>
+        <a class="A_Filter" href="#">здоровье</a>
+        <a class="A_Filter" href="#">тренировки</a>
+      </div>
+
+      <div id="lifehacks_list" class="C_Lifehacks">
       </div>
     </main>
 
