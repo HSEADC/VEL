@@ -22,5 +22,13 @@
         "tags": ["экипировка"],
         "short_description": "Велостанок – отличноерешение для тренировок в любое время года.",
         "is_editor_choice": true
+    },
+    {
+        "id": 4,
+        "title": "Одежда для холодов",
+        "image": "images/articles/4/article-4-mini-cover.webp",
+        "tags": ["экипировка"],
+        "short_description": "Главные принципы подбора формы для холодного времени года.",
+        "is_editor_choice": false
     }
 ]
