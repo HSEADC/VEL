@@ -446,7 +446,7 @@ function articles_list_arrayLikeToArray(r, a) { (null == a || a > r.length) && (
 
 
 var ARTICLES_PATH = 'articles.html';
-var API_URL = 'api/articles-data.json';
+var API_URL = 'api/articles-list.json';
 var createArticles = function createArticles() {
   var url = new URL(window.location);
   if (!url.pathname.includes(ARTICLES_PATH)) {
@@ -501,7 +501,7 @@ function lifehacks_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = 
 
 
 var LIFEHACKS_PATH = 'lifehacks.html';
-var apiUrl = 'api/lifehacks-data.json';
+var apiUrl = 'api/lifehacks-list.json';
 var createLifehacks = function createLifehacks() {
   var listNode = document.getElementById('lifehacks_list');
   var editorChoiceNode = document.getElementById('editor_choice_list');

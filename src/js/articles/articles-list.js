@@ -3,7 +3,7 @@ import { createH3, createImage, createTags, createTextNode } from "../common/gen
 import { ARTICLE_PATH } from "./article-page";
 
 export const ARTICLES_PATH = 'articles.html';
-const API_URL = 'api/articles-data.json';
+const API_URL = 'api/articles-list.json';
 
 export const createArticles = () => {
     const url = new URL(window.location);

@@ -2,7 +2,7 @@ import { filterEntities, createFilters } from "../common/filters";
 import { createTag, createH3 } from "../common/general";
 
 export const LIFEHACKS_PATH = 'lifehacks.html';
-const apiUrl = 'api/lifehacks-data.json';
+const apiUrl = 'api/lifehacks-list.json';
 
 export const createLifehacks = () => {
     const listNode = document.getElementById('lifehacks_list');
