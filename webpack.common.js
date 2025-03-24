@@ -142,12 +142,21 @@ module.exports = {
       meta: getMeta('Главная', '/index.html'),
     }),
 
-    // new HtmlWebpackPlugin({
-    //   title: getTitle('Статьи'),
-    //   template: './src/sections/articles.ejs',
-    //   filename: './articles.html',
-    //   meta: getMeta('Статьи', '/articles.html'),
-    // }),
+    new HtmlWebpackPlugin({
+      title: getTitle('Статьи'),
+      template: './src/sections/articles.ejs',
+      filename: './articles.html',
+      meta: getMeta('Статьи', '/articles.html'),
+      inject: false,
+    }),
+
+    new HtmlWebpackPlugin({
+      title: getTitle('Статья'),
+      template: './src/sections/article.ejs',
+      filename: './article.html',
+      meta: getMeta('Статьи', '/article.html'),
+      inject: false,
+    }),
 
     new HtmlWebpackPlugin({
       title: getTitle('Правила безопасности для велосипедистов'),
@@ -179,20 +188,15 @@ module.exports = {
       meta: getMeta('Лайфхаки', '/lifehacks.html'),
       inject: false,
     }),
-
-    // new HtmlWebpackPlugin({
-    //   title: getTitle('Lifehack 1'),
-    //   template: './src/sections/lifehacks/1.ejs',
-    //   filename: './lifehacks-1.html',
-    //   meta: getMeta('Lifehack 1', '/lifehacks/1.html'),
-    // }),
-
-    // new HtmlWebpackPlugin({
-    //   title: getTitle('Lifehack 2'),
-    //   template: './src/sections/lifehacks/2.ejs',
-    //   filename: './lifehacks-2.html',
-    //   meta: getMeta('Lifehack 2', '/lifehacks-2.html'),
-    // }),
+    
+    new HtmlWebpackPlugin({
+      title: getTitle('Лайфхак'),
+      favicon: './src/images/icons/favicon.svg',
+      template: './src/sections/lifehack.ejs',
+      filename: './lifehack.html',
+      meta: getMeta('Лайфхак', '/lifehack.html'),
+      inject: false,
+    }),
 
     new HtmlWebpackPlugin({
       title: getTitle('Маршруты'),

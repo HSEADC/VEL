@@ -1,3 +1,11 @@
+.Q_TextYellow {
+  color: var(--yellow) !important;
+}
+
+.Q_TextWhite {
+  color: var(--white) !important;
+}
+
 .Q_RouteCardV1 {
   background-image: url('../../images/icons/route-card-v1.svg');
 }
@@ -23,44 +31,42 @@
 }
 
 .Q_LifehackBG3 {
-    background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-3.webp');
-  
-    &:hover {
-      background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-3-active.webp');
-    }
-  }
+  background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-3.webp');
 
-  .Q_LifehackBG4 {
-    background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-4.webp');
-  
-    &:hover {
-      background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-4-active.webp');
-    }
+  &:hover {
+    background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-3-active.webp');
   }
+}
 
-  .Q_LifehackBG5 {
-    background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-5.webp');
-  
-    &:hover {
-      background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-5-active.webp');
-    }
-  }
+.Q_LifehackBG4 {
+  background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-4.webp');
 
-  .Q_LifehackBG6 {
-    background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-6.webp');
-  
-    &:hover {
-      background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-6-active.webp');
-    }
+  &:hover {
+    background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-4-active.webp');
   }
+}
 
-  .Q_LifehacksBannerBg {
-    background-color: #70805D;
-    background-image: 
-      url('../../images/lifehacks/quarks/lifehacks-banner-bg-pattern-bottom.webp'),
-      url('../../images/lifehacks/quarks/lifehacks-banner-bg-pattern-top.webp'),
-      url('../../images/lifehacks/quarks/lifehacks-banner-bg.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.Q_LifehackBG5 {
+  background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-5.webp');
+
+  &:hover {
+    background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-5-active.webp');
   }
+}
+
+.Q_LifehackBG6 {
+  background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-6.webp');
+
+  &:hover {
+    background-image: url('../../images/lifehacks/quarks/lifehack-card-bg-6-active.webp');
+  }
+}
+
+.Q_LifehacksBannerBg {
+  background-color: #70805D;
+  background-image:
+    url('../../images/lifehacks/quarks/lifehacks-banner-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

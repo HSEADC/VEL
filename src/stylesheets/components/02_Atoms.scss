@@ -29,15 +29,16 @@
 }
 
 .A_SearchInput {
-    max-width: 195px;
+    max-width: 295px;
+    width: 100%;
     display: block;
-    border: 1px solid #FFD95E;
-    border-radius: 10px 0 0 10px;
-    background-color: #FAF3ED;
+    border-radius: 10px;
+    border: 0;
+    background-color: var(--dark-white);
+    padding: 0 20px;
 
-    font-family: SFPro;
-    font-size: 15px;
-    padding: 6px 15px;
+    font: var(--general-text);
+    color: var(--main-dark);
 
     &:focus {
         outline-width: 0;
@@ -134,8 +135,7 @@
 
 .A_PageBannerDescription {
     max-width: 600px;
-    font-family: SFPro;
-    font-size: 20px;
+    font: var(--general-text);
     color: white;
     text-align: center;
 
@@ -147,8 +147,7 @@
     padding: 1px 12px 4px;
     background-color: var(--blue);
 
-    font-family: SFPro;
-    font-size: 14px;
+    font: var(--caption-font);
     color: var(--main-dark);
 }
 
@@ -173,6 +172,7 @@
     padding: 5px 16px 7px;
     border: 1px solid var(--green);
     border-radius: 20px;
+    background-color: transparent;
 }
 
 .A_FilterActive {
@@ -182,26 +182,108 @@
 
 .A_H1 {
     font: var(--h1-font);
-    color: var(--yellow);
+    color: var(--main-dark);
+    line-height: 100%;
 
     margin: 0;
     padding: 0;
-    margin-bottom: 24px;
 }
 
 .A_H2 {
     font: var(--h2-font);
     color: var(--main-dark);
+    line-height: 100%;
     padding: 0;
 }
 
 .A_H3 {
     font: var(--h3-font);
     color: var(--main-dark);
+    line-height: 100%;
     padding: 0;
-    text-align: center;
+}
+
+.A_Text {
+    font: var(--general-text);
+    color: var(--main-dark);
+}
+
+.A_Caption {
+    font: var(--caption-text);
+    color: var(--main-dark);
 }
 
 .A_LifehackPhoto {
     max-width: 225px;
+}
+
+.A_Button {
+    border-radius: 10px;
+    padding: 12px 24px;
+    background-color: var(--yellow);
+    border: 0;
+    
+    color: var(--main-dark);
+    font: var(--general-text);
+    line-height: 100%;
+    text-decoration: none;
+
+    @media (orientation: portrait) {
+        padding: 9px 16px;
+        border-radius: 8px;
+    }
+}
+
+.A_ArticleBanner {
+    width: 100%;
+    aspect-ratio: 18 / 5;
+    margin-top: -78px;
+
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-color: var(--dark-white);
+}
+
+.A_ArticleRemark, .A_ArticleReference {
+    background-color: var(--dark-white);
+    padding: 32px 50px;
+    border-radius: 15px;
+
+    @media (orientation: portrait) {
+        padding: 24px 36px;
+        border-radius: 12px;
+    }
+}
+
+.A_ArticleReference {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    a {
+        align-self: end;
+    }
+
+    @media (orientation: portrait) {
+        gap: 15px;
+    }
+}
+
+.A_ArticleNavButton {
+    font: var(--caption-text);
+    color: var(--green);
+    text-decoration: none;
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    text-align: left;
+    
+    &:target {
+        color: var(--main-dark);
+    }
+}
+
+.A_ArticleNavButtonActive {
+    color: var(--main-dark);
 }

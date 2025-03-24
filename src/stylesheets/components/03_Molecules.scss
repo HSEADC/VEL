@@ -11,9 +11,13 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    height: 32px;
+    height: 48px;
 
     border-radius: 10px;
+
+    @media (orientation: portrait) {
+        display: none;
+    }
 }
 
 .M_EmailForm {
@@ -24,6 +28,10 @@
     flex-direction: row;
     gap: 6px;
     justify-content: stretch;
+
+    @media (orientation: portrait) {
+        display: none;
+    }
 }
 
 .M_FooterNav {
@@ -48,21 +56,22 @@
 .M_PageBanner {
     width: 100%;
     height: 450px;
-    margin-top: -72px;
-    padding-top: 72px;
+    margin-top: -78px;
+    padding-top: 78px;
     margin-bottom: 90px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 32px;
 }
 
 .M_Filters {
     display: flex;
     flex-direction: row;
     gap: 15px;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 20px;
 }
 
@@ -97,7 +106,7 @@
     }
 }
 
-.M_Lifehack {
+.M_LifehackCard {
     max-width: 270px;
     max-height: 270px;
     width: 100%;
@@ -116,4 +125,138 @@
     grid-template-rows: 20px 140px auto;
     justify-items: center;
     gap: 10px;
+
+    h3 {
+        text-align: center;
+    }
+}
+
+.M_LifehackPageCard {
+    max-width: 845px;
+    width: 100%;
+
+    align-self: center;
+    margin: 90px 0;
+
+    padding: 50px;
+    background-color: var(--dark-white);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.M_EditorChoiseArticleCard {
+    margin-top: 40px;
+    margin-bottom: 90px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+
+    img {
+        max-width: 365px;
+        width: 100%;
+    }
+
+    background-color: var(--green);
+    border-radius: 15px;
+}
+
+.M_ArticleCard {
+    max-width: 557px;
+    border-radius: 15px;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    color: var(--main-dark);
+    overflow: hidden;
+    
+    background-color: var(--dark-white);
+
+    img {
+        width: 40%;
+        flex-shrink: 1;
+        aspect-ratio: 224 / 271;
+        border-radius: 15px 0 0 15px;
+    }
+}
+
+.M_ArticleIntro {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media (orientation: portrait) {
+        gap: 15px;
+    }
+}
+
+.M_ArticleAuthor {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    img {
+        max-width: 96px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+    }
+
+    @media (max-width: 1000px) {
+        display: none;
+    }
+}
+
+.M_ArticleSection {
+    flex-shrink: 1;
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @media (orientation: portrait) {
+        gap: 24px;
+    }
+}
+
+.M_ArticleSecionText {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (orientation: portrait) {
+        gap: 16px;
+    }
+}
+
+.M_ArticleList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (orientation: portrait) {
+        gap: 12px;
+    }
+}
+
+.M_ArticleImages {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    gap: 15px;
+
+    width: 100%;
+    max-height: 350px;
+    width: 100%;
+
+    img {
+        border-radius: 15px;
+        min-height: 0;
+        min-width: 0;
+    }
 }

@@ -1,12 +1,20 @@
 import './index.css';
 
-import './stylesheets/components/01_Quarks.scss';
-import './stylesheets/components/02_Atoms.scss';
-import './stylesheets/components/03_Molecules.scss';
-import './stylesheets/components/04_Wrappers.scss';
-import './stylesheets/components/05_Collections.scss';
-import './stylesheets/components/06_Organisms.scss';
-import './stylesheets/components/07_SuperOrganisms.scss';
+import './js/navigation';
+import { ARTICLES_PATH, createArticles } from './js/articles/articles-list';
+import { ARTICLE_PATH, createArticle } from './js/articles/article-page';
+import { createLifehacks, LIFEHACKS_PATH } from './js/lifehacks/lifehacks';
 
-import './js/navigation.js';
-import './js/lifehacks.js';
+const url = new URL(window.location).pathname;
+
+if (url.includes(ARTICLES_PATH)) {
+    createArticles();
+}
+
+if (url.includes(ARTICLE_PATH)) {
+    createArticle();
+}
+
+if (url.includes(LIFEHACKS_PATH)) {
+    createLifehacks();
+}
