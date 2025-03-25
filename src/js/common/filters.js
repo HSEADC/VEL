@@ -41,6 +41,7 @@ const createFilter = (name, isActive) => {
     filterButton.addEventListener('click', (event) => {
         const urlParams = new URLSearchParams(window.location.search);
 
+        urlParams.delete('page');
         urlParams.set('filter', event.target.innerText);
         
         window.location.search = urlParams;

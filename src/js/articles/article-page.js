@@ -1,4 +1,5 @@
-import { createTags, createH1, createTextNode, createH2, createImage, createLink, createCaption } from "../common/general";
+import { createTags, createH1, createTextNode, createH2, createImage, createLink, createCaption, getRandomNumber } from "../common/general";
+import { fetchArticles, renderArticles } from "./articles-list";
 
 export const ARTICLE_PATH = 'article.html';
 
@@ -42,6 +43,8 @@ const renderArticle = (article) => {
     for (const sectionData of article.sections) {
         sectionsElement.appendChild(createArticleSection(sectionData));
     }
+
+    createRecomendations();
 }
 
 const createBanner = (bannerImage) => {
@@ -284,4 +287,30 @@ const createArticleReference = (reminderData) => {
     );
 
     return reference;
+}
+
+const createRecomendations = () => {
+    const url = new URL(window.location);
+    const id = parseInt(url.searchParams.get('id'), 10);
+
+    fetchArticles().then(
+        (articles) => {
+            articles = articles.filter((article) => article.id !== id);
+
+            if (articles.length <= 2) {
+                renderArticles(articles);
+
+                return;
+            }
+
+            const limit = articles.length - 1;
+
+            const randomNumber = getRandomNumber(limit);
+            const randomArticles = articles.slice(randomNumber, randomNumber + 2);
+
+            console.log(randomArticles);
+
+            renderArticles(randomArticles);
+        }
+    )
 }

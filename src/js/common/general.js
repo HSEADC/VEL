@@ -82,3 +82,18 @@ export const createLink = (text, href) => {
 
     return link;
 }
+
+export const createButton = (text, onClick) => {
+    const button = document.createElement('button');
+
+    button.innerHTML = text;
+    button.onclick = onClick;
+
+    button.classList.add('A_Button');
+
+    return button;
+}
+
+export const getRandomNumber = (limit) => {
+    return Math.floor(Math.random() * limit);
+}

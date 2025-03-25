@@ -149,6 +149,10 @@
 
     font: var(--caption-font);
     color: var(--main-dark);
+
+    @media (max-width: 480px) {
+        padding: 1px 6px 2px;
+    }
 }
 
 .A_CardTitle {
@@ -173,6 +177,10 @@
     border: 1px solid var(--green);
     border-radius: 20px;
     background-color: transparent;
+
+    @media (max-width: 480px) {
+        padding: 2px 8px 5px;
+    }
 }
 
 .A_FilterActive {

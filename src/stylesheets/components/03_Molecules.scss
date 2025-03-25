@@ -72,7 +72,13 @@
     flex-direction: row;
     gap: 15px;
     justify-content: center;
+    flex-wrap: wrap;
     margin-top: 20px;
+
+    @media (max-width: 480px) {
+        gap: 8px;
+        margin-top: 15px;
+    }
 }
 
 .M_Route {
@@ -119,6 +125,7 @@
     background-position: center;
     background-size: cover;
     border-radius: 20px;
+    text-decoration: none;
 
     display: grid;
     grid-template-columns: 100%;
@@ -129,6 +136,31 @@
     h3 {
         text-align: center;
     }
+
+    img {
+        max-height: 140px;
+    }
+}
+
+.M_LifehackLargeCard {
+    max-width: 557px;
+    max-height: 270px;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 557 / 270;
+
+    padding: 40px 16px 50px 32px;
+    background-color: var(--dark-white);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: row;
+    
+    gap: 10px;
 }
 
 .M_LifehackPageCard {
@@ -155,16 +187,27 @@
     justify-content: stretch;
 
     img {
-        max-width: 365px;
+        max-width: 30%;
         width: 100%;
+        flex-shrink: 1;
+        object-fit: cover;
+        aspect-ratio: 224 / 271;
+        border-radius: 15px 0 0 15px;
     }
 
     background-color: var(--green);
     border-radius: 15px;
+    text-decoration: none;
+
+    @media (max-width: 600px) {
+        margin-top: 20px;
+        margin-bottom: 45px;
+    }
 }
 
 .M_ArticleCard {
     max-width: 557px;
+    max-height: 270px;
     border-radius: 15px;
     text-decoration: none;
 
@@ -181,6 +224,7 @@
         flex-shrink: 1;
         aspect-ratio: 224 / 271;
         border-radius: 15px 0 0 15px;
+        object-fit: cover;
     }
 }
 
@@ -258,5 +302,15 @@
         border-radius: 15px;
         min-height: 0;
         min-width: 0;
+    }
+}
+
+.M_Pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+        margin-bottom: 50px;
     }
 }
