@@ -50,7 +50,7 @@ const renderArticle = (article) => {
 const createBanner = (bannerImage) => {
     const banner = document.getElementById('article-banner');
 
-    banner.style.backgroundImage = `url('${bannerImage}')`;
+    banner.style.backgroundImage = `url('images/articles/list-weave.webp'), url('${bannerImage}')`;
 }
 
 const createArticleHead = (article) => {

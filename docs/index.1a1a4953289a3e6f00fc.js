@@ -296,7 +296,7 @@ var renderArticle = function renderArticle(article) {
 };
 var createBanner = function createBanner(bannerImage) {
   var banner = document.getElementById('article-banner');
-  banner.style.backgroundImage = "url('".concat(bannerImage, "')");
+  banner.style.backgroundImage = "url('images/articles/list-weave.webp'), url('".concat(bannerImage, "')");
 };
 var createArticleHead = function createArticleHead(article) {
   var wrapper = document.createElement('div');
