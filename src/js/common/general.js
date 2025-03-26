@@ -97,3 +97,11 @@ export const createButton = (text, onClick) => {
 export const getRandomNumber = (limit) => {
     return Math.floor(Math.random() * limit);
 }
+
+export const createBoldText = (text) => {
+    const textNode = document.createElement('b');
+
+    textNode.innerHTML = text;
+
+    return textNode;
+}

@@ -31,7 +31,7 @@
     font-family: 'MursGothic';
 }
 
-.O_ArticleMain {
+.O_StoryMain {
     display: flex;
     flex-direction: row;
     align-items: start;
@@ -46,8 +46,60 @@
     }   
 }
 
-.O_Recomendations {
+.O_RouteMain {
+    padding-bottom: 64px;
+}
+
+.O_InfoCardWay {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+
+    border-radius: 15px;
+    padding: 24px;
+    background-color: var(--dark-white);
+    margin-top: -15px;
+
+    @media (max-width: 600px) {
+        padding: 16px;
+    }
+}
+
+
+.O_BlockStoryText {
+    flex-shrink: 1;
+    max-width: 700px;
     width: 100%;
-    max-width: 1190px;
-    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 42px;
+
+    @media (orientation: portrait) {
+        gap: 24px;
+    }
+}
+
+.O_Factoid {
+    background-color: var(--dark-white);
+    padding: 32px 50px;
+    border-radius: 15px;
+
+    @media (orientation: portrait) {
+        padding: 24px 36px;
+        border-radius: 12px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    a {
+        align-self: end;
+    }
+
+    @media (orientation: portrait) {
+        gap: 15px;
+    }
 }

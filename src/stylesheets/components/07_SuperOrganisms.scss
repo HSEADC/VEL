@@ -118,3 +118,48 @@
         }
     }
 }
+
+.S_BlockCardsWay {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (max-width: 600px) {
+        gap: 20px;
+    }
+
+    margin-bottom: 90px;
+}
+
+.S_CardWay {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+.S_StoryCover {
+    min-height: 350px;
+    max-height: 450px;
+    width: 100%;
+    aspect-ratio: 18 / 5;
+    margin-top: -78px;
+
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-color: var(--dark-white);
+}
+
+.S_RecommendationStory {
+    width: 100%;
+    max-width: 1190px;
+    padding: 0 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    margin-bottom: 90px;
+}

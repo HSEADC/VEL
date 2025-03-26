@@ -220,6 +220,11 @@ var createButton = function createButton(text, onClick) {
 var getRandomNumber = function getRandomNumber(limit) {
   return Math.floor(Math.random() * limit);
 };
+var createBoldText = function createBoldText(text) {
+  var textNode = document.createElement('b');
+  textNode.innerHTML = text;
+  return textNode;
+};
 ;// ./src/js/common/pagination.js
 
 var paginateEntities = function paginateEntities(entities, perPage) {
@@ -245,10 +250,217 @@ var removeLoadMoreButton = function removeLoadMoreButton() {
   var paginationNode = document.getElementById('pagination');
   paginationNode.innerHTML = '';
 };
+;// ./src/js/common/story-navigation.js
+function story_navigation_createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = story_navigation_unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function story_navigation_unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return story_navigation_arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? story_navigation_arrayLikeToArray(r, a) : void 0; } }
+function story_navigation_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+
+var createSectionHeader = function createSectionHeader(title) {
+  var header = general_createH2(title);
+  var observer = new IntersectionObserver(function (entries) {
+    var entry = entries[0];
+    var header = entry.target;
+    if (!entry.isIntersecting) {
+      return;
+    }
+    var navWrapper = document.getElementById('story-nav');
+    if (!navWrapper) {
+      return;
+    }
+    var activeNavButton = navWrapper.getElementsByClassName('A_ArticleNavButtonActive')[0];
+    if (activeNavButton.innerHTML === header.innerHTML) {
+      return;
+    }
+    activeNavButton.classList.remove('A_ArticleNavButtonActive');
+    var _iterator = story_navigation_createForOfIteratorHelper(navWrapper.getElementsByClassName('A_ArticleNavButton')),
+      _step;
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var navButton = _step.value;
+        if (navButton.innerHTML !== header.innerHTML) {
+          continue;
+        }
+        navButton.classList.add('A_ArticleNavButtonActive');
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+  }, {
+    threshold: [0]
+  });
+  observer.observe(header);
+  return header;
+};
+var createNavLink = function createNavLink(sectionData) {
+  var navWrapper = document.getElementById('story-nav');
+  var navButton = document.createElement('button');
+  navButton.classList.add('A_ArticleNavButton');
+  if (!navWrapper.innerHTML) {
+    navButton.classList.add('A_ArticleNavButtonActive');
+  }
+  navButton.innerHTML = sectionData.title;
+  navButton.onclick = function (event) {
+    navWrapper.getElementsByClassName('A_ArticleNavButtonActive')[0].classList.remove('A_ArticleNavButtonActive');
+    document.getElementById(sectionData.id).scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
+    event.target.classList.add('A_ArticleNavButtonActive');
+  };
+  navWrapper.append(navButton);
+};
+;// ./src/js/common/story-components.js
+function story_components_createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = story_components_unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function story_components_unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return story_components_arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? story_components_arrayLikeToArray(r, a) : void 0; } }
+function story_components_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+
+
+var createStoryBanner = function createStoryBanner() {
+  var banner = document.getElementById('story-banner');
+  for (var _len = arguments.length, images = new Array(_len), _key = 0; _key < _len; _key++) {
+    images[_key] = arguments[_key];
+  }
+  var backgroundImage = images.map(function (image) {
+    return "url('".concat(image, "')");
+  }).join(', ');
+  banner.style.backgroundImage = backgroundImage;
+};
+var createStoryIntro = function createStoryIntro(story) {
+  var introNode = document.createElement('div');
+  introNode.classList.add('W_NameStory');
+  introNode.append(createH1(story.title), createTags(story.tags), createTextNode(story.description));
+  return introNode;
+};
+var createStorySection = function createStorySection(sectionData) {
+  var articleSection = document.createElement('section');
+  articleSection.classList.add('O_BlockStoryText');
+  var header = createSectionHeader(sectionData.title);
+  createNavLink(sectionData);
+  header.setAttribute('id', sectionData.id);
+  articleSection.appendChild(header);
+  articleSection.appendChild(createSectionPart(sectionData.parts));
+  return articleSection;
+};
+var createSectionPart = function createSectionPart(sectionParts) {
+  var sectionText = document.createElement('div');
+  sectionText.classList.add('W_TextStory');
+  var _iterator = story_components_createForOfIteratorHelper(sectionParts !== null && sectionParts !== void 0 ? sectionParts : []),
+    _step;
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var part = _step.value;
+      var partElement = createPart(part);
+      if (!partElement) {
+        continue;
+      }
+      sectionText.appendChild(partElement);
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+  return sectionText;
+};
+var createPart = function createPart(part) {
+  if (part.type === 'text') {
+    return createTextNode(part.value);
+  }
+  if (part.type === 'list') {
+    return createStoryList(part.value);
+  }
+  if (part.type === 'image') {
+    return createStoryImagesList(part.value);
+  }
+  if (part.type === 'remark') {
+    return createRemark(part.value);
+  }
+  if (part.type === 'reference') {
+    return createReference(part.value);
+  }
+  if (part.type === 'features') {
+    return createFeatures(part.value);
+  }
+  return null;
+};
+var createStoryList = function createStoryList(articleList) {
+  var listNode = document.createElement('div');
+  listNode.classList.add('M_StoryList');
+  var _iterator2 = story_components_createForOfIteratorHelper(articleList),
+    _step2;
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var listItem = _step2.value;
+      var itemNode = createTextNode(listItem.value);
+      itemNode.prepend(createBoldText(listItem.title), '. ');
+      listNode.appendChild(itemNode);
+    }
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
+  }
+  return listNode;
+};
+var createStoryImagesList = function createStoryImagesList(articleImages) {
+  var imagesNode = document.createElement('div');
+  imagesNode.classList.add('M_StoryImagesList');
+  var _iterator3 = story_components_createForOfIteratorHelper(articleImages),
+    _step3;
+  try {
+    for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+      var image = _step3.value;
+      imagesNode.appendChild(createImage(image));
+    }
+  } catch (err) {
+    _iterator3.e(err);
+  } finally {
+    _iterator3.f();
+  }
+  return imagesNode;
+};
+var createRemark = function createRemark(reminderText) {
+  var remark = createTextNode(reminderText);
+  remark.classList.add('O_Factoid');
+  remark.classList.add('Q_LineDecorate');
+  return remark;
+};
+var createReference = function createReference(reminderData) {
+  var reference = document.createElement('div');
+  reference.classList.add('O_Factoid');
+  reference.append(createTextNode(reminderData.text), createLink(reminderData.title, reminderData.href));
+  return reference;
+};
+var createFeatures = function createFeatures(features) {
+  var featuresNode = document.createElement('div');
+  featuresNode.classList.add('C_WayFeatures');
+  var _iterator4 = story_components_createForOfIteratorHelper(features),
+    _step4;
+  try {
+    for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+      var feature = _step4.value;
+      featuresNode.appendChild(createFeature(feature));
+    }
+  } catch (err) {
+    _iterator4.e(err);
+  } finally {
+    _iterator4.f();
+  }
+  return featuresNode;
+};
+var createFeature = function createFeature(feature) {
+  var featureNode = document.createElement('div');
+  featureNode.classList.add('M_WayFeature');
+  featureNode.append(createImage(feature.icon), createCaption(feature.text));
+  return featureNode;
+};
 ;// ./src/js/articles/article-page.js
 function article_page_createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = article_page_unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
 function article_page_unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return article_page_arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? article_page_arrayLikeToArray(r, a) : void 0; } }
 function article_page_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+
 
 
 var ARTICLE_PATH = 'article.html';
@@ -273,19 +485,19 @@ var renderArticle = function renderArticle(article) {
   if (!article) {
     return;
   }
-  var introElement = document.getElementById('article-intro');
+  var introElement = document.getElementById('story-intro');
   if (!introElement) {
     return;
   }
-  createBanner(article.banner_image);
+  createStoryBanner('images/articles/list-weave.webp', article.banner_image);
   introElement.appendChild(createArticleHead(article));
-  var sectionsElement = document.getElementById('article-sections');
+  var sectionsElement = document.getElementById('story-sections');
   var _iterator = article_page_createForOfIteratorHelper(article.sections),
     _step;
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
       var sectionData = _step.value;
-      sectionsElement.appendChild(createArticleSection(sectionData));
+      sectionsElement.appendChild(createStorySection(sectionData));
     }
   } catch (err) {
     _iterator.e(err);
@@ -294,14 +506,10 @@ var renderArticle = function renderArticle(article) {
   }
   createRecomendations();
 };
-var createBanner = function createBanner(bannerImage) {
-  var banner = document.getElementById('article-banner');
-  banner.style.backgroundImage = "url('images/articles/list-weave.webp'), url('".concat(bannerImage, "')");
-};
 var createArticleHead = function createArticleHead(article) {
   var wrapper = document.createElement('div');
-  wrapper.classList.add('W_ArticleHead');
-  wrapper.append(createAuthor(article.author), createArticleInto(article));
+  wrapper.classList.add('W_StoryHead');
+  wrapper.append(createAuthor(article.author), createStoryIntro(article));
   return wrapper;
 };
 var createAuthor = function createAuthor(author) {
@@ -312,169 +520,6 @@ var createAuthor = function createAuthor(author) {
   authorName.append(createTextNode(author.name), createCaption('автор статьи'));
   authorNode.append(createImage(author.photo), authorName);
   return authorNode;
-};
-var createArticleInto = function createArticleInto(article) {
-  var introNode = document.createElement('div');
-  introNode.classList.add('M_ArticleIntro');
-  introNode.append(createH1(article.title), createTags(article.tags), createTextNode(article.description));
-  return introNode;
-};
-var createArticleSection = function createArticleSection(sectionData) {
-  var articleSection = document.createElement('section');
-  articleSection.classList.add('M_ArticleSection');
-  var header = createSectionHeader(sectionData.title);
-  createNavLink(sectionData);
-  header.setAttribute('id', sectionData.id);
-  articleSection.appendChild(header);
-  articleSection.appendChild(createSectionTextNode(sectionData.parts));
-  return articleSection;
-};
-var createSectionHeader = function createSectionHeader(title) {
-  var header = general_createH2(title);
-  var observer = new IntersectionObserver(function (entries) {
-    var entry = entries[0];
-    var header = entry.target;
-    if (!entry.isIntersecting) {
-      return;
-    }
-    var navWrapper = document.getElementById('article-nav');
-    if (!navWrapper) {
-      return;
-    }
-    var activeNavButton = navWrapper.getElementsByClassName('A_ArticleNavButtonActive')[0];
-    if (activeNavButton.innerHTML === header.innerHTML) {
-      return;
-    }
-    activeNavButton.classList.remove('A_ArticleNavButtonActive');
-    var _iterator2 = article_page_createForOfIteratorHelper(navWrapper.getElementsByClassName('A_ArticleNavButton')),
-      _step2;
-    try {
-      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-        var navButton = _step2.value;
-        if (navButton.innerHTML !== header.innerHTML) {
-          continue;
-        }
-        navButton.classList.add('A_ArticleNavButtonActive');
-      }
-    } catch (err) {
-      _iterator2.e(err);
-    } finally {
-      _iterator2.f();
-    }
-  }, {
-    threshold: [0]
-  });
-  observer.observe(header);
-  return header;
-};
-var createNavLink = function createNavLink(sectionData) {
-  var navWrapper = document.getElementById('article-nav');
-  var navButton = document.createElement('button');
-  navButton.classList.add('A_ArticleNavButton');
-  if (!navWrapper.innerHTML) {
-    navButton.classList.add('A_ArticleNavButtonActive');
-  }
-  navButton.innerHTML = sectionData.title;
-  navButton.onclick = function (event) {
-    navWrapper.getElementsByClassName('A_ArticleNavButtonActive')[0].classList.remove('A_ArticleNavButtonActive');
-    document.getElementById(sectionData.id).scrollIntoView({
-      behavior: 'smooth',
-      block: 'center'
-    });
-    event.target.classList.add('A_ArticleNavButtonActive');
-  };
-  navWrapper.append(navButton);
-};
-var createSectionTextNode = function createSectionTextNode(sectionParts) {
-  var sectionText = document.createElement('div');
-  sectionText.classList.add('M_ArticleSecionText');
-  var _iterator3 = article_page_createForOfIteratorHelper(sectionParts !== null && sectionParts !== void 0 ? sectionParts : []),
-    _step3;
-  try {
-    for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-      var part = _step3.value;
-      var partElement = createPart(part);
-      if (!partElement) {
-        continue;
-      }
-      sectionText.appendChild(partElement);
-    }
-  } catch (err) {
-    _iterator3.e(err);
-  } finally {
-    _iterator3.f();
-  }
-  return sectionText;
-};
-var createPart = function createPart(part) {
-  if (part.type === 'text') {
-    return createTextNode(part.value);
-  }
-  if (part.type === 'list') {
-    return createArticleList(part.value);
-  }
-  if (part.type === 'image') {
-    return createArticleImages(part.value);
-  }
-  if (part.type === 'remark') {
-    return createArticleRemark(part.value);
-  }
-  if (part.type === 'reference') {
-    return createArticleReference(part.value);
-  }
-  return null;
-};
-var createArticleList = function createArticleList(articleList) {
-  var listNode = document.createElement('div');
-  listNode.classList.add('M_ArticleList');
-  var _iterator4 = article_page_createForOfIteratorHelper(articleList),
-    _step4;
-  try {
-    for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-      var listItem = _step4.value;
-      var itemNode = createTextNode(listItem.value);
-      itemNode.prepend(createBoldText(listItem.title), '. ');
-      listNode.appendChild(itemNode);
-    }
-  } catch (err) {
-    _iterator4.e(err);
-  } finally {
-    _iterator4.f();
-  }
-  return listNode;
-};
-var createBoldText = function createBoldText(text) {
-  var textNode = document.createElement('b');
-  textNode.innerHTML = text;
-  return textNode;
-};
-var createArticleImages = function createArticleImages(articleImages) {
-  var imagesNode = document.createElement('div');
-  imagesNode.classList.add('M_ArticleImages');
-  var _iterator5 = article_page_createForOfIteratorHelper(articleImages),
-    _step5;
-  try {
-    for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-      var image = _step5.value;
-      imagesNode.appendChild(createImage(image));
-    }
-  } catch (err) {
-    _iterator5.e(err);
-  } finally {
-    _iterator5.f();
-  }
-  return imagesNode;
-};
-var createArticleRemark = function createArticleRemark(reminderText) {
-  var reminder = createTextNode(reminderText);
-  reminder.classList.add('A_ArticleRemark');
-  return reminder;
-};
-var createArticleReference = function createArticleReference(reminderData) {
-  var reference = document.createElement('div');
-  reference.classList.add('A_ArticleReference');
-  reference.append(createTextNode(reminderData.text), createLink(reminderData.title, reminderData.href));
-  return reference;
 };
 var createRecomendations = function createRecomendations() {
   var url = new URL(window.location);
@@ -780,7 +825,102 @@ var lifehack_page_createRecomendations = function createRecomendations() {
     renderLifehacks(uniqueLifehacks);
   });
 };
+;// ./src/js/routes/route-page.js
+function route_page_createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = route_page_unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function route_page_unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return route_page_arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? route_page_arrayLikeToArray(r, a) : void 0; } }
+function route_page_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+
+
+var ROUTE_PATH = 'route.html';
+var DISTANCE_IMAGE = 'images/routes/quarks/location.svg';
+var TIME_IMAGE = 'images/routes/quarks/time.svg';
+var createRoute = function createRoute() {
+  var url = new URL(window.location);
+  var id = url.searchParams.get('id');
+  if (!id) {
+    window.location.href = '/';
+  }
+  void fetch("api/routes/".concat(id, ".json")).then(function (response) {
+    return response.json();
+  }).then(function (route) {
+    return renderRoute(route);
+  });
+  // .catch(() => {
+  //     window.location.href = '/';
+  // });
+};
+var renderRoute = function renderRoute(route) {
+  if (!route) {
+    return;
+  }
+  var introElement = document.getElementById('story-intro');
+  if (!introElement) {
+    return;
+  }
+  createStoryBanner(route.banner_image);
+  introElement.appendChild(createRouteHead(route));
+  var sectionsElement = document.getElementById('story-sections');
+  var _iterator = route_page_createForOfIteratorHelper(route.sections),
+    _step;
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var sectionData = _step.value;
+      sectionsElement.appendChild(createStorySection(sectionData));
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+  createEnding(route.ending);
+};
+var createRouteHead = function createRouteHead(route) {
+  var wrapper = document.createElement('div');
+  wrapper.classList.add('W_StoryHead');
+  wrapper.append(createSummary(route.summary), createStoryIntro(route));
+  return wrapper;
+};
+var createSummary = function createSummary(summaryData) {
+  var summaryNode = document.createElement('aside');
+  summaryNode.classList.add('W_InfoCardWay');
+  var difficultyNode = document.createElement('div');
+  difficultyNode.classList.add('M_WayInfo');
+  difficultyNode.append(createImage(summaryData.difficulty));
+  var distanceNode = document.createElement('div');
+  distanceNode.classList.add('M_WayInfo');
+  distanceNode.append(createImage(DISTANCE_IMAGE), createCaption(summaryData.distance));
+  var timeNode = document.createElement('div');
+  timeNode.classList.add('M_WayInfo');
+  timeNode.append(createImage(TIME_IMAGE), createCaption(summaryData.time));
+  summaryNode.append(difficultyNode, distanceNode, timeNode);
+  return summaryNode;
+};
+var createEnding = function createEnding(ending) {
+  var endingNode = document.getElementById('story-ending');
+  var factoid = document.createElement('div');
+  factoid.classList.add('O_Factoid');
+  factoid.classList.add('Q_LineDecorate');
+  var listNode = document.createElement('div');
+  listNode.classList.add('M_StoryList');
+  var _iterator2 = route_page_createForOfIteratorHelper(ending),
+    _step2;
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var listItem = _step2.value;
+      var itemNode = createTextNode(listItem.value);
+      itemNode.prepend(createBoldText(listItem.title), ': ');
+      listNode.appendChild(itemNode);
+    }
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
+  }
+  factoid.append(listNode);
+  endingNode.append(factoid);
+};
 ;// ./src/index.js
+
 
 
 
@@ -800,6 +940,9 @@ var loadPages = function loadPages() {
   }
   if (url.includes(lifehack_page_LIFEHACK_PATH)) {
     createLifehack();
+  }
+  if (url.includes(ROUTE_PATH)) {
+    createRoute();
   }
 };
 loadPages();

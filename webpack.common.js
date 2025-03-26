@@ -154,31 +154,9 @@ module.exports = {
       title: getTitle('Статья'),
       template: './src/sections/article.ejs',
       filename: './article.html',
-      meta: getMeta('Статьи', '/article.html'),
+      meta: getMeta('Статья', '/article.html'),
       inject: false,
     }),
-
-    new HtmlWebpackPlugin({
-      title: getTitle('Правила безопасности для велосипедистов'),
-      favicon: './src/images/icons/favicon.svg',
-      template: './src/sections/articles/1.ejs',
-      filename: './articles-1.html',
-      meta: getMeta('Article 1', '/articles-1.html'),
-    }),
-
-    // new HtmlWebpackPlugin({
-    //   title: getTitle('Article 2'),
-    //   template: './src/sections/articles/2.ejs',
-    //   filename: './articles-2.html',
-    //   meta: getMeta('Article 2', '/articles-2.html'),
-    // }),
-
-    // new HtmlWebpackPlugin({
-    //   title: getTitle('Article 3'),
-    //   template: './src/sections/articles/3.ejs',
-    //   filename: './articles-3.html',
-    //   meta: getMeta('Article 3', '/articles-3.html'),
-    // }),
 
     new HtmlWebpackPlugin({
       title: getTitle('Лайфхаки'),
@@ -206,11 +184,12 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      title: getTitle('Ищем природу в городе'),
+      title: getTitle('Маршрут'),
       favicon: './src/images/icons/favicon.svg',
-      template: './src/sections/routes/1.ejs',
-      filename: './routes-1.html',
-      meta: getMeta('Route 1', '/routes-1.html'),
+      template: './src/sections/route.ejs',
+      filename: './route.html',
+      meta: getMeta('Маршрут', '/route.html'),
+      inject: false,
     }),
 
     // new HtmlWebpackPlugin({

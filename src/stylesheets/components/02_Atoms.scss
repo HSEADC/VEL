@@ -214,10 +214,11 @@
 .A_Text {
     font: var(--general-text);
     color: var(--main-dark);
+    margin: 0;
 }
 
 .A_Caption {
-    font: var(--caption-text);
+    font: var(--caption-font);
     color: var(--main-dark);
 }
 
@@ -242,42 +243,6 @@
     }
 }
 
-.A_ArticleBanner {
-    width: 100%;
-    aspect-ratio: 18 / 5;
-    margin-top: -78px;
-
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-color: var(--dark-white);
-}
-
-.A_ArticleRemark, .A_ArticleReference {
-    background-color: var(--dark-white);
-    padding: 32px 50px;
-    border-radius: 15px;
-
-    @media (orientation: portrait) {
-        padding: 24px 36px;
-        border-radius: 12px;
-    }
-}
-
-.A_ArticleReference {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    a {
-        align-self: end;
-    }
-
-    @media (orientation: portrait) {
-        gap: 15px;
-    }
-}
-
 .A_ArticleRemark {
     background-image: url('../../images/articles/Q_LineDecorate.webp');
     background-position: 180% 10%;
@@ -285,7 +250,7 @@
 }
 
 .A_ArticleNavButton {
-    font: var(--caption-text);
+    font: var(--caption-font);
     color: var(--green);
     text-decoration: none;
     border: 0;

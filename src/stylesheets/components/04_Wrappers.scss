@@ -124,7 +124,7 @@
     }
 }
 
-.W_ArticleIntro {
+.W_StoryIntro {
     width: 100%;
     background-color: var(--dark-white);
     border-radius: 0 0 30px 30px;
@@ -134,7 +134,7 @@
     align-items: center;
 }
 
-.W_ArticleHead {
+.W_StoryHead {
     display: flex;
     flex-direction: row;
     align-items: start;
@@ -157,4 +157,55 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+
+.W_WayText {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    max-width: 60%;
+}
+
+.W_InfoCardWay {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.W_NameStory {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media (orientation: portrait) {
+        gap: 15px;
+    }
+}
+
+.W_TextStory {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (orientation: portrait) {
+        gap: 16px;
+    }
+}
+
+.W_StoryEnding {
+    width: 100%;
+    max-width: 1190px;
+    padding: 0 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    .O_Factoid {
+        max-width: 700px;
+    }
+
+    margin-bottom: 90px;
 }
