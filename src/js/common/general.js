@@ -77,6 +77,7 @@ export const createLink = (text, href) => {
 
     link.setAttribute('href', href ?? '#');
     link.innerHTML = text;
+    link.append(createImage('images/icons/A_Arrow.svg'));
 
     link.classList.add('A_Button');
 
@@ -104,4 +105,8 @@ export const createBoldText = (text) => {
     textNode.innerHTML = text;
 
     return textNode;
+}
+
+export const updateDocumentTitle = (title) => {
+    document.title = `${title} - VEL`;
 }

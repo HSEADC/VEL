@@ -1,10 +1,17 @@
-.M_HeaderNavTabs {
+.M_HeaderNavTabs,
+.M_HeaderNavTabsDark {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: end;
     justify-content: center;
     gap: 8px;
+}
+
+.M_HeaderNavTabsDark {
+    .A_ActiveNav {
+        color: var(--green) !important;
+    }
 }
 
 .M_Search {
@@ -20,14 +27,16 @@
     }
 }
 
-.M_EmailForm {
+.M_Form {
     flex-grow: 1;
     flex-shrink: 1;
 
     display: flex;
     flex-direction: row;
-    gap: 6px;
+    gap: 8px;
     justify-content: stretch;
+    align-items: center;
+    max-height: 44px;
 
     @media (orientation: portrait) {
         display: none;
@@ -42,7 +51,7 @@
     gap: 15px;
 }
 
-.M_FooterSocial {
+.M_Social {
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -53,31 +62,21 @@
     }
 }
 
-.M_PageBanner {
-    width: 100%;
-    height: 450px;
-    margin-top: -78px;
-    padding-top: 78px;
-    margin-bottom: 90px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-}
-
 .M_Filters {
     display: flex;
     flex-direction: row;
     gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 20px;
+    width: 100%;
 
     @media (max-width: 480px) {
         gap: 8px;
-        margin-top: 15px;
+        justify-content: start;
+    }
+
+    @media (max-width: 625px) {
+        justify-content: start;
     }
 }
 
@@ -121,9 +120,7 @@
 .M_LifehackCard {
     max-width: 270px;
     max-height: 270px;
-    width: 100%;
     height: 100%;
-    aspect-ratio: 1;
 
     padding: 20px;
     background-color: var(--dark-white);
@@ -135,7 +132,7 @@
 
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 20px 140px auto;
+    grid-template-rows: 20px 60% auto;
     justify-items: center;
     gap: 10px;
 
@@ -144,7 +141,13 @@
     }
 
     img {
-        max-height: 140px;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    @media (max-width: 480px) {
+        padding: 10px;
+        max-height: 164px;
     }
 }
 
@@ -165,7 +168,7 @@
 
     display: flex;
     flex-direction: row;
-    
+
     gap: 10px;
 }
 
@@ -193,8 +196,7 @@
     justify-content: stretch;
 
     img {
-        max-width: 30%;
-        width: 100%;
+        width: 30%;
         flex-shrink: 1;
         object-fit: cover;
         aspect-ratio: 224 / 271;
@@ -205,9 +207,32 @@
     border-radius: 15px;
     text-decoration: none;
 
-    @media (max-width: 600px) {
+    background-image: url('../../images/articles/Q_PatternCardArticle-default.svg');
+    background-size: auto 150%;
+    background-repeat: no-repeat;
+    background-position: 150% 80%;
+
+    &:hover {
+        background-image: url('../../images/articles/Q_PatternCardArticle.svg');
+    }
+
+    @media (max-width: 800px) {
         margin-top: 20px;
         margin-bottom: 45px;
+
+        img {
+            width: 38%;
+            flex-shrink: 1;
+            object-fit: cover;
+        }
+
+        background-image: url('../../images/articles/Q_PatternCardArticleSmall-default.svg');
+        background-size: auto 150%;
+        background-position: 125% 80%;
+
+        &:hover {
+            background-image: url('../../images/articles/Q_PatternCardArticleSmall.svg');
+        }
     }
 }
 
@@ -222,11 +247,19 @@
     justify-content: stretch;
     color: var(--main-dark);
     overflow: hidden;
-    
+
     background-color: var(--dark-white);
+    background-image: url('../../images/articles/Q_PatternCardArticleSmall-default.svg');
+    background-size: auto 150%;
+    background-repeat: no-repeat;
+    background-position: 125% 80%;
+
+    &:hover {
+        background-image: url('../../images/articles/Q_PatternCardArticleSmall.svg');
+    }
 
     img {
-        width: 40%;
+        width: 38%;
         flex-shrink: 1;
         aspect-ratio: 224 / 271;
         border-radius: 15px 0 0 15px;
@@ -238,7 +271,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    
+
     img {
         max-width: 96px;
         aspect-ratio: 1;
@@ -281,6 +314,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 
     button {
         margin-bottom: 50px;
@@ -326,7 +360,13 @@
     padding: 16px;
     background-color: var(--dark-white);
     border-radius: 16px;
-    
+
     word-break: break-word;
     line-break: loose;
+}
+
+.M_TextAndTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

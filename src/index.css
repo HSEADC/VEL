@@ -2,7 +2,7 @@
 @import 'stylesheets/fonts.scss';
 @import 'stylesheets/vars.scss';
 @import 'stylesheets/basics.scss';
-@import 'stylesheets/general.scss';
+@import 'stylesheets/main.scss';
 
 @import 'stylesheets/components/01_Quarks.scss';
 @import 'stylesheets/components/02_Atoms.scss';

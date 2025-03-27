@@ -11,7 +11,21 @@
 </head>
 
 <body>
-    <header></header>
+    <header class="O_Header">
+        <nav class="W_HeaderNav">
+          <a class="A_Logo" href="index.html">
+            <img src="images/icons/logo-dark.svg" alt="">
+          </a>
+          <div class="M_HeaderNavTabsDark Q_HideOnMobile">
+              <a href="articles.html" class="A_PointMenu Q_TextBlack">статьи</a>
+              <a href="lifehacks.html" class="A_PointMenu Q_TextBlack">лайфхаки</a>
+              <a href="routes.html" class="A_PointMenu Q_TextBlack">маршруты</a>
+          </div>
+          <div class="M_Search">
+            <input class="A_Form" type="text" placeholder="Я ищу..." size="20" />
+          </div>
+        </nav>
+      </header>
 
     <main class="O_MainContent">
         <section id="lifehack-text" class="M_LifehackPageCard">
@@ -55,7 +69,7 @@
         </section>
 
         <h2 class="A_H2">Будет интересно</h2>
-        <div id="lifehacks_list" class="C_Lifehacks"></div>
+        <div id="lifehacks_list" class="C_AllLifehacks"></div>
     </main>
 
     <footer></footer>

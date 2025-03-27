@@ -78,7 +78,7 @@ const createArticle = (article) => {
     return articleNode;
 }
 
-const createEditorChoiceArticle = (article) => {
+export const createEditorChoiceArticle = (article) => {
     const editorChoiceNode = document.getElementById('article_editor_choice');
 
     if (!editorChoiceNode) {

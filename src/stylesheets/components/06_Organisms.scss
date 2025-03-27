@@ -12,21 +12,15 @@
     }
 }
 
-.O_FooterRow {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-between;
-    gap: 40px;
-    width: 100%;
-}
-
 .O_MainContent {
     display: flex;
     flex: 1;
     flex-direction: column;
+    align-items: start;
     justify-content: stretch;
-    max-width: 1210px;
+    max-width: 1190px;
+    width: 100%;
+    padding: 0 30px;
 
     font-family: 'MursGothic';
 }
@@ -102,4 +96,9 @@
     @media (orientation: portrait) {
         gap: 15px;
     }
+}
+
+.O_BlockTgMainPage {
+    background-color: var(--dark-white);
+    border-radius: 30px 30px 0px 0px;
 }

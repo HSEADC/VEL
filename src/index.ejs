@@ -1,106 +1,180 @@
-yarn<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%= htmlWebpackPlugin.tags.headTags %>
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body class="bg-black">
-    <header></header>
 
-    <main class="teaser">
-      <div class="teaser-intro">
-        <img src="images/teaser/landing-screen.png" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%= htmlWebpackPlugin.tags.headTags %>
+    <title>
+      <%= htmlWebpackPlugin.options.title %>
+    </title>
+</head>
+
+<body>
+  <header class="O_Header">
+    <nav class="W_HeaderNav">
+      <a class="A_Logo" href="index.html">
+        <img src="images/icons/logo.svg" alt="">
+      </a>
+      <div class="M_HeaderNavTabs">
+          <a href="articles.html" class="A_PointMenu">статьи</a>
+          <a href="lifehacks.html" class="A_PointMenu">лайфхаки</a>
+          <a href="routes.html" class="A_PointMenu">маршруты</a>
+      </div>
+      <div class="M_Social">
+        <div class="A_SocialLink"><a href="https://t.me/+iCtcV4CG7UphMWYy"><img src="images/icons/telegram.svg" alt="Telegram"></a></div>
+        <div class="A_SocialLink"><a href="https://vk.com/vellmsk"><img src="images/icons/vk.svg" alt="VK"></a></div>
+        <div class="A_SocialLink"><a href="https://dzen.ru/vell_msc"><img src="images/icons/dzen.svg" alt="Яндекс Дзен"></a></div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="W_NamePage W_NamePageMain Q_PatternMainImage">
+    <h1 class="A_H1 Q_TextYellow">Твой помощник<br />в&nbsp;езде на&nbsp;велосипеде</h1>
+    <p class="A_PageBannerDescription">
+      Исследуй. Достигай. Вдохновляйся.<br />
+      Мы рядом, пока ты крутишь педали.
+    </p>
+  </div>
+
+  <div class="W_MainPage">
+    <div class="O_MainContent">
+      <div class="W_BlockDescribeMainPage">
+        <h2 class="A_H2">Авторские статьи</h2>
+        <a href="articles.html" class="A_TextButton">
+          Все статьи
+          <img src="images/icons/A_Arrow.svg" alt="">
+        </a>
       </div>
 
-      <section class="teaser-block">
-        <div>
-          <a class="teaser-button" href="articles-1.html">Статьи <img src="images/icons/button-arrow.svg" alt=""></a>
-        </div>
+      <div class="С_ArticleMainPage">
+        <div id="articles_list" class="C_AllCardsArticle"></div>
+        <div id="article_editor_choice"></div>
+      </div>
+    </div>
+  </div>
 
-        <div class="articles-wrapper">
-          <h2 class="teaser-heading">Просто о самом важном: от безопасности до моды</h2>
-          <div class="articles-list">
-            <div>
-              <a href="articles-1.html" class="card">
-                <img src="images/teaser/safety rules photo.png" alt="Правила безопасности">
-                <div class="card-info">
-                  <h3 class="card-heading">Правила безопасности</h3>
-                  <div class="card-description">Как получать удовольствие от велика без вреда для себя и окружающих.</div>
-                </div>
-              </a>
-            </div>
-            <div>
-              <a href="#" class="card">
-                <img src="images/teaser/move things photo.png" alt="Перевозим вещи">
-                <div class="card-info">
-                  <h3 class="card-heading">Перевозим вещи</h3>
-                  <div class="card-description">Не корзиночкой едины: делимся пятью способами перевозить вещи в поездке на велосипеде.</div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="routes-block">
-        <section class="teaser-block">
-          <div>
-            <a class="teaser-button" href="routes-1.html">Маршруты <img src="images/icons/button-arrow.svg" alt=""></a>
-          </div>
-
-          <div class="routes-wrapper">
-            <div>
-              <a href="routes-1.html" class="card">
-                <img src="images/teaser/nature route photo.png" alt="Ищем природу">
-                <div class="card-info">
-                  <h3 class="card-heading">Ищем природу в городе</h3>
-                </div>
-              </a>
-            </div>
-            
-            <div class="routes-info">
-              <h2 class="teaser-heading">Подберём путь под любое настроение</h2>
-              <div class="teaser-text">Хочешь отправиться на романтическую прогулку в парке или успеть объехать за&nbsp;день весь город?</div>
-            </div>
-          </div>
-        </section>
+  <div class="W_MainPage Q_DarkWhiteBG">
+    <div class="O_MainContent">
+      <div class="W_BlockDescribeMainPage">
+        <h2 class="A_H2">Лайфхаки</h2>
+        <a href="lifehacks.html" class="A_TextButton">
+          Все лайфхаки
+          <img src="images/icons/A_Arrow.svg" alt="">
+        </a>
       </div>
 
-      <section class="teaser-block">
-        <div>
-          <a class="teaser-button" href="lifehacks.html">Лайфхаки <img src="images/icons/button-arrow.svg" alt=""></a>
-        </div>
+      <div id="lifehacks_list" class="C_AllLifehacks"></div>
+    </div>
+  </div>
 
-        <div class="lifehacks-wrapper">
-          <div class="lifehacks-info">
-            <h2 class="teaser-heading">Нет времени на чтение? Мы собрали полезные советы в карточках</h2>
-          </div>
-          <div>
-            <a href="lifehacks.html" class="card">
-              <img src="images/lifehacks/panties-lifehack.svg" alt="Ищем природу">
-              <div class="card-info">
-                <div class="card-description">
-                  Велосипедки — не просто шорты. Они сделаны из дышащей 
-                  и не сковывающей движения ткани, а также имеют специальные 
-                  уплотнения для гигиены и защиты от кочек. Наличие нижнего белья
-                  может привести к натиранию и поту.
-                </div>
+  <div class="W_MainPage">
+    <div class="O_MainContent">
+      <div class="W_BlockDescribeMainPage">
+        <h2 class="A_H2">Маршруты</h2>
+        <a href="routes.html" class="A_TextButton">
+          Все маршруты
+          <img src="images/icons/A_Arrow.svg" alt="">
+        </a>
+      </div>
+
+      <div class="C_CardsStory">
+        <a class="S_CardWay" href="route.html?id=1">
+          <img class="Q_PatternCardWay" src="images/routes/2/cover.webp" alt="">
+          <div class="O_InfoCardWay">
+            <div class="W_WayText">
+              <h3 class="A_H3">Ляпота Тульской области</h3>
+              <div class="M_Tags">
+                <div class="A_Tag">природный</div>
+                <div class="A_Tag">тренировка</div>
               </div>
-              <div class="card-keywords">
-                <div class="card-keyword">экипировка</div>
+            </div>
+            <div class="W_InfoCardWay">
+              <div class="M_WayInfo">
+                <img src="images/routes/quarks/difficulty-hard.svg">
               </div>
-            </a>
+              <div class="M_WayInfo">
+                <img src="images/routes/quarks/location.svg">
+                <span class="A_Caption">60 км</span>
+              </div>
+              <div class="M_WayInfo">
+                <img src="images/routes/quarks/time.svg">
+                <span class="A_Caption">на день</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <div class="teaser-ending">
-        <img src="images/teaser/finishing-screen.png" class="">
+        </a>
+        <a class="S_CardWay" href="route.html?id=1">
+          <img class="Q_PatternCardWay" src="images/routes/2/cover.webp" alt="">
+          <div class="O_InfoCardWay">
+            <div class="W_WayText">
+              <h3 class="A_H3">Ляпота Тульской области</h3>
+              <div class="M_Tags">
+                <div class="A_Tag">природный</div>
+                <div class="A_Tag">тренировка</div>
+              </div>
+            </div>
+            <div class="W_InfoCardWay">
+              <div class="M_WayInfo">
+                <img src="images/routes/quarks/difficulty-hard.svg">
+              </div>
+              <div class="M_WayInfo">
+                <img src="images/routes/quarks/location.svg">
+                <span class="A_Caption">60 км</span>
+              </div>
+              <div class="M_WayInfo">
+                <img src="images/routes/quarks/time.svg">
+                <span class="A_Caption">на день</span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="S_CardWay" href="route.html?id=1">
+          <img class="Q_PatternCardWay" src="images/routes/1/cover.webp" alt="">
+          <div class="O_InfoCardWay">
+            <div class="W_WayText">
+              <h3 class="A_H3">Ляпота Тульской области</h3>
+              <p class="A_Text">Маршрут знакомит с тихими и красивыми уголками Тульской области — местами, где природа, сельская жизнь и история переплетаются.</span>
+              <div class="M_Tags">
+                <div class="A_Tag">природный</div>
+                <div class="A_Tag">тренировка</div>
+              </div>    
+            </div>
+            <div class="W_InfoCardWay">
+              <div class="M_WayInfo">
+                <img src="images/routes/quarks/difficulty-hard.svg">
+              </div>
+              <div class="M_WayInfo">
+                <img src="images/routes/quarks/location.svg">
+                <span class="A_Caption">60 км</span>
+              </div>
+              <div class="M_WayInfo">
+                <img src="images/routes/quarks/time.svg">
+                <span class="A_Caption">на день</span>
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
-    </main>
+    </div>
+  </div>
 
-    <footer></footer>
-  </body>
+  <div class="O_BlockTgMainPage W_MainPage Q_LineDecorate Q_HideOnMobile">
+    <div class="O_MainContent">
+      <div class="W_BlockDescribeTgMainPage">
+        <div class="M_TextAndTitle">
+          <h2 class="A_H2">Больше новинок в нашем телеграме </h2>
+          <div class="A_Text">Пописывайся на канал и узнавай всё самое интересное из мира велоспорта</div>
+        </div>
+        <a href="#" class="A_Button">
+          перейти в телеграм
+          <img src="images/icons/A_Arrow.svg" alt="">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer></footer>
+</body>
+
 </html>

@@ -7,11 +7,11 @@
     --blue: #C1CDD7;
     --transparent-dark: #2E3338;
 
-    --h1-font: bold 56px MursGothicDemi;
-    --h2-font: bold 36px MursGothicDemi;
-    --h3-font: bold 24px MursGothicDemi;
-    --caption-font: normal 14px SFPro;
-    --general-text: normal 20px SFPro;
+    --h1-font: bold 56px/1 MursGothicDemi;
+    --h2-font: bold 36px/1 MursGothicDemi;
+    --h3-font: bold 24px/1 MursGothicDemi;
+    --caption-font: normal 14px/1 SFPro;
+    --general-text: normal 20px/1 SFPro;
 }
 
 @media (max-width: 960px) {
@@ -23,19 +23,12 @@
         --general-text: normal 15px SFPro;
     }
 }
-
 @media (max-width: 600px) {
     :root {
-        --h2-font: bold 20px MursGothicDemi;
-    }
-}
-
-@media (max-width: 480px) {
-    :root {
-        --h1-font: bold 28px MursGothicDemi;
-        --h2-font: bold 16px MursGothicDemi;
-        --h3-font: bold 12px MursGothicDemi;
-        --caption-font: normal 7px SFPro;
-        --general-text: normal 10px SFPro;
+        --h1-font: bold 36px/1 MursGothicDemi;
+        --h2-font: bold 25px/1 MursGothicDemi;
+        --h3-font: bold 18px/1 MursGothicDemi;
+        --caption-font: normal 12px/1 SFPro;
+        --general-text: normal 16px SFPro;
     }
 }

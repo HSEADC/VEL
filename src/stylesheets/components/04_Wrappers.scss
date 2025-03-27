@@ -7,12 +7,35 @@
     grid-template-columns: 295px 1fr 295px;
     align-items: center;
 
+    :last-child {
+        justify-self: end;
+    }
 
     @media screen and (orientation: portrait) {
         width: 100%;
         padding: 20px 30px 0;
         grid-template-columns: 60px 1fr 60px;
         justify-content: space-between;
+    }
+}
+
+.W_FooterRow {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+.W_FooterNames {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    @media (max-width: 700px) {
+        flex-direction: column;
+        gap: 4px;
     }
 }
 
@@ -50,6 +73,36 @@
     }
 }
 
+.W_NamePage {
+    width: 100%;
+    height: 450px;
+    margin-top: -78px;
+    padding-top: 78px;
+    margin-bottom: 90px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+
+    h1 {
+        text-align: center;
+    }
+}
+
+.W_NamePageMain {
+    height: 700px;
+    margin-bottom: 0;
+}
+
+.W_FiltersPage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .W_LifehackTitleWrapper {
     display: flex;
     flex-direction: column;
@@ -80,8 +133,17 @@
 
     padding: 32px;
 
+    @media (max-width: 800px) {
+        padding: 24px;
+        gap: 32px;
+
+        a {
+            display: none;
+        }
+    }
+
     @media (max-width: 480px) {
-        padding: 16px;
+        padding: 14px;
         gap: 16px;
     }
 }
@@ -94,8 +156,20 @@
 
     max-width: 530px;
 
+    @media (max-width: 600px) {
+        gap: 16px;
+
+        a {
+            display: none;
+        }
+
+        h2 {
+            font: var(--h3-font)
+        }
+    }
+
     @media (max-width: 480px) {
-        gap: 10px;
+        gap: 8px;
     }
 }
 
@@ -108,7 +182,7 @@
     padding: 24px;
 
     @media (max-width: 480px) {
-        padding: 16px;
+        padding: 14px;
         gap: 16px;
     }
 }
@@ -171,6 +245,10 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    @media (max-width: 1000px) {
+        display: none;
+    }
 }
 
 .W_NameStory {
@@ -208,4 +286,43 @@
     }
 
     margin-bottom: 90px;
+}
+
+.W_MainPage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 90px 30px;
+
+    .C_AllLifehacks, .C_CardsStory {
+        margin: 0;
+        margin-top: 40px;
+    }
+
+    .C_AllLifehacks {
+        .M_LifehackCard {
+            background-color: var(--white);
+        }
+
+        @media (max-width: 1100px) {
+            grid-template-columns: repeat(2, min(270px, 49%));
+        }
+    }
+}
+
+.W_BlockDescribeTgMainPage {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 48px;
+}
+
+.W_BlockDescribeMainPage {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }

@@ -1,4 +1,4 @@
-import { createBoldText, createCaption, createImage, createTextNode } from "../common/general";
+import { createBoldText, createCaption, createImage, createTextNode, updateDocumentTitle } from "../common/general";
 import { createStoryBanner, createStoryIntro, createStorySection } from "../common/story-components";
 
 export const ROUTE_PATH = 'route.html';
@@ -18,9 +18,9 @@ export const createRoute = () => {
     void fetch(`api/routes/${id}.json`)
         .then((response) => response.json())
         .then((route) => renderRoute(route))
-    // .catch(() => {
-    //     window.location.href = '/';
-    // });
+        .catch(() => {
+            window.location.href = '/';
+        });
 }
 
 const renderRoute = (route) => {
@@ -34,6 +34,7 @@ const renderRoute = (route) => {
         return;
     }
 
+    updateDocumentTitle(route.title);
     createStoryBanner(route.banner_image);
     introElement.appendChild(createRouteHead(route));
 

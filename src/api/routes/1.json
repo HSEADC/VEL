@@ -1,8 +1,8 @@
 {
     "title": "Ляпота Тульской области",
-    "banner_image": "images/routes/1/way_away from the city_cover.webp",
+    "banner_image": "images/routes/1/cover.webp",
     "description": "Маршрут знакомит с тихими и красивыми уголками Тульской области — местами, где природа, сельская жизнь и история переплетаются. В пути — творческое пространство, старинная усадьба, фермерское хозяйство и конная дача среди полей и лесов. Это спокойная однодневная велопрогулка для тех, кто ценит ритм за городом.",
-    "tags": ["природный", "тренировка"],
+    "tags": ["экскурсия", "тренировка"],
     "summary": {
         "difficulty": "images/routes/quarks/difficulty-hard.svg",
         "distance": "60 км",
@@ -20,8 +20,8 @@
                 {
                     "type": "image",
                     "value": [
-                        "images/routes/1/way_away from the city_1.webp",
-                        "images/routes/1/way_away from the city_2.webp"
+                        "images/routes/1/1.webp",
+                        "images/routes/1/2.webp"
                     ]
                 },
                 {
@@ -29,15 +29,15 @@
                     "value": [
                         {
                             "icon": "images/routes/quarks/features/drink.svg",
-                            "text": "кофе и сладкие<br/>угощения"
+                            "text": "кофе и сладкие угощения"
                         },
                         {
                             "icon": "images/routes/quarks/features/bike.svg",
-                            "text": "аренда лодок<br/>и сауны"
+                            "text": "аренда лодок и сауны"
                         },
                         {
                             "icon": "images/routes/quarks/features/forest.svg",
-                            "text": "живописная<br/>природа"
+                            "text": "живописная природа"
                         }
                     ]
                 }
@@ -54,7 +54,7 @@
                 {
                     "type": "image",
                     "value": [
-                        "images/routes/1/way_away from the city_3.webp"
+                        "images/routes/1/3.webp"
                     ]
                 },
                 {
@@ -62,15 +62,15 @@
                     "value": [
                         {
                             "icon": "images/routes/quarks/features/arcitecture.svg",
-                            "text": "усадьба<br/>19 века"
+                            "text": "усадьба 19 века"
                         },
                         {
                             "icon": "images/routes/quarks/features/road.svg",
-                            "text": "просёлочные<br/>дороги"
+                            "text": "аренда лодок и сауны"
                         },
                         {
                             "icon": "images/routes/quarks/features/fun.svg",
-                            "text": "экскурсия<br/>по музею"
+                            "text": "живописная природа"
                         }
                     ]
                 }
@@ -87,8 +87,8 @@
                 {
                     "type": "image",
                     "value": [
-                        "images/routes/1/way_away from the city_4.webp",
-                        "images/routes/1/way_away from the city_5.webp"
+                        "images/routes/1/4.webp",
+                        "images/routes/1/5.webp"
                     ]
                 },
                 {
@@ -96,15 +96,15 @@
                     "value": [
                         {
                             "icon": "images/routes/quarks/features/cafe.svg",
-                            "text": "авторская<br/>кухня"
+                            "text": "авторская кухня"
                         },
                         {
                             "icon": "images/routes/quarks/features/forest.svg",
-                            "text": "фермерские<br/>угодья"
+                            "text": "фермерские угодья"
                         },
                         {
                             "icon": "images/routes/quarks/features/talks.svg",
-                            "text": "открытые ужины и<br/>фестивали"
+                            "text": "открытые ужины и фестивали"
                         }
                     ]
                 }
@@ -121,7 +121,7 @@
                 {
                     "type": "image",
                     "value": [
-                        "images/routes/1/way_away from the city_6.webp"
+                        "images/routes/1/6.webp"
                     ]
                 },
                 {
@@ -133,11 +133,11 @@
                         },
                         {
                             "icon": "images/routes/quarks/features/fun.svg",
-                            "text": "занятие<br/>спортом"
+                            "text": "занятие спортом"
                         },
                         {
                             "icon": "images/routes/quarks/features/road.svg",
-                            "text": "грунтовые<br/>дороги"
+                            "text": "грунтовые дороги"
                         }
                     ]
                 }

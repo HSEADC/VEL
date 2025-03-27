@@ -6,12 +6,12 @@
   color: var(--white) !important;
 }
 
-.Q_RouteCardV1 {
-  background-image: url('../../images/icons/route-card-v1.svg');
+.Q_TextBlack {
+  color: var(--main-dark) !important;
 }
 
-.Q_RouteCardV2 {
-  background-image: url('../../images/icons/route-card-v2.svg');
+.Q_DarkWhiteBG {
+  background-color: var(--dark-white);
 }
 
 .Q_LifehackBG1 {
@@ -65,15 +65,85 @@
 .Q_LifehacksBannerBg {
   background-color: #70805D;
   background-image:
+    url('../../images/lifehacks/quarks.svg'),
     url('../../images/lifehacks/quarks/lifehacks-banner-bg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  @media (max-width: 600px) {
+    background-image:
+      url('../../images/lifehacks/quarks-mobile.svg'),
+      url('../../images/lifehacks/quarks/lifehacks-banner-bg.webp');
+  }
 }
+
+.Q_ArticlesBannerBg {
+  background-color: #70805D;
+  background-image:
+    url('../../images/articles/quarks.svg'),
+    url('../../images/articles/cover.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (max-width: 600px) {
+    background-image:
+      url('../../images/articles/quarks-mobile.svg'),
+      url('../../images/articles/cover.webp');
+  }
+}
+
+.Q_RoutesBannerBg {
+  background-color: #70805D;
+  background-image:
+    url('../../images/routes/quarks.svg'),
+    url('../../images/routes/cover.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (max-width: 600px) {
+    background-image:
+      url('../../images/routes/quarks-mobile.svg'),
+      url('../../images/routes/cover.webp');
+  }
+}
+
 
 .Q_PatternCardWay {
   max-width: 100%;
   max-height: 300px;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
+}
+
+.Q_PatternMainImage {
+  background-color: #70805D;
+  background-image:
+    url('../../images/main/Q_PattermMainPage.svg'),
+    url('../../images/main/A_CoverMainPage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (max-width: 600px) {
+    background-image:
+      url('../../images/main/Q_PattermMainPageMobile.svg'),
+      url('../../images/main/A_CoverMainPage.jpg');
+  }
+}
+
+.Q_LineDecorate {
+  background-image: url('../../images/icons/Q_LineDecorate.svg');
+  background-position: right;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.Q_HideOnMobile {
+  @media (max-width: 675px) {
+    display: none !important;
+    visibility: none !important;
+  }
 }

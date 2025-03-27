@@ -1,4 +1,4 @@
-import { createH1, createH3, createImage, createTags, createTextNode, getRandomNumber } from "../common/general";
+import { createH1, createH3, createImage, createTags, createTextNode, getRandomNumber, updateDocumentTitle } from "../common/general";
 import { fetchLifehacks, renderLifehacks } from "./lifehacks-list";
 
 export const LIFEHACK_PATH = 'lifehack.html';
@@ -34,6 +34,7 @@ const renderLifehack = (lifehack) => {
         lifehackNode.appendChild(createPart(part));
     }
 
+    updateDocumentTitle(lifehack.title);
     createRecomendations();
 }
 

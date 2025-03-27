@@ -1,4 +1,4 @@
-import { createTextNode, createImage, createCaption, getRandomNumber } from "../common/general";
+import { createTextNode, createImage, createCaption, getRandomNumber, updateDocumentTitle } from "../common/general";
 import { createStoryBanner, createStoryIntro, createStorySection } from "../common/story-components";
 import { fetchArticles, renderArticles } from "./articles-list";
 
@@ -36,6 +36,7 @@ const renderArticle = (article) => {
         return;
     }
 
+    updateDocumentTitle(article.title);
     createStoryBanner('images/articles/list-weave.webp', article.banner_image);
     introElement.appendChild(createArticleHead(article));
 
@@ -100,8 +101,6 @@ const createRecomendations = () => {
 
             const randomNumber = getRandomNumber(limit);
             const randomArticles = articles.slice(randomNumber, randomNumber + 2);
-
-            console.log(randomArticles);
 
             renderArticles(randomArticles);
         }
