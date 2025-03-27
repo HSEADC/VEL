@@ -23,147 +23,147 @@
     {
         "id": 4,
         "title": "Пакуем велик",
-        "image": "../images/lifehacks/list/4.webp",
+        "image": "images/lifehacks/list/4.webp",
         "tag": "аксессуары",
         "is_editor_choice": false
     },
     {
         "id": 5,
         "title": "Снимай трусы",
-        "image": "../images/lifehacks/list/5.webp",
+        "image": "images/lifehacks/list/5.webp",
         "tag": "экипировка",
         "is_editor_choice": false
     },
     {
         "id": 6,
         "title": "Хитрости складного",
-        "image": "../images/lifehacks/list/6.webp",
+        "image": "images/lifehacks/list/6.webp",
         "tag": "виды велосипедов",
         "is_editor_choice": false
     },
     {
         "id": 7,
         "title": "Не пей воду",
-        "image": "../images/lifehacks/list/7.webp",
+        "image": "images/lifehacks/list/7.webp",
         "tag": "тренировки",
         "is_editor_choice": false
     },
     {
         "id": 8,
         "title": "Орудия чистоты",
-        "image": "../images/lifehacks/list/8.webp",
+        "image": "images/lifehacks/list/8.webp",
         "tag": "обслуживание",
         "is_editor_choice": false
     },
     {
         "id": 9,
         "title": "Вело-компьютер",
-        "image": "../images/lifehacks/list/9.webp",
+        "image": "images/lifehacks/list/9.webp",
         "tag": "тренировки",
         "is_editor_choice": false
     },
     {
         "id": 10,
         "title": "Против пота",
-        "image": "../images/lifehacks/list/10.webp",
+        "image": "images/lifehacks/list/10.webp",
         "tag": "экипировка",
         "is_editor_choice": false
     },
     {
         "id": 11,
         "title": "Особые линзы",
-        "image": "../images/lifehacks/list/11.webp",
+        "image": "images/lifehacks/list/11.webp",
         "tag": "аксессуары",
         "is_editor_choice": false
     },
     {
         "id": 12,
         "title": "Меняем грипсы",
-        "image": "../images/lifehacks/list/12.webp",
+        "image": "images/lifehacks/list/12.webp",
         "tag": "обслуживание",
         "is_editor_choice": false
     },
     {
         "id": 13,
         "title": "Вело-носочки",
-        "image": "../images/lifehacks/list/13.webp",
+        "image": "images/lifehacks/list/13.webp",
         "tag": "аксессуары",
         "is_editor_choice": false
     },
     {
         "id": 14,
         "title": "Спасаем звёздочки",
-        "image": "../images/lifehacks/list/14.webp",
+        "image": "images/lifehacks/list/14.webp",
         "tag": "обслуживание",
         "is_editor_choice": false
     },
     {
         "id": 15,
         "title": "Секреты скорости",
-        "image": "../images/lifehacks/list/15.webp",
+        "image": "images/lifehacks/list/15.webp",
         "tag": "тренировки",
         "is_editor_choice": false
     },
     {
         "id": 16,
         "title": "E-bike: заряд",
-        "image": "../images/lifehacks/list/16.webp",
+        "image": "images/lifehacks/list/16.webp",
         "tag": "виды велосипедов",
         "is_editor_choice": false
     },
     {
         "id": 17,
         "title": "Рюкзак-поворотник",
-        "image": "../images/lifehacks/list/17.webp",
+        "image": "images/lifehacks/list/17.webp",
         "tag": "безопасность",
         "is_editor_choice": false
     },
     {
         "id": 18,
         "title": "Замена обмотки",
-        "image": "../images/lifehacks/list/18.webp",
+        "image": "images/lifehacks/list/18.webp",
         "tag": "обслуживание",
         "is_editor_choice": false
     },
     {
         "id": 19,
         "title": "Носки на обувь",
-        "image": "../images/lifehacks/list/19.webp",
+        "image": "images/lifehacks/list/19.webp",
         "tag": "аксессуары",
         "is_editor_choice": false
     },
     {
         "id": 20,
         "title": "Куда деть мультитул",
-        "image": "../images/lifehacks/list/20.webp",
+        "image": "images/lifehacks/list/20.webp",
         "tag": "обслуживание",
         "is_editor_choice": false
     },
     {
         "id": 21,
         "title": "Хороший замок",
-        "image": "../images/lifehacks/list/21.webp",
+        "image": "images/lifehacks/list/21.webp",
         "tag": "безопасность",
         "is_editor_choice": false
     },
     {
         "id": 22,
         "title": "Батончик на перекус",
-        "image": "../images/lifehacks/list/22.webp",
+        "image": "images/lifehacks/list/22.webp",
         "tag": "тренировки",
         "is_editor_choice": false
     },
     {
         "id": 23,
         "title": "Апгрейд шлема",
-        "image": "../images/lifehacks/list/23.webp",
+        "image": "images/lifehacks/list/23.webp",
         "tag": "безопасность",
         "is_editor_choice": true
     },
     {
         "id": 24,
         "title": "Польза перчаток",
-        "image": "../images/lifehacks/list/24.webp",
+        "image": "images/lifehacks/list/24.webp",
         "tag": "аксессуары",
         "is_editor_choice": true
     }
