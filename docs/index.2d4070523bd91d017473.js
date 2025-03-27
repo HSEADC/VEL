@@ -153,7 +153,7 @@ var createTags = function createTags(tags) {
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
       var tag = _step.value;
-      tagsNode.appendChild(general_createTag(tag));
+      tagsNode.appendChild(createTag(tag));
     }
   } catch (err) {
     _iterator.e(err);
@@ -162,7 +162,7 @@ var createTags = function createTags(tags) {
   }
   return tagsNode;
 };
-var general_createTag = function createTag(tag) {
+var createTag = function createTag(tag) {
   var tagNode = document.createElement('span');
   tagNode.classList.add('A_Tag');
   tagNode.innerText = tag;
@@ -174,7 +174,7 @@ var createH1 = function createH1(header) {
   headerNode.innerText = header;
   return headerNode;
 };
-var general_createH2 = function createH2(header) {
+var createH2 = function createH2(header) {
   var headerNode = document.createElement('h2');
   headerNode.classList.add('A_H2');
   headerNode.innerText = header;
@@ -260,7 +260,7 @@ function story_navigation_unsupportedIterableToArray(r, a) { if (r) { if ("strin
 function story_navigation_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 
 var createSectionHeader = function createSectionHeader(title) {
-  var header = general_createH2(title);
+  var header = createH2(title);
   var observer = new IntersectionObserver(function (entries) {
     var entry = entries[0];
     var header = entry.target;
@@ -640,7 +640,7 @@ var createEditorChoiceArticle = function createEditorChoiceArticle(article) {
   infoWrapper.classList.add('W_EditorChoiseArticleCardInfo');
   var textWrapper = document.createElement('div');
   textWrapper.classList.add('W_EditorChoiseArticleCardText');
-  var title = general_createH2(article.title);
+  var title = createH2(article.title);
   var description = createTextNode(article.short_description);
   title.classList.add('Q_TextWhite');
   description.classList.add('Q_TextWhite');
@@ -717,6 +717,9 @@ var renderLifehacks = function renderLifehacks(lifehacks) {
       if (listNode) {
         listNode.appendChild(createLifehackCard(lifehack, index));
       }
+      if (lifehack.is_editor_choice) {
+        createEditorCard(lifehack);
+      }
     }
   } catch (err) {
     _iterator.e(err);
@@ -726,18 +729,22 @@ var renderLifehacks = function renderLifehacks(lifehacks) {
 };
 var createLifehackCard = function createLifehackCard(lifehack, index) {
   // 2 7 16 21
-  return createSmallCard(lifehack, index);
+  return createCard(lifehack, index);
 };
-var createSmallCard = function createSmallCard(lifehack, index) {
+var createCard = function createCard(lifehack, index) {
   var lifehackCard = document.createElement('a');
   lifehackCard.setAttribute('href', "".concat(LIFEHACK_PATH, "?id=").concat(lifehack.id));
   lifehackCard.classList.add('M_LifehackCard', "Q_LifehackBG".concat(index % 6 + 1));
-  lifehackCard.appendChild(general_createTag(lifehack.tag));
+  lifehackCard.appendChild(createTag(lifehack.tag));
   lifehackCard.appendChild(lifehacks_list_createImage(lifehack.image));
   lifehackCard.appendChild(createH3(lifehack.title));
   return lifehackCard;
 };
-var createLargeCard = function createLargeCard(lifehack, index) {
+var createEditorCard = function createEditorCard(lifehack, index) {
+  var editorList = document.getElementById('editor_lifehacks');
+  if (!editorList) {
+    return;
+  }
   var lifehackCard = document.createElement('a');
   lifehackCard.setAttribute('href', "".concat(LIFEHACK_PATH, "?id=").concat(lifehack.id));
   lifehackCard.classList.add('M_LifehackLargeCard', "Q_LifehackBG".concat(index % 6 + 1));
@@ -747,7 +754,7 @@ var createLargeCard = function createLargeCard(lifehack, index) {
   textWrapper.appendChild(createH2(lifehack.title));
   lifehackCard.appendChild(textWrapper);
   lifehackCard.appendChild(lifehacks_list_createImage(lifehack.image));
-  return lifehackCard;
+  editorList.append(lifehackCard);
 };
 var lifehacks_list_createImage = function createImage(imageSrc) {
   var imageElement = document.createElement('img');

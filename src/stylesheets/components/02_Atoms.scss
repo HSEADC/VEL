@@ -36,7 +36,7 @@
     border-radius: 10px;
     border: 0;
     background-color: var(--dark-white);
-    padding: 0 20px;
+    padding: 11px 20px;
 
     font: var(--general-text);
     color: var(--main-dark);
@@ -230,6 +230,11 @@
     img {
         width: 16px;
         height: 16px;
+
+        @media (max-width: 600px) {
+            max-width: 12px;
+            max-height: 12px;
+        }
     }
 
     @media (orientation: portrait) {
@@ -252,8 +257,13 @@
     gap: 12px;
 
     img {
-        width: 16px;
-        height: 16px;
+        max-width: 16px;
+        max-height: 16px;
+
+        @media (max-width: 600px) {
+            max-width: 12px;
+            max-height: 12px;
+        }
     }
 }
 
@@ -278,4 +288,8 @@
 
 .A_ArticleNavButtonActive {
     color: var(--main-dark);
+}
+
+.A_PhotoAboutPage {
+    border-radius: 15px;
 }

@@ -245,10 +245,6 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-
-    @media (max-width: 1000px) {
-        display: none;
-    }
 }
 
 .W_NameStory {
@@ -325,4 +321,30 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    row-gap: 8px;
+}
+
+.W_TextBlockAboutUs {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.W_FinalBlockAbout {
+    margin-bottom: 90px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+    max-width: 475px;
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
 }

@@ -170,6 +170,18 @@
     flex-direction: row;
 
     gap: 10px;
+
+    background-image: url('../../images/lifehacks/Q_LargeCardQuark.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &:hover {
+        background-image: url('../../images/lifehacks/Q_LargeCardQuarkActive.svg');
+    }
+
+    @media (max-width: 600px) {    
+        padding: 20px 8px 25px 16px;
+    }
 }
 
 .M_LifehackPageCard {
@@ -195,7 +207,7 @@
     flex-direction: row;
     justify-content: stretch;
 
-    img {
+    & > img {
         width: 30%;
         flex-shrink: 1;
         object-fit: cover;

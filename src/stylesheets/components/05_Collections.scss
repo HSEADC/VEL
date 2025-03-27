@@ -53,6 +53,23 @@
     }
 }
 
+.C_EditorLifehacks {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 49% 49%;
+    gap: 15px;
+    justify-items: center;
+    
+    margin-top: 40px;
+    margin-bottom: 90px;
+
+    @media (max-width: 760px) {
+        margin-top: 20px;
+        margin-bottom: 45px;
+        grid-template-columns: 100%;
+    }
+}
+
 .C_StorySections {
     display: flex;
     flex-direction: column;
@@ -63,15 +80,24 @@
 .C_BlockCardsWay {
     display: grid;
 
-    grid-template-columns: repeat(2, 49.5);
+    grid-template-columns: repeat(2, 49%);
     gap: 15px;
+
+    .Q_PatternCardWay {
+        aspect-ratio: 3.4;
+    }
 
     .W_WayText .A_Text  {
         display: none;
     }
 
     :first-child {
-        @media (min-width: 700px) {
+        @media (min-width: 800px) {
+            .Q_PatternCardWay {
+                max-width: 100%;
+                aspect-ratio: 3.8;
+            }
+
             grid-column: span 2;
 
             .W_WayText .A_Text {
@@ -85,7 +111,7 @@
         }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
         grid-template-columns: 100%;
     }
 }
@@ -124,11 +150,20 @@
 
 .C_CardsStory {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(2, 49%);
     gap: 15px;
 
+    .W_WayText .A_Text  {
+        display: none;
+    }
+
     :nth-child(3) {
-        @media (min-width: 700px) {
+        @media (min-width: 800px) {
+            .Q_PatternCardWay {
+                max-width: 100%;
+                aspect-ratio: 3.8;
+            }
+
             grid-column: span 2;
 
             .W_WayText .A_Text {
@@ -142,7 +177,7 @@
         }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
         grid-template-columns: 100%;        
     }
 }
@@ -164,5 +199,17 @@
 
     .C_AllCardsArticle, .M_EditorChoiseArticleCard {
         margin: 0;
+    }
+}
+
+.C_PhotosAuthorAbout {
+    display: grid;
+    grid-template-columns: repeat(3, 32.5%);
+    justify-content: space-evenly;
+    max-width: 654px;
+    width: 100%;
+
+    img {
+        max-width: 208px;
     }
 }

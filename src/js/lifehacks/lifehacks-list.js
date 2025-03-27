@@ -45,15 +45,19 @@ export const renderLifehacks = (lifehacks) => {
         if (listNode) {
             listNode.appendChild(createLifehackCard(lifehack, index));
         }
+
+        if (lifehack.is_editor_choice) {
+            createEditorCard(lifehack);
+        }
     }
 }
 
 const createLifehackCard = (lifehack, index) => {
     // 2 7 16 21
-    return createSmallCard(lifehack, index);
+    return createCard(lifehack, index);
 }
 
-const createSmallCard = (lifehack, index) => {
+const createCard = (lifehack, index) => {
     const lifehackCard = document.createElement('a');
     lifehackCard.setAttribute('href', `${LIFEHACK_PATH}?id=${lifehack.id}`);
     lifehackCard.classList.add('M_LifehackCard', `Q_LifehackBG${index % 6 + 1}`);
@@ -65,7 +69,13 @@ const createSmallCard = (lifehack, index) => {
     return lifehackCard;
 }
 
-const createLargeCard = (lifehack, index) => {
+const createEditorCard = (lifehack, index) => {
+    const editorList = document.getElementById('editor_lifehacks');
+
+    if (!editorList) {
+        return;
+    }
+
     const lifehackCard = document.createElement('a');
     lifehackCard.setAttribute('href', `${LIFEHACK_PATH}?id=${lifehack.id}`);
     lifehackCard.classList.add('M_LifehackLargeCard', `Q_LifehackBG${index % 6 + 1}`);
@@ -79,7 +89,7 @@ const createLargeCard = (lifehack, index) => {
     lifehackCard.appendChild(textWrapper);
     lifehackCard.appendChild(createImage(lifehack.image));
 
-    return lifehackCard;
+    editorList.append(lifehackCard);
 }
 
 const createImage = (imageSrc) => {

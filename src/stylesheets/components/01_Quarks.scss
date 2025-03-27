@@ -63,7 +63,7 @@
 }
 
 .Q_LifehacksBannerBg {
-  background-color: #70805D;
+  background-color: var(--green);
   background-image:
     url('../../images/lifehacks/quarks.svg'),
     url('../../images/lifehacks/quarks/lifehacks-banner-bg.webp');
@@ -79,7 +79,7 @@
 }
 
 .Q_ArticlesBannerBg {
-  background-color: #70805D;
+  background-color: var(--green);
   background-image:
     url('../../images/articles/quarks.svg'),
     url('../../images/articles/cover.webp');
@@ -95,7 +95,7 @@
 }
 
 .Q_RoutesBannerBg {
-  background-color: #70805D;
+  background-color: var(--green);
   background-image:
     url('../../images/routes/quarks.svg'),
     url('../../images/routes/cover.webp');
@@ -110,12 +110,29 @@
   }
 }
 
+.Q_AboutUsBanner {
+  background-color: var(--green);
+  background-image: url('../../images/about-us/quarks.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (max-width: 600px) {
+    background-image: url('../../images/about-us/quarks-mobile.svg');
+  }
+}
+
 
 .Q_PatternCardWay {
   max-width: 100%;
   max-height: 300px;
+  height: 100%;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
+
+  @media (max-width: 700px) {
+    max-height: 165px;
+  }
 }
 
 .Q_PatternMainImage {

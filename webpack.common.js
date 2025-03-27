@@ -195,13 +195,13 @@ module.exports = {
       inject: false,
     }),
     
-    // new HtmlWebpackPlugin({
-    //   title: getTitle('О нас'),
-    //   favicon: './src/images/icons/favicon.svg',
-    //   template: './src/sections/about-us.ejs',
-    //   filename: './about-us.html',
-    //   meta: getMeta('О нас', '/about-us.html'),
-    // }),
+    new HtmlWebpackPlugin({
+      title: getTitle('О нас'),
+      favicon: './src/images/icons/favicon.svg',
+      template: './src/sections/about-us.ejs',
+      filename: './about-us.html',
+      meta: getMeta('О нас', '/about-us.html'),
+    }),
 
     // Partials
     new HtmlWebpackPartialsPlugin([
