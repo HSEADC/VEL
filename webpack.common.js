@@ -221,7 +221,6 @@ module.exports = {
         priority: 'replace',
       }
     ]),
-  ],
     new HtmlWebpackPartialsPlugin([
       {
         path: path.join(__dirname, "./src/partials/analytics.html"),
@@ -230,6 +229,7 @@ module.exports = {
         priority: "replace",
       },
     ]),
+  ],
   optimization: {
     minimizer: [
       new CssMinimizerPlugin(),
