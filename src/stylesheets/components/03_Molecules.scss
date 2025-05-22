@@ -271,8 +271,8 @@
     }
 
     img {
-        width: 38%;
-        flex-shrink: 1;
+        display: block;
+        max-width: 38%;
         aspect-ratio: 224 / 271;
         border-radius: 15px 0 0 15px;
         object-fit: cover;

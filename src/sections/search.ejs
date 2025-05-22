@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= htmlWebpackPlugin.tags.headTags %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <analytics></analytics>
+  </head>
+  <body>
+    <div id="navigation"></div>
+
+    <main class="O_MainContent O_SearchContent">
+      <h2 class="A_H2">Статьи</h2>  
+
+      <div id="articles_list" class="C_AllCardsArticle">
+        <div class="A_Text">По вашему запросу ничего не найдено</div>
+      </div>
+
+      <div id="pagination" class="M_Pagination"></div>
+    </main>
+
+    <div id="footer"></div>
+  </body>
+</html>

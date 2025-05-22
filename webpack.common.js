@@ -42,23 +42,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
             plugins: ['@babel/plugin-proposal-class-properties']
-          }
-        }
-      },
-      {
-        test: /\.js?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true
           }
         }
       },
@@ -120,6 +110,9 @@ module.exports = {
       },
     ]
   },
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
@@ -140,6 +133,7 @@ module.exports = {
       template: './src/index.ejs',
       filename: './index.html',
       meta: getMeta('Главная', '/index.html'),
+      inject: false,
     }),
 
     new HtmlWebpackPlugin({
@@ -184,6 +178,7 @@ module.exports = {
       template: './src/sections/routes.ejs',
       filename: './routes.html',
       meta: getMeta('Маршруты', '/routes.html'),
+      inject: false,
     }),
 
     new HtmlWebpackPlugin({
@@ -201,6 +196,16 @@ module.exports = {
       template: './src/sections/about-us.ejs',
       filename: './about-us.html',
       meta: getMeta('О нас', '/about-us.html'),
+      inject: false,
+    }),
+    
+    new HtmlWebpackPlugin({
+      title: getTitle('Поиск'),
+      favicon: './src/images/icons/favicon.svg',
+      template: './src/sections/search.ejs',
+      filename: './search.html',
+      meta: getMeta('Поиск', '/search.html'),
+      inject: false,
     }),
 
     // Partials
@@ -210,6 +215,7 @@ module.exports = {
         location: 'header',
         template_filename: '*',
         priority: 'replace',
+        inject: false,
       }
     ]),
 
@@ -219,6 +225,7 @@ module.exports = {
         location: 'footer',
         template_filename: '*',
         priority: 'replace',
+        inject: false,
       }
     ]),
     new HtmlWebpackPartialsPlugin([
@@ -227,6 +234,7 @@ module.exports = {
         location: "analytics",
         template_filename: "*",
         priority: "replace",
+        inject: false,
       },
     ]),
   ],
@@ -235,5 +243,5 @@ module.exports = {
       new CssMinimizerPlugin(),
       new JsonMinimizerPlugin(),
     ]
-  }
+  },
 }

@@ -3,7 +3,7 @@ html, body {
   padding: 0;
 }
 
-body {
+body, #navigation, #footer {
   display: flex;
   flex-direction: column;
   width: 100%;

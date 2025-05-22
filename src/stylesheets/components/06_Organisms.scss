@@ -21,8 +21,13 @@
     max-width: 1190px;
     width: 100%;
     padding: 0 30px;
+    min-height: 50vh;
 
     font-family: 'MursGothic';
+}
+
+.O_SearchContent {
+    margin-top: 90px;
 }
 
 .O_StoryMain {
