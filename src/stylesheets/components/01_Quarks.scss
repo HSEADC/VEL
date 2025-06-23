@@ -161,7 +161,14 @@
 .Q_HideOnMobile {
   @media (max-width: 675px) {
     display: none !important;
-    visibility: none !important;
+    visibility: hidden !important;
+  }
+}
+
+.Q_ShowOnMobile {
+  @media (min-width: 675px) {
+    display: none !important;
+    visibility: hidden !important;
   }
 }
 

@@ -1,12 +1,24 @@
 import { createEditorChoiceArticle, fetchArticles, renderArticles } from "../articles/articles-list";
 import { getRandomNumber } from "../common/general";
 import { fetchLifehacks, renderLifehacks } from "../lifehacks/lifehacks-list";
+import {createRoot} from "react-dom/client";
+import SearchBox from "../components/common/SearchBox";
 
 export const MAIN_PATH = 'index.html';
 
 export const createMainPage = () => {
     createArticles();
     createLifehacks();
+
+    const searchBox = document.getElementById('search-box');
+
+    if (!searchBox) {
+        return;
+    }
+
+    createRoot(searchBox).render(
+        <SearchBox />
+    )
 }
 
 const createArticles = () => {

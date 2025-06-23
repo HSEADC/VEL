@@ -16673,11 +16673,58 @@ var __webpack_exports__ = {};
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(540);
-;// ./src/js/components/common/Header.jsx
+;// ./src/js/components/NavSideBar.jsx
+function NavSideBar(_ref) {
+  var onClose = _ref.onClose;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "Q_ShowOnMobile O_OpenMenu"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "W_OpenMenuMobile"
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "A_Logo",
+    href: "index.html"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "images/icons/logo-dark.svg",
+    alt: ""
+  })), /*#__PURE__*/React.createElement("button", {
+    className: "A_CloseButton",
+    onClick: onClose
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "images/icons/cross.svg",
+    alt: ""
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "M_PointMenuHeaderMobile"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "articles.html",
+    className: "A_PointMenu Q_TextBlack"
+  }, "\u0441\u0442\u0430\u0442\u044C\u0438"), /*#__PURE__*/React.createElement("a", {
+    href: "lifehacks.html",
+    className: "A_PointMenu Q_TextBlack"
+  }, "\u043B\u0430\u0439\u0444\u0445\u0430\u043A\u0438"), /*#__PURE__*/React.createElement("a", {
+    href: "routes.html",
+    className: "A_PointMenu Q_TextBlack"
+  }, "\u043C\u0430\u0440\u0448\u0440\u0443\u0442\u044B"), /*#__PURE__*/React.createElement("a", {
+    href: "about-us.html",
+    className: "A_PointMenu Q_TextBlack"
+  }, "\u043E \u043D\u0430\u0441")));
+}
+;// ./src/js/components/Header.jsx
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
 function Header(_ref) {
   var _url$searchParams$get;
   var _ref$theme = _ref.theme,
     theme = _ref$theme === void 0 ? 'light' : _ref$theme;
+  var _useState = (0,react.useState)(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    isMenuOpen = _useState2[0],
+    setIsMenuOpen = _useState2[1];
   var url = new URL(window.location.href);
   var logoUrl = theme === 'light' ? 'images/icons/logo.svg' : 'images/icons/logo-dark.svg';
   var tabsClass = theme === 'light' ? 'M_HeaderNavTabs' : 'M_HeaderNavTabsDark';
@@ -16699,8 +16746,16 @@ function Header(_ref) {
   }, /*#__PURE__*/React.createElement("nav", {
     className: "W_HeaderNav"
   }, /*#__PURE__*/React.createElement("a", {
-    className: "A_Logo",
+    className: "A_Logo Q_HideOnMobile",
     href: "index.html"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: logoUrl,
+    alt: ""
+  })), /*#__PURE__*/React.createElement("button", {
+    className: "A_Logo Q_ShowOnMobile",
+    onClick: function onClick() {
+      return setIsMenuOpen(true);
+    }
   }, /*#__PURE__*/React.createElement("img", {
     src: logoUrl,
     alt: ""
@@ -16719,7 +16774,7 @@ function Header(_ref) {
     href: "about-us.html",
     className: tabClass
   }, "\u043E \u043D\u0430\u0441")), /*#__PURE__*/React.createElement("div", {
-    className: "M_Search"
+    className: "M_Search Q_HideOnMobile"
   }, /*#__PURE__*/React.createElement("input", {
     id: "search",
     className: "A_Form",
@@ -16728,9 +16783,49 @@ function Header(_ref) {
     defaultValue: (_url$searchParams$get = url.searchParams.get('query')) !== null && _url$searchParams$get !== void 0 ? _url$searchParams$get : '',
     size: "20",
     onKeyDown: onSearch
-  }))));
+  })), isMenuOpen && /*#__PURE__*/React.createElement(NavSideBar, {
+    onClose: function onClose() {
+      return setIsMenuOpen(false);
+    }
+  })));
 }
-;// ./src/js/components/common/Footer.jsx
+;// ./src/js/components/common/SocialLink.jsx
+function SocialLink(_ref) {
+  var icon = _ref.icon,
+    link = _ref.link;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "A_SocialLink"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: link
+  }, /*#__PURE__*/React.createElement("img", {
+    src: icon,
+    alt: ""
+  })));
+}
+;// ./src/js/components/common/SocialLinks.jsx
+
+function SocialLinks(_ref) {
+  var _ref$className = _ref.className,
+    className = _ref$className === void 0 ? '' : _ref$className;
+  var socialLinks = [{
+    icon: 'images/icons/telegram.svg',
+    link: 'https://t.me/+iCtcV4CG7UphMWYy'
+  }, {
+    icon: 'images/icons/pinterest.svg',
+    link: '#'
+  }];
+  return /*#__PURE__*/React.createElement("div", {
+    className: "M_Social ".concat(className)
+  }, socialLinks.map(function (socialLink) {
+    return /*#__PURE__*/React.createElement(SocialLink, {
+      key: socialLink.link,
+      icon: socialLink.icon,
+      link: socialLink.link
+    });
+  }));
+}
+;// ./src/js/components/Footer.jsx
+
 function Footer() {
   return /*#__PURE__*/React.createElement("footer", {
     className: "S_Footer"
@@ -16755,7 +16850,7 @@ function Footer() {
     type: "submit",
     className: "A_Button"
   }, "\u043F\u043E\u0434\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F")))), /*#__PURE__*/React.createElement("section", {
-    className: "M_FooterNav"
+    className: "M_FooterNav Q_HideOnMobile"
   }, /*#__PURE__*/React.createElement("a", {
     href: "articles.html",
     className: "A_FooterNavButton"
@@ -16768,32 +16863,14 @@ function Footer() {
   }, "\u043C\u0430\u0440\u0448\u0440\u0443\u0442\u044B"), /*#__PURE__*/React.createElement("a", {
     href: "about-us.html",
     className: "A_FooterNavButton"
-  }, "\u043E \u043D\u0430\u0441"))), /*#__PURE__*/React.createElement("section", {
+  }, "\u043E \u043D\u0430\u0441")), /*#__PURE__*/React.createElement("div", {
+    className: "A_Logo Q_HideOnMobile"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "images/icons/logo.svg",
+    alt: ""
+  }))), /*#__PURE__*/React.createElement("section", {
     className: "W_FooterRow"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "M_Social"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "A_SocialLink"
-  }, /*#__PURE__*/React.createElement("a", {
-    href: "https://t.me/+iCtcV4CG7UphMWYy"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: "images/icons/telegram.svg",
-    alt: "Telegram"
-  }))), /*#__PURE__*/React.createElement("div", {
-    className: "A_SocialLink"
-  }, /*#__PURE__*/React.createElement("a", {
-    href: "https://vk.com/vellmsk"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: "images/icons/vk.svg",
-    alt: "VK"
-  }))), /*#__PURE__*/React.createElement("div", {
-    className: "A_SocialLink"
-  }, /*#__PURE__*/React.createElement("a", {
-    href: "https://dzen.ru/vell_msc"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: "images/icons/dzen.svg",
-    alt: "\u042F\u043D\u0434\u0435\u043A\u0441 \u0414\u0437\u0435\u043D"
-  })))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(SocialLinks, null), /*#__PURE__*/React.createElement("div", {
     className: "A_HseLogo"
   }, /*#__PURE__*/React.createElement("img", {
     src: "images/icons/hse.svg",
@@ -16801,6 +16878,11 @@ function Footer() {
   }))), /*#__PURE__*/React.createElement("section", {
     className: "W_FooterRow"
   }, /*#__PURE__*/React.createElement("div", {
+    className: "A_Logo Q_ShowOnMobile"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "images/icons/logo.svg",
+    alt: ""
+  })), /*#__PURE__*/React.createElement("div", {
     className: "W_FooterNames"
   }, /*#__PURE__*/React.createElement("span", {
     className: "A_Caption Q_TextWhite"
@@ -16821,10 +16903,10 @@ function Footer() {
 // EXTERNAL MODULE: ./src/js/navigation.js
 var navigation = __webpack_require__(552);
 ;// ./src/js/common/filters.js
-function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
-function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
-function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-var createFilters = function createFilters(entities) {
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = filters_unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function filters_unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return filters_arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? filters_arrayLikeToArray(r, a) : void 0; } }
+function filters_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+var createFilters = function createFilters(entities, onClick) {
   var filtersNode = document.getElementById('filters');
   if (!filtersNode) {
     return;
@@ -16832,7 +16914,7 @@ var createFilters = function createFilters(entities) {
   filtersNode.innerHTML = '';
   var selectedTag = getSelectedTag();
   var createdFilters = [];
-  filtersNode.appendChild(createFilter('все', selectedTag === 'все' || !selectedTag));
+  filtersNode.appendChild(createFilter('все', selectedTag === 'все' || !selectedTag, onClick));
   var _iterator = _createForOfIteratorHelper(entities),
     _step;
   try {
@@ -16849,7 +16931,7 @@ var createFilters = function createFilters(entities) {
             continue;
           }
           createdFilters.push(tag);
-          filtersNode.appendChild(createFilter(tag, selectedTag === tag));
+          filtersNode.appendChild(createFilter(tag, selectedTag === tag, onClick));
         }
       } catch (err) {
         _iterator2.e(err);
@@ -16863,7 +16945,7 @@ var createFilters = function createFilters(entities) {
     _iterator.f();
   }
 };
-var createFilter = function createFilter(name, isActive) {
+var createFilter = function createFilter(name, isActive, onClick) {
   var filterButton = document.createElement('button');
   if (isActive) {
     filterButton.classList.add('A_FilterActive');
@@ -16871,10 +16953,11 @@ var createFilter = function createFilter(name, isActive) {
   filterButton.classList.add('A_Filter');
   filterButton.innerText = name;
   filterButton.addEventListener('click', function (event) {
-    var urlParams = new URLSearchParams(window.location.search);
-    urlParams["delete"]('page');
-    urlParams.set('filter', event.target.innerText);
-    window.location.search = urlParams;
+    var url = new URL(window.location.href);
+    url.searchParams["delete"]('page');
+    url.searchParams.set('filter', event.target.innerText);
+    window.history.pushState({}, '', url);
+    onClick();
   });
   return filterButton;
 };
@@ -16886,7 +16969,6 @@ var filterEntities = function filterEntities(entities) {
   if (!selectedTag || selectedTag === 'все') {
     return entities;
   }
-  ;
   var result = [];
   var _iterator3 = _createForOfIteratorHelper(entities),
     _step3;
@@ -17350,7 +17432,7 @@ var prepareArticles = function prepareArticles(articles) {
     return article.is_editor_choice;
   });
   createEditorChoiceArticle(edittorChoiceArticle);
-  createFilters(articles);
+  createFilters(articles, createArticles);
   var filteredArticles = filterEntities(articles);
   var paginatedEntities = paginateEntities(filteredArticles, PER_PAGE);
   if (paginatedEntities.length < filteredArticles.length) {
@@ -17417,10 +17499,10 @@ var createEditorChoiceArticle = function createEditorChoiceArticle(article) {
 };
 ;// ./src/js/lifehacks/lifehacks-list.js
 function lifehacks_list_typeof(o) { "@babel/helpers - typeof"; return lifehacks_list_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, lifehacks_list_typeof(o); }
-function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || lifehacks_list_unsupportedIterableToArray(r, e) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
-function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+function lifehacks_list_slicedToArray(r, e) { return lifehacks_list_arrayWithHoles(r) || lifehacks_list_iterableToArrayLimit(r, e) || lifehacks_list_unsupportedIterableToArray(r, e) || lifehacks_list_nonIterableRest(); }
+function lifehacks_list_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function lifehacks_list_iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function lifehacks_list_arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 function lifehacks_list_createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = lifehacks_list_unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
 function lifehacks_list_unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return lifehacks_list_arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? lifehacks_list_arrayLikeToArray(r, a) : void 0; } }
 function lifehacks_list_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
@@ -17432,13 +17514,15 @@ function lifehacks_list_asyncToGenerator(n) { return function () { var t = this,
 var LIFEHACKS_PATH = 'lifehacks.html';
 var LIFEHACK_PATH = 'lifehack.html';
 var LIFEHACKS_URL = 'api/lifehacks-list.json';
-var createLifehacks = function createLifehacks() {
+var _createLifehacks = function createLifehacks() {
   void fetchLifehacks().then(function (lifehacks) {
-    createFilters(lifehacks);
+    renderEditorChoice(lifehacks);
+    createFilters(lifehacks, _createLifehacks);
     var filteredLifehacks = filterEntities(lifehacks);
     renderLifehacks(filteredLifehacks);
   });
 };
+
 var fetchLifehacks = /*#__PURE__*/function () {
   var _ref = lifehacks_list_asyncToGenerator(/*#__PURE__*/lifehacks_list_regeneratorRuntime().mark(function _callee() {
     return lifehacks_list_regeneratorRuntime().wrap(function _callee$(_context) {
@@ -17457,32 +17541,17 @@ var fetchLifehacks = /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }();
-var renderLifehacks = function renderLifehacks(lifehacks) {
-  var listNode = document.getElementById('lifehacks_list');
-  var editorChoiceNode = document.getElementById('editor_choice_list');
-  if (!listNode && !editorChoiceNode) {
+var renderEditorChoice = function renderEditorChoice(lifehacks) {
+  var editorChoiceNode = document.getElementById('editor_lifehacks');
+  if (!editorChoiceNode) {
     return;
   }
-  if (listNode) {
-    listNode.innerHTML = '';
-  }
-  if (editorChoiceNode) {
-    editorChoiceNode.innerHTML = '';
-  }
-  var _iterator = lifehacks_list_createForOfIteratorHelper(lifehacks.entries()),
+  editorChoiceNode.innerHTML = '';
+  var _iterator = lifehacks_list_createForOfIteratorHelper(lifehacks),
     _step;
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var _step$value = _slicedToArray(_step.value, 2),
-        index = _step$value[0],
-        lifehack = _step$value[1];
-      var lifehackCard = createLifehackCard(lifehack, index);
-      if (editorChoiceNode && lifehack.is_editor_choice) {
-        editorChoiceNode.appendChild(lifehackCard);
-      }
-      if (listNode) {
-        listNode.appendChild(createLifehackCard(lifehack, index));
-      }
+      var lifehack = _step.value;
       if (lifehack.is_editor_choice) {
         createEditorCard(lifehack);
       }
@@ -17491,6 +17560,28 @@ var renderLifehacks = function renderLifehacks(lifehacks) {
     _iterator.e(err);
   } finally {
     _iterator.f();
+  }
+};
+var renderLifehacks = function renderLifehacks(lifehacks) {
+  var listNode = document.getElementById('lifehacks_list');
+  if (!listNode) {
+    return;
+  }
+  listNode.innerHTML = '';
+  var _iterator2 = lifehacks_list_createForOfIteratorHelper(lifehacks.entries()),
+    _step2;
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var _step2$value = lifehacks_list_slicedToArray(_step2.value, 2),
+        index = _step2$value[0],
+        lifehack = _step2$value[1];
+      var lifehackCard = createLifehackCard(lifehack, index);
+      listNode.appendChild(lifehackCard);
+    }
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
   }
 };
 var createLifehackCard = function createLifehackCard(lifehack, index) {
@@ -17697,14 +17788,53 @@ var createEnding = function createEnding(ending) {
   factoid.append(listNode);
   endingNode.append(factoid);
 };
+// EXTERNAL MODULE: ./node_modules/react-dom/client.js
+var client = __webpack_require__(338);
+;// ./src/js/components/common/SearchBox.jsx
+function SearchBox() {
+  var onSearch = function onSearch(event) {
+    var currentUrl = window.location.href;
+    var searchText = event.target.value;
+    var urlParts = currentUrl.split('/');
+    urlParts[urlParts.length - 1] = 'search.html';
+    var searchUrl = new URL(urlParts.join('/'));
+    searchUrl.searchParams.set('query', searchText);
+    window.location.href = searchUrl;
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "W_SearchMainPage"
+  }, /*#__PURE__*/React.createElement("input", {
+    id: "search-box",
+    type: "text",
+    placeholder: "\u0412\u0438\u0434\u044B \u0432\u0435\u043B\u043E\u0441\u0438\u043F\u0435\u0434\u043E\u0432",
+    onKeyDown: function onKeyDown(event) {
+      if (event.key !== 'Enter') {
+        return;
+      }
+      onSearch(event);
+    },
+    className: "M_SearchMainPage"
+  }), /*#__PURE__*/React.createElement("button", {
+    type: "submit",
+    onClick: onSearch,
+    className: "A_Button"
+  }, "\u043D\u0430\u0439\u0442\u0438"));
+}
 ;// ./src/js/main-page/main-page.js
+
+
 
 
 
 var MAIN_PATH = 'index.html';
 var createMainPage = function createMainPage() {
   main_page_createArticles();
-  main_page_createLifehacks();
+  createLifehacks();
+  var searchBox = document.getElementById('search-box');
+  if (!searchBox) {
+    return;
+  }
+  (0,client.createRoot)(searchBox).render(/*#__PURE__*/React.createElement(SearchBox, null));
 };
 var main_page_createArticles = function createArticles() {
   var url = new URL(window.location);
@@ -17730,7 +17860,7 @@ var main_page_createArticles = function createArticles() {
     createEditorChoiceArticle(editorChoice);
   });
 };
-var main_page_createLifehacks = function createLifehacks() {
+var createLifehacks = function createLifehacks() {
   var url = new URL(window.location);
   var id = parseInt(url.searchParams.get('id'), 10);
   fetchLifehacks().then(function (lifehacks) {
@@ -17747,8 +17877,6 @@ var main_page_createLifehacks = function createLifehacks() {
     renderLifehacks(uniqueLifehacks);
   });
 };
-// EXTERNAL MODULE: ./node_modules/react-dom/client.js
-var client = __webpack_require__(338);
 ;// ./src/js/common/search.js
 function search_typeof(o) { "@babel/helpers - typeof"; return search_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, search_typeof(o); }
 function search_regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ search_regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == search_typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(search_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
@@ -17790,7 +17918,69 @@ var searchArticles = /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }();
+;// ./src/js/components/HeaderMain.jsx
+function HeaderMain_slicedToArray(r, e) { return HeaderMain_arrayWithHoles(r) || HeaderMain_iterableToArrayLimit(r, e) || HeaderMain_unsupportedIterableToArray(r, e) || HeaderMain_nonIterableRest(); }
+function HeaderMain_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function HeaderMain_unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return HeaderMain_arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? HeaderMain_arrayLikeToArray(r, a) : void 0; } }
+function HeaderMain_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function HeaderMain_iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function HeaderMain_arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+function HeaderMain(_ref) {
+  var _ref$theme = _ref.theme,
+    theme = _ref$theme === void 0 ? 'light' : _ref$theme,
+    _ref$hideNavigation = _ref.hideNavigation,
+    hideNavigation = _ref$hideNavigation === void 0 ? false : _ref$hideNavigation;
+  var _useState = (0,react.useState)(false),
+    _useState2 = HeaderMain_slicedToArray(_useState, 2),
+    isMenuOpen = _useState2[0],
+    setIsMenuOpen = _useState2[1];
+  var url = new URL(window.location.href);
+  var logoUrl = theme === 'light' ? 'images/icons/logo.svg' : 'images/icons/logo-dark.svg';
+  var tabsClass = theme === 'light' ? 'M_HeaderNavTabs' : 'M_HeaderNavTabsDark';
+  var tabClass = theme === 'light' ? 'A_PointMenu' : 'A_PointMenu Q_TextBlack';
+  return /*#__PURE__*/React.createElement("header", {
+    className: "O_Header"
+  }, /*#__PURE__*/React.createElement("nav", {
+    className: "W_HeaderNav"
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "A_Logo Q_HideOnMobile",
+    href: "index.html"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: logoUrl,
+    alt: ""
+  })), /*#__PURE__*/React.createElement("button", {
+    className: "A_Logo Q_ShowOnMobile",
+    onClick: function onClick() {
+      return setIsMenuOpen(true);
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: logoUrl,
+    alt: ""
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "".concat(tabsClass, " Q_HideOnMobile")
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "articles.html",
+    className: tabClass
+  }, "\u0441\u0442\u0430\u0442\u044C\u0438"), /*#__PURE__*/React.createElement("a", {
+    href: "lifehacks.html",
+    className: tabClass
+  }, "\u043B\u0430\u0439\u0444\u0445\u0430\u043A\u0438"), /*#__PURE__*/React.createElement("a", {
+    href: "routes.html",
+    className: tabClass
+  }, "\u043C\u0430\u0440\u0448\u0440\u0443\u0442\u044B"), /*#__PURE__*/React.createElement("a", {
+    href: "about-us.html",
+    className: tabClass
+  }, "\u043E \u043D\u0430\u0441")), /*#__PURE__*/React.createElement(SocialLinks, null)), isMenuOpen && /*#__PURE__*/React.createElement(NavSideBar, {
+    onClose: function onClose() {
+      return setIsMenuOpen(false);
+    }
+  }));
+}
 ;// ./src/index.js
+
 
 
 
@@ -17807,6 +17997,25 @@ var searchArticles = /*#__PURE__*/function () {
 window.React = react;
 var url = new URL(window.location).pathname;
 var loadPages = function loadPages() {
+  var header = document.getElementById('navigation');
+  var footer = (0,client.createRoot)(document.getElementById('footer'));
+  if (footer) {
+    footer.render(/*#__PURE__*/react.createElement(Footer, null));
+  }
+  if (url.includes(MAIN_PATH) || url.endsWith('/')) {
+    createMainPage();
+    if (header) {
+      (0,client.createRoot)(header).render(/*#__PURE__*/react.createElement(HeaderMain, {
+        theme: url.includes(lifehack_page_LIFEHACK_PATH) || url.includes(SEARCH_PATH) ? 'dark' : 'light'
+      }));
+    }
+    return;
+  }
+  if (header) {
+    (0,client.createRoot)(header).render(/*#__PURE__*/react.createElement(Header, {
+      theme: url.includes(lifehack_page_LIFEHACK_PATH) || url.includes(SEARCH_PATH) ? 'dark' : 'light'
+    }));
+  }
   if (url.includes(ARTICLES_PATH)) {
     createArticles();
     return;
@@ -17816,7 +18025,7 @@ var loadPages = function loadPages() {
     return;
   }
   if (url.includes(LIFEHACKS_PATH)) {
-    createLifehacks();
+    _createLifehacks();
     return;
   }
   if (url.includes(lifehack_page_LIFEHACK_PATH)) {
@@ -17827,19 +18036,10 @@ var loadPages = function loadPages() {
     createRoute();
     return;
   }
-  if (url.includes(MAIN_PATH) || url.endsWith('/')) {
-    createMainPage();
-  }
   if (url.includes(SEARCH_PATH)) {
     createSearchPage();
   }
 };
-var header = (0,client.createRoot)(document.getElementById('navigation'));
-header.render(/*#__PURE__*/react.createElement(Header, {
-  theme: url.includes(lifehack_page_LIFEHACK_PATH) || url.includes(SEARCH_PATH) ? 'dark' : 'light'
-}));
-var footer = (0,client.createRoot)(document.getElementById('footer'));
-footer.render(/*#__PURE__*/react.createElement(Footer, null));
 loadPages();
 })();
 

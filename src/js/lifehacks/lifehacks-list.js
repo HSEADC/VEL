@@ -8,7 +8,9 @@ const LIFEHACKS_URL = 'api/lifehacks-list.json';
 export const createLifehacks = () => {    
     void fetchLifehacks()
         .then((lifehacks) => {
-            createFilters(lifehacks);
+            renderEditorChoice(lifehacks);
+
+            createFilters(lifehacks, createLifehacks);
 
             const filteredLifehacks = filterEntities(lifehacks);
             renderLifehacks(filteredLifehacks);
@@ -19,36 +21,35 @@ export const fetchLifehacks = async () => {
     return fetch(LIFEHACKS_URL).then((response) => response.json());
 }
 
-export const renderLifehacks = (lifehacks) => {
-    const listNode = document.getElementById('lifehacks_list');
-    const editorChoiceNode = document.getElementById('editor_choice_list');
+const renderEditorChoice = (lifehacks) => {
+    const editorChoiceNode = document.getElementById('editor_lifehacks');
 
-    if (!listNode && !editorChoiceNode) {
+    if (!editorChoiceNode) {
         return;
     }
 
-    if (listNode) {
-        listNode.innerHTML = '';
+    editorChoiceNode.innerHTML = '';
+
+    for (const lifehack of lifehacks) {
+        if (lifehack.is_editor_choice) {
+            createEditorCard(lifehack);
+        }
+    }
+}
+
+export const renderLifehacks = (lifehacks) => {
+    const listNode = document.getElementById('lifehacks_list');
+
+    if (!listNode) {
+        return;
     }
 
-    if (editorChoiceNode) {
-        editorChoiceNode.innerHTML = '';
-    }
+    listNode.innerHTML = '';
 
     for (const [index, lifehack] of lifehacks.entries()) {
         const lifehackCard = createLifehackCard(lifehack, index);
 
-        if (editorChoiceNode && lifehack.is_editor_choice) {
-            editorChoiceNode.appendChild(lifehackCard);
-        }
-
-        if (listNode) {
-            listNode.appendChild(createLifehackCard(lifehack, index));
-        }
-
-        if (lifehack.is_editor_choice) {
-            createEditorCard(lifehack);
-        }
+        listNode.appendChild(lifehackCard);
     }
 }
 

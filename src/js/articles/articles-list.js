@@ -21,7 +21,7 @@ const prepareArticles = (articles) => {
     const edittorChoiceArticle = articles.find((article) => article.is_editor_choice);
     createEditorChoiceArticle(edittorChoiceArticle);
 
-    createFilters(articles);
+    createFilters(articles, createArticles);
 
     const filteredArticles = filterEntities(articles);
     const paginatedEntities = paginateEntities(filteredArticles, PER_PAGE);

@@ -16,3 +16,15 @@ body, #navigation, #footer {
     box-sizing: border-box;
   }
 }
+
+main {
+  min-height: 55vh;
+}
+
+#search-box {
+  max-width: 550px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

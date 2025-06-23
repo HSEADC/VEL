@@ -1,5 +1,5 @@
 
-export const createFilters = (entities) => {
+export const createFilters = (entities, onClick) => {
     const filtersNode = document.getElementById('filters')
 
     if (!filtersNode) {
@@ -10,7 +10,7 @@ export const createFilters = (entities) => {
     const selectedTag = getSelectedTag();
     const createdFilters = [];
 
-    filtersNode.appendChild(createFilter('все', selectedTag === 'все' || !selectedTag));
+    filtersNode.appendChild(createFilter('все', selectedTag === 'все' || !selectedTag, onClick));
 
     for (const entity of entities) {
         const tags = entity.hasOwnProperty('tag')
@@ -23,12 +23,12 @@ export const createFilters = (entities) => {
             }
 
             createdFilters.push(tag);
-            filtersNode.appendChild(createFilter(tag, selectedTag === tag));
+            filtersNode.appendChild(createFilter(tag, selectedTag === tag, onClick));
         }
     }
 }
 
-const createFilter = (name, isActive) => {
+const createFilter = (name, isActive, onClick) => {
     const filterButton = document.createElement('button');
 
     if (isActive) {
@@ -39,12 +39,14 @@ const createFilter = (name, isActive) => {
     filterButton.innerText = name;
 
     filterButton.addEventListener('click', (event) => {
-        const urlParams = new URLSearchParams(window.location.search);
+        const url = new URL(window.location.href);
 
-        urlParams.delete('page');
-        urlParams.set('filter', event.target.innerText);
-        
-        window.location.search = urlParams;
+        url.searchParams.delete('page');
+        url.searchParams.set('filter', event.target.innerText);
+
+        window.history.pushState({}, '', url);
+
+        onClick();
     })
 
     return filterButton;
@@ -59,7 +61,7 @@ export const filterEntities = (entities) => {
 
     if (!selectedTag || selectedTag === 'все') {
         return entities;
-    };
+    }
 
     const result = [];
 
