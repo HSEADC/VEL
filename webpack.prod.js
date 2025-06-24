@@ -28,7 +28,7 @@ getPages = () => {
       ...routeIds.map(id => `route.html?id=${id}`),
   )
 
-  return pages;
+  return pages.map((page) => `/VEL/${page}`);
 }
 
 const paths = getPages();
