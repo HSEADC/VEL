@@ -191,7 +191,6 @@
     opacity: 0;
     transform: translateY(20px);
     
-    animation: slideUp 0.6s ease-out forwards;
 }
 
 .A_H2 {
@@ -204,21 +203,8 @@
     padding: 0;
     opacity: 0;
     transform: translateY(20px);
-    
-    animation: slideUp 0.6s ease-out forwards;
+
 }
-
-@keyframes slideUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
 .A_H3 {
     font: var(--h3-font);
     color: var(--main-dark);

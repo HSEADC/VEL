@@ -166,5 +166,33 @@
         "image": "images/lifehacks/list/24.webp",
         "tag": "аксессуары",
         "is_editor_choice": true
+    },
+    {
+        "id": 25,
+        "title": "Изолента",
+        "image": "images/lifehacks/list/25.webp",
+        "tag": "аксессуары",
+        "is_editor_choice": false
+    },
+    {
+        "id": 26,
+        "title": "Летний друг",
+        "image": "images/lifehacks/list/26.webp",
+        "tag": "экипировка",
+        "is_editor_choice": false
+    },
+    {
+        "id": 27,
+        "title": "Своими руками",
+        "image": "images/lifehacks/list/28.webp",
+        "tag": "тренировки",
+        "is_editor_choice": false
+    },
+    {
+        "id": 28,
+        "title": "Сохраняй баланс",
+        "image": "images/lifehacks/list/27.webp",
+        "tag": "безопасность",
+        "is_editor_choice": false
     }
 ]

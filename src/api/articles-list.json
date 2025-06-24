@@ -182,5 +182,37 @@
         "tags": ["виды велосипедов"],
         "short_description": "Разбираемся, чем они отличаются и какой вариант подойдёт именно вам.",
         "is_editor_choice": true
+    }, 
+    {
+        "id": 24,
+        "title": "Психотерапия на колёсах",
+        "image": "images/articles/24/cover-mini.webp",
+        "tags": ["тренировки"],
+        "short_description": "Как велосипед помогает справляться с тревогой и выгоранием.",
+        "is_editor_choice": false
+    },
+        {
+        "id": 25,
+        "title": "Руль под стиль катания",
+        "image": "images/articles/25/cover-mini.webp",
+        "tags": ["аксессуары"],
+        "short_description": "Прямой, бараний, бабочка и другие — как выбрать.",
+        "is_editor_choice": false
+    },
+    {
+        "id": 26,
+        "title": "Вода важнее байка",
+        "image": "images/articles/26/cover-mini.webp",
+        "tags": ["экипировка"],
+        "short_description": "Почему так критично пить воду во время заездов",
+        "is_editor_choice": false
+    },
+    {
+        "id": 27,
+        "title": "Травмы на велозаездах",
+        "image": "images/articles/27/cover-mini.webp",
+        "tags": ["безопасность"],
+        "short_description": "Упал — не паникуй: что делать при травме на велозаезде",
+        "is_editor_choice": false
     }
 ]
