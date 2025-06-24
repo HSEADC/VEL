@@ -377,3 +377,337 @@
     justify-content: space-between;
     gap: 8px;
 }
+
+.W_NameErrorPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+.W_NameCoverLanding {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 40px;
+
+    z-index: 1;
+
+    max-width: 1200px;
+    width: 100%;
+
+    @media (max-width: 475px) {
+        flex-direction: column-reverse;
+    }
+
+    .A_Logo {
+        display: block;
+        flex-shrink: 1;
+        max-width: 540px;
+        max-height: 270px;
+        width: 100%;
+    }
+}
+
+.W_InfoBlockLanding {
+    flex-shrink: 1;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 48px;
+
+    @media (max-width: 600px) {
+        gap: 24px;
+    }
+}
+
+.W_NameLandingPage {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+
+    max-width: 520px;
+
+    .A_H1 {
+        text-align: start;
+    }
+}
+
+.W_BlockLanding {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.W_BlockDescribeMainPage {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 20px;
+
+    .M_NameBlockText {
+        max-width: 600px;
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
+}
+
+.W_DecorativeBlockName {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+    gap: 16px;
+
+    .A_H2 {
+        max-width: 575px;
+        text-align: end;
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: column-reverse;
+    }
+}
+
+.W_ArticleBlockLanding {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    @media (max-width: 800px) {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+
+.W_AllCardWayLanding {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 1;
+    width: 100%;
+
+    @media (max-width: 675px) {
+        flex-direction: column;
+    }
+}
+
+.W_CommunityBlockLanding {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    @media (max-width: 675px) {
+        flex-direction: column;
+    }
+}
+
+.W_BlockDescribeTgMainPageLanding {
+    max-width: 515px;
+}
+
+.W_StyleGuideCover {
+    max-width: 1200px;
+    width: 100%;
+    padding: 250px 30px;
+
+    .A_Logo {
+        max-width: 300px;
+        max-height: 145px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.W_StyleGuideBlock {
+    max-width: 825px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    @media (max-width: 675px) {
+        gap: 32px;
+    }
+}
+
+.W_BrandPlatformBlock {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+
+    :nth-child(3) {
+        grid-column: 1 / span 2;
+    }
+
+    @media (max-width: 675px) {
+        gap: 24px;
+
+        grid-template-columns: repeat(1, 1fr);
+
+        :nth-child(3) {
+            grid-column: 1 / 1;
+        }
+        padding-bottom: 48px;
+    }
+}
+
+.W_AllLogoRulesDescription {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+
+    :nth-child(3), :nth-child(4), :nth-child(5) {
+        grid-column: 1 / span 2;
+    }
+
+    @media (max-width: 675px) {
+        gap: 24px;
+
+        grid-template-columns: repeat(1, 1fr);
+
+        :nth-child(3), :nth-child(4), :nth-child(5) {
+            grid-column: 1 / 1;
+        }
+        padding-bottom: 48px;
+    }
+}
+
+.W_BlockLogoUsing {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+
+    > div {
+        max-width: 50%;
+    }
+
+    .M_Logo {
+        max-width: 400px;
+        width: 100%;
+        img {
+            width: 100%;
+            max-height: 100%;
+        }
+    }
+    @media (max-width: 675px) {
+        gap: 24px;
+
+        > div {
+            max-width: 100%;
+        }
+
+        flex-direction: column-reverse;
+    }
+}
+
+.W_LogoUsing {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @media (max-width: 675px) {
+        gap: 16px;
+    }
+}
+
+.W_LogoRulesPhoto {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.W_TypographyBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @media (max-width: 675px) {
+        gap: 24px;
+    }
+}
+
+.W_BaseTextTypography {
+    display: flex;
+    gap: 48px;
+
+    @media (max-width: 675px) {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+}
+
+.W_TypographyColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (max-width: 675px) {
+        gap: 8px;
+    }
+}
+
+.W_GridsBlock {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+
+    @media (max-width: 675px) {
+        flex-direction: column;
+
+        :last-child {
+            flex-direction: row;
+        }
+    }
+}
+
+.W_StyleBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @media (max-width: 675px) {
+        gap: 24px;
+    }
+}
+
+.W_PhotoMedia {
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.W_Icons {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+
+    .A_Icons {
+        max-width: 328px;
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 675px) {
+        flex-direction: column;
+    }
+}

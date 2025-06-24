@@ -208,33 +208,60 @@ module.exports = {
       inject: false,
     }),
 
-    // Partials
-    new HtmlWebpackPartialsPlugin([
-      {
-        path: path.join(__dirname, './src/partials/header.html'),
-        location: 'header',
-        template_filename: '*',
-        priority: 'replace',
-        inject: false,
-      }
-    ]),
+    new HtmlWebpackPlugin({
+      title: getTitle('404'),
+      favicon: './src/images/icons/favicon.svg',
+      template: './src/sections/errors/404.ejs',
+      filename: './404.html',
+      meta: getMeta('404', '/404.html'),
+      inject: false,
+    }),
 
-    new HtmlWebpackPartialsPlugin([
-      {
-        path: path.join(__dirname, './src/partials/footer.html'),
-        location: 'footer',
-        template_filename: '*',
-        priority: 'replace',
-        inject: false,
-      }
-    ]),
+    new HtmlWebpackPlugin({
+      title: getTitle('408'),
+      favicon: './src/images/icons/favicon.svg',
+      template: './src/sections/errors/408.ejs',
+      filename: './408.html',
+      meta: getMeta('408', '/408.html'),
+      inject: false,
+    }),
+
+    new HtmlWebpackPlugin({
+      title: getTitle('429'),
+      favicon: './src/images/icons/favicon.svg',
+      template: './src/sections/errors/429.ejs',
+      filename: './429.html',
+      meta: getMeta('429', '/429.html'),
+      inject: false,
+    }),
+
+
+    new HtmlWebpackPlugin({
+      title: getTitle('Лендинг'),
+      favicon: './src/images/icons/favicon.svg',
+      template: './src/sections/landing.ejs',
+      filename: './landing.html',
+      meta: getMeta('Лендинг', '/landing.html'),
+      inject: false,
+    }),
+
+
+    new HtmlWebpackPlugin({
+      title: getTitle('Style Guide'),
+      favicon: './src/images/icons/favicon.svg',
+      template: './src/sections/style-guide.ejs',
+      filename: './style-guide.html',
+      meta: getMeta('Style Guide', '/style-guide.html'),
+      inject: false,
+    }),
+
+    // Partials
     new HtmlWebpackPartialsPlugin([
       {
         path: path.join(__dirname, "./src/partials/analytics.html"),
         location: "analytics",
         template_filename: "*",
         priority: "replace",
-        inject: false,
       },
     ]),
   ],

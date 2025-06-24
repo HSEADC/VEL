@@ -1,6 +1,7 @@
 import SocialLinks from "./common/SocialLinks";
 import NavSideBar from "./NavSideBar";
 import {useState} from "react";
+import NavLinks from "./common/NavLinks";
 
 export default function HeaderMain({
     theme = 'light',
@@ -33,12 +34,9 @@ export default function HeaderMain({
                     <img src={logoUrl} alt="" />
                 </button>
 
-                <div className={`${tabsClass} Q_HideOnMobile`}>
-                    <a href="articles.html" className={tabClass}>статьи</a>
-                    <a href="lifehacks.html" className={tabClass}>лайфхаки</a>
-                    <a href="routes.html" className={tabClass}>маршруты</a>
-                    <a href="about-us.html" className={tabClass}>о нас</a>
-                </div>
+
+                {!hideNavigation ? <NavLinks theme={theme} /> : <span className="Q_HideOnMobile"></span>}
+
                 <SocialLinks />
             </nav>
 

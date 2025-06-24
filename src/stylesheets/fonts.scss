@@ -11,8 +11,17 @@
 }
 
 @font-face {
-  font-family: SFPro;
-  src: url('../fonts/SFProDisplay-Regular.woff2') format('woff2');
-  font-weight: 500;
+  font-family: GolosText;
+  src: url('../fonts/GolosText-Regular.woff2') format('woff2');
+  font-weight: normal;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: GolosText;
+  src: url('../fonts/GolosText-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }

@@ -1,5 +1,6 @@
 import {useState} from "react";
 import NavSideBar from "./NavSideBar";
+import NavLinks from "./common/NavLinks";
 
 export default function Header({
     theme = 'light',
@@ -11,14 +12,6 @@ export default function Header({
     const logoUrl = theme === 'light'
         ? 'images/icons/logo.svg'
         : 'images/icons/logo-dark.svg';
-
-    const tabsClass = theme === 'light'
-        ? 'M_HeaderNavTabs'
-        : 'M_HeaderNavTabsDark'
-
-    const tabClass = theme === 'light'
-        ? 'A_PointMenu'
-        : 'A_PointMenu Q_TextBlack'
 
     const onSearch = (event) => {
         if (event.key !== 'Enter') {
@@ -48,12 +41,8 @@ export default function Header({
                     <img src={logoUrl} alt="" />
                 </button>
 
-                <div className={`${tabsClass} Q_HideOnMobile`}>
-                    <a href="articles.html" className={tabClass}>статьи</a>
-                    <a href="lifehacks.html" className={tabClass}>лайфхаки</a>
-                    <a href="routes.html" className={tabClass}>маршруты</a>
-                    <a href="about-us.html" className={tabClass}>о нас</a>
-                </div>
+                <NavLinks theme={theme} />
+
                 <div className="M_Search Q_HideOnMobile">
                     <input
                         id="search"

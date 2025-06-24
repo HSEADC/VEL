@@ -10,7 +10,7 @@ body, #navigation, #footer {
   align-items: center;
   box-sizing: border-box;
 
-  background-color: var(--white);
+  background-color: transparent;
 
   * {
     box-sizing: border-box;
@@ -18,7 +18,11 @@ body, #navigation, #footer {
 }
 
 main {
-  min-height: 55vh;
+  min-height: 50vh;
+
+  @media (orientation: portrait) {
+    min-height: 65vh;
+  }
 }
 
 #search-box {

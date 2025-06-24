@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= htmlWebpackPlugin.tags.headTags %>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+
+    <analytics></analytics>
+</head>
+
+<body>
+<div id="navigation"></div>
+
+<div class="S_CoverLandingPage">
+    <div id="video-container">
+        <video autoplay loop muted="muted">
+            <source id="webm" src="images/landing/главный экран 3.webm" type="video/webm">
+            Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+    </div>
+    <div class="W_NameCoverLanding">
+        <div class="W_InfoBlockLanding">
+            <div class="W_NameLandingPage">
+                <h1 class="A_H1 Q_TextYellow">Медиа про велосипеды</h1>
+                <p class="A_Text Q_TextWhite">
+                    Исследуй. Достигай. Вдохновляйся.<br>
+                    Мы рядом, пока ты крутишь педали.
+                </p>
+            </div>
+            <a href="index.html" class="A_Button">
+                перейти в медиа
+                <img src="images/icons/A_Arrow.svg" alt="">
+            </a>
+        </div>
+        <img src="images/icons/logo.svg" alt="logo" class="A_Logo">
+    </div>
+</div>
+
+<div class="O_FactoidLanding">
+    <div class="W_BlockLanding">
+        <div class="M_NameBlockText">
+            <h2 class="A_H2">Наша цель —</h2>
+            <p class="A_Text">
+                помогать людям открывать<br/>
+                для себя увлекательный мир велоспорта.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="S_BlockLanding">
+    <h2 class="A_H2">Что у нас есть?</h2>
+    <div class="C_AllLandingCard">
+        <div class="O_CardTypeLanding Q_LandingCardPattern1">
+            <div class="M_NameBlockText">
+                <h3 class="A_H3">Статьи</h3>
+                <p class="A_Text">Полезная информация, чтобы сделать поездки комфортнее и безопаснее</p>
+            </div>
+            <a href="articles.html" class="A_TextButton">
+                Все статьи
+                <img src="images/icons/A_Arrow.svg" alt="" />
+            </a>
+        </div>
+        <div class="O_CardTypeLanding Q_LandingCardPattern2">
+            <div class="M_NameBlockText">
+                <h3 class="A_H3">Лайфхаки</h3>
+                <p class="A_Text">Проверенные велосипедистами краткие инсайты и советы в разделе лайфхаки</p>
+            </div>
+            <a href="lifehacks.html" class="A_TextButton">
+                Все лайфхаки
+                <img src="images/icons/A_Arrow.svg" alt="" />
+            </a>
+        </div>
+        <div class="O_CardTypeLanding Q_LandingCardPattern3">
+            <div class="M_NameBlockText">
+                <h3 class="A_H3">Маршруты</h3>
+                <p class="A_Text">Увлекательные пути по Москве и области на разные темы, открывающие новые горизонты</p>
+            </div>
+            <a href="routes.html" class="A_TextButton">
+                Все маршруты
+                <img src="images/icons/A_Arrow.svg" alt="" />
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="S_BlockLanding">
+    <div class="O_NameBlockLanding">
+        <div class="W_BlockDescribeMainPage">
+            <div class="M_NameBlockText">
+                <h2 class="A_H2">Рассказали о самом важном в статьях</h2>
+                <p class="A_Text">
+                    Все статьи проиллюстрированы множеством фотографий
+                    и созданы на основе проверенной информации, личном опыте и любви к делу.
+                </p>
+            </div>
+            <a href="articles.html" class="A_TextButton">
+                Все статьи
+                <img src="images/icons/A_Arrow.svg" alt="" />
+            </a>
+        </div>
+        <div class="W_DecorativeBlockName">
+            <div class="Q_Line"></div>
+            <h2 class="A_H2">от безопасности до удобных носочков</h2>
+        </div>
+    </div>
+    <div class="W_ArticleBlockLanding">
+        <div class="C_CardArticleLanding" id="articles_list"></div>
+        <img src="images/landing/A_PhotoArticleBlockLanding.webp" alt="" class="A_PhotoLanding A_PhotoArticleBlockLanding">
+    </div>
+</div>
+
+<div class="S_LifehackBlockLanding">
+    <div class="S_BlockLanding">
+        <div class="O_NameBlockLanding">
+            <div class="W_BlockDescribeMainPage">
+                <div class="M_NameBlockText">
+                    <h2 class="A_H2">Собрали краткие обзоры и советы</h2>
+                    <p class="A_Text">
+                        В разделе «лайфхаки» можно найти бесчисленное
+                        количество велосипедных хитростей в максимально сжатой форме, чтобы скорей применить их в деле!
+                    </p>
+                </div>
+                <a href="lifehacks.html" class="A_TextButton">
+                    Все лайфхаки
+                    <img src="images/icons/A_Arrow.svg" alt="" />
+                </a>
+            </div>
+        </div>
+        <div class="C_AllLifehacks" id="lifehacks_list"></div>
+    </div>
+</div>
+
+<div class="S_BlockLanding">
+    <div class="O_NameBlockLanding">
+        <div class="W_BlockDescribeMainPage">
+            <div class="M_NameBlockText">
+                <h2 class="A_H2">Проложили уникальные маршруты</h2>
+                <p class="A_Text">
+                    Тематические пути пролегают не только через разные
+                    районы Москвы, но и охватывают живописную природу
+                    подмосковья для желающих испытать свои силы.
+                </p>
+            </div>
+            <a href="routes.html" class="A_TextButton">
+                Все маршруты
+                <img src="images/icons/A_Arrow.svg" alt="" />
+            </a>
+        </div>
+        <div class="W_DecorativeBlockName">
+            <hr class="Q_Line">
+            <h2 class="A_H2">и уточнили всё самое важное</h2>
+        </div>
+    </div>
+    <div class="W_AllCardWayLanding">
+        <img src="images/landing/S_CardWayLanding.webp" class="A_PhotoLanding A_PhotoWayLanding Q_HideOnMobile" alt="">
+        <img src="images/landing/S_CardWayLandingMobile.webp" class="A_PhotoLanding A_PhotoWayLandingMobile Q_ShowOnMobile" alt="">
+        <img src="images/landing/O_ExamplewayCardLanding.webp" class="A_PhotoLanding A_ExampleWayLanding Q_HideOnMobile" alt="">
+        <img src="images/landing/O_ExamplewayCardLandingMobile.webp" class="A_PhotoLanding A_ExampleWayLandingMobile Q_ShowOnMobile" alt="">
+    </div>
+</div>
+
+<div class="S_BlockLanding S_CommunityBlockLanding">
+    <div class="W_CommunityBlockLanding">
+        <div class="M_NameBlockText">
+            <h2 class="A_H2">Наше комьюнити</h2>
+            <p class="A_Text">
+                Свободных, активных и влюблённых в движение велосипедистов
+            </p>
+        </div>
+        <img class="A_PhotoLanding A_PhotoCommunityBlockLanding" src="images/landing/A_PhotoCommunityBlockLanding.webp" alt="">
+    </div>
+
+    <div class="O_CallToActionTelegram">
+        <div class="W_CallToActionTelegram">
+            <div class="M_CallToActionTelegram">
+                <p class="A_Text Q_TextWhite">Анонсы заездов, обзоры новинок и приколы</p>
+                <a href="https://t.me/+iCtcV4CG7UphMWYy" target="_blank" class="A_Button">
+                    перейти в телеграм
+                    <img src="images/icons/A_Arrow.svg" alt="" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="C_AllCardsReview">
+        <div class="O_CardReviewLanding Q_ReviewCardPattern1">
+            <div class="M_NameReviewLanding">
+                <img src="images/landing/A_AuthorPhoto.webp" class="A_AuthorPhoto" alt="">
+                <h3 class="A_H3">
+                    Нина,<br />
+                    29 лет
+                </h3>
+            </div>
+            <p class="A_Text">Для меня vel — это не просто сервис, это целый гид по велокультуре! </p>
+        </div>
+
+        <div class="O_CardReviewLanding Q_ReviewCardPattern2">
+            <div class="M_NameReviewLanding">
+                <img src="images/landing/A_AuthorPhoto-1.webp" class="A_AuthorPhoto" alt="">
+                <h3 class="A_H3">
+                    Маша,<br />
+                    32 года
+                </h3>
+            </div>
+            <p class="A_Text">Когда мои друзья задают вопросы о великах, я кидаю им ссылку на vel</p>
+        </div>
+
+        <div class="O_CardReviewLanding Q_ReviewCardPattern3">
+            <div class="M_NameReviewLanding">
+                <img src="images/landing/A_AuthorPhoto-2.webp" class="A_AuthorPhoto" alt="">
+                <h3 class="A_H3">
+                    Андрей,<br />
+                    25 лет
+                </h3>
+            </div>
+            <p class="A_Text">С vel я наконец-то научился планировать свои поездки и кататься стало интереснее!</p>
+        </div>
+    </div>
+</div>
+
+<div class="O_BlockTgMainPage O_BlockTgMainPageLanding W_MainPage Q_LineDecorate">
+    <div class="O_MainContent W_BlockDescribeTgMainPage">
+        <div class="M_BlockDescribeTgMainPage">
+            <h2 class="A_H2">Становись самым опытным райдером</h2>
+
+            <a href="index.html" class="A_Button">
+                перейти в медиа
+                <img src="images/icons/A_Arrow.svg" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+</body>
+
+</html>

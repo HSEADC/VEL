@@ -23,12 +23,9 @@ export const createMainPage = () => {
 
 const createArticles = () => {
     const url = new URL(window.location);
-    const id = parseInt(url.searchParams.get('id'), 10);
 
     fetchArticles().then(
         (articles) => {
-            articles = articles.filter((article) => article.id !== id);
-
             if (articles.length <= 2) {
                 renderArticles(articles);
 
@@ -57,14 +54,11 @@ const createArticles = () => {
 
 const createLifehacks = () => {
     const url = new URL(window.location);
-    const id = parseInt(url.searchParams.get('id'), 10);
 
     fetchLifehacks().then(
         (lifehacks) => {
-            const uniqueLifehacks = lifehacks.filter((lifehack) => lifehack.id !== id);
-            
-            if (uniqueLifehacks.length > 4) {
-                const limit = uniqueLifehacks.length - 3;
+            if (lifehacks.length > 4) {
+                const limit = lifehacks.length - 3;
                 const randomNumber = getRandomNumber(limit);
                 const randomLifehacks = lifehacks.slice(randomNumber, randomNumber + 4);
                 renderLifehacks(randomLifehacks);
@@ -72,7 +66,7 @@ const createLifehacks = () => {
                 return;
             }
 
-            renderLifehacks(uniqueLifehacks);
+            renderLifehacks(lifehacks);
         }
     )
 }

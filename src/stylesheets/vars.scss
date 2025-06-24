@@ -6,12 +6,13 @@
     --dark-white: #F1EFE9;
     --blue: #C1CDD7;
     --transparent-dark: #2E3338;
+    --transparent-green: rgba(157, 171, 140, 0.4);
 
     --h1-font: bold 56px/1 MursGothicDemi;
     --h2-font: bold 36px/1 MursGothicDemi;
     --h3-font: bold 24px/1 MursGothicDemi;
-    --caption-font: normal 14px/1 SFPro;
-    --general-text: normal 20px/1 SFPro;
+    --caption-font: normal 14px/1 GolosText;
+    --general-text: normal 20px/1 GolosText;
 }
 
 @media (max-width: 960px) {
@@ -19,8 +20,8 @@
         --h1-font: bold 42px MursGothicDemi;
         --h2-font: bold 27px MursGothicDemi;
         --h3-font: bold 18px MursGothicDemi;
-        --caption-font: normal 11px SFPro;
-        --general-text: normal 15px SFPro;
+        --caption-font: normal 11px GolosText;
+        --general-text: normal 15px GolosText;
     }
 }
 @media (max-width: 600px) {
@@ -28,7 +29,7 @@
         --h1-font: bold 36px/1 MursGothicDemi;
         --h2-font: bold 25px/1 MursGothicDemi;
         --h3-font: bold 16px/1 MursGothicDemi;
-        --caption-font: normal 12px/1 SFPro;
-        --general-text: normal 16px SFPro;
+        --caption-font: normal 12px/1 GolosText;
+        --general-text: normal 16px GolosText;
     }
 }

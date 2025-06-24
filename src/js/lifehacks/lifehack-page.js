@@ -13,14 +13,14 @@ export const createLifehack = () => {
     const id = url.searchParams.get('id');
 
     if (!id) {
-        window.location.href = '/';
+        window.location.href = '/404.html';
     }
 
     void fetch(`api/lifehacks/${id}.json`)
         .then((response) => response.json())
         .then((lifehack) => renderLifehack(lifehack))
         .catch(() => {
-            window.location.href = '/';
+            window.location.href = '/404.html';
         });
 }
 

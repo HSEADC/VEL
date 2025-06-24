@@ -21,25 +21,26 @@ const url = new URL(window.location).pathname;
 
 const loadPages = () => {
     const header = document.getElementById('navigation');
-    const footer = createRoot(document.getElementById('footer'));
-
+    const footer = document.getElementById('footer');
 
     if (footer) {
-        footer.render(
+        createRoot(footer).render(
             <Footer />
         )
     }
 
-    if (url.includes(MAIN_PATH) || url.endsWith('/')) {
+    if (url.includes(MAIN_PATH) || url.endsWith('/') || url.includes('landing.html')) {
         createMainPage();
 
         if (header) {
             createRoot(header).render(
-                <HeaderMain theme={
-                    url.includes(LIFEHACK_PATH) || url.includes(SEARCH_PATH)
-                        ? 'dark'
-                        : 'light'
-                }
+                <HeaderMain
+                    theme={
+                        url.includes(LIFEHACK_PATH) || url.includes(SEARCH_PATH)
+                            ? 'dark'
+                            : 'light'
+                    }
+                    hideNavigation={url.includes('landing.html')}
                 />
             );
         }

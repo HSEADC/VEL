@@ -10,7 +10,7 @@ export default function SocialLinks({
         },
         {
             icon: 'images/icons/pinterest.svg',
-            link: '#'
+            link: 'https://ru.pinterest.com/velmoscow'
         },
     ]
 

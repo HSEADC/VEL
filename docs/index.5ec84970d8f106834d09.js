@@ -16708,6 +16708,36 @@ function NavSideBar(_ref) {
     className: "A_PointMenu Q_TextBlack"
   }, "\u043E \u043D\u0430\u0441")));
 }
+;// ./src/js/components/common/NavLinks.jsx
+function NavLinks(_ref) {
+  var _ref$theme = _ref.theme,
+    theme = _ref$theme === void 0 ? 'light' : _ref$theme;
+  var tabsClass = theme === 'light' ? 'M_HeaderNavTabs' : 'M_HeaderNavTabsDark';
+  var getTabClass = function getTabClass(url) {
+    var tabClass = theme === 'light' ? 'A_PointMenu' : 'A_PointMenu Q_TextBlack';
+    var currentPath = window.location.pathname.toLowerCase().replace('/', '').replace('.html', '');
+    var navPath = url.replace('/', '').replace('.html', '').toLowerCase();
+    if (!currentPath && navPath === 'index' || currentPath.includes(navPath) || currentPath.includes(navPath.substring(0, navPath.length - 1))) {
+      return "".concat(tabClass, " A_ActiveNav");
+    }
+    return tabClass;
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "".concat(tabsClass, " Q_HideOnMobile")
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "articles.html",
+    className: getTabClass('articles.html')
+  }, "\u0441\u0442\u0430\u0442\u044C\u0438"), /*#__PURE__*/React.createElement("a", {
+    href: "lifehacks.html",
+    className: getTabClass('lifehacks.html')
+  }, "\u043B\u0430\u0439\u0444\u0445\u0430\u043A\u0438"), /*#__PURE__*/React.createElement("a", {
+    href: "routes.html",
+    className: getTabClass('routes.html')
+  }, "\u043C\u0430\u0440\u0448\u0440\u0443\u0442\u044B"), /*#__PURE__*/React.createElement("a", {
+    href: "about-us.html",
+    className: getTabClass('about-us.html')
+  }, "\u043E \u043D\u0430\u0441"));
+}
 ;// ./src/js/components/Header.jsx
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -16715,6 +16745,7 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 function Header(_ref) {
@@ -16727,8 +16758,6 @@ function Header(_ref) {
     setIsMenuOpen = _useState2[1];
   var url = new URL(window.location.href);
   var logoUrl = theme === 'light' ? 'images/icons/logo.svg' : 'images/icons/logo-dark.svg';
-  var tabsClass = theme === 'light' ? 'M_HeaderNavTabs' : 'M_HeaderNavTabsDark';
-  var tabClass = theme === 'light' ? 'A_PointMenu' : 'A_PointMenu Q_TextBlack';
   var onSearch = function onSearch(event) {
     if (event.key !== 'Enter') {
       return;
@@ -16759,21 +16788,9 @@ function Header(_ref) {
   }, /*#__PURE__*/React.createElement("img", {
     src: logoUrl,
     alt: ""
-  })), /*#__PURE__*/React.createElement("div", {
-    className: "".concat(tabsClass, " Q_HideOnMobile")
-  }, /*#__PURE__*/React.createElement("a", {
-    href: "articles.html",
-    className: tabClass
-  }, "\u0441\u0442\u0430\u0442\u044C\u0438"), /*#__PURE__*/React.createElement("a", {
-    href: "lifehacks.html",
-    className: tabClass
-  }, "\u043B\u0430\u0439\u0444\u0445\u0430\u043A\u0438"), /*#__PURE__*/React.createElement("a", {
-    href: "routes.html",
-    className: tabClass
-  }, "\u043C\u0430\u0440\u0448\u0440\u0443\u0442\u044B"), /*#__PURE__*/React.createElement("a", {
-    href: "about-us.html",
-    className: tabClass
-  }, "\u043E \u043D\u0430\u0441")), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement(NavLinks, {
+    theme: theme
+  }), /*#__PURE__*/React.createElement("div", {
     className: "M_Search Q_HideOnMobile"
   }, /*#__PURE__*/React.createElement("input", {
     id: "search",
@@ -16812,7 +16829,7 @@ function SocialLinks(_ref) {
     link: 'https://t.me/+iCtcV4CG7UphMWYy'
   }, {
     icon: 'images/icons/pinterest.svg',
-    link: '#'
+    link: 'https://ru.pinterest.com/velmoscow'
   }];
   return /*#__PURE__*/React.createElement("div", {
     className: "M_Social ".concat(className)
@@ -17323,14 +17340,14 @@ var createArticle = function createArticle() {
   }
   var id = url.searchParams.get('id');
   if (!id) {
-    window.location.href = '/';
+    window.location.href = '/404.html';
   }
   void fetch("api/articles/".concat(id, ".json")).then(function (response) {
     return response.json();
   }).then(function (article) {
     return renderArticle(article);
   })["catch"](function () {
-    window.location.href = '/';
+    window.location.href = '/404.html';
   });
 };
 var renderArticle = function renderArticle(article) {
@@ -17633,14 +17650,14 @@ var createLifehack = function createLifehack() {
   }
   var id = url.searchParams.get('id');
   if (!id) {
-    window.location.href = '/';
+    window.location.href = '/404.html';
   }
   void fetch("api/lifehacks/".concat(id, ".json")).then(function (response) {
     return response.json();
   }).then(function (lifehack) {
     return renderLifehack(lifehack);
   })["catch"](function () {
-    window.location.href = '/';
+    window.location.href = '/404.html';
   });
 };
 var renderLifehack = function renderLifehack(lifehack) {
@@ -17707,14 +17724,14 @@ var createRoute = function createRoute() {
   var url = new URL(window.location);
   var id = url.searchParams.get('id');
   if (!id) {
-    window.location.href = '/';
+    window.location.href = '/404.html';
   }
   void fetch("api/routes/".concat(id, ".json")).then(function (response) {
     return response.json();
   }).then(function (route) {
     return renderRoute(route);
   })["catch"](function () {
-    window.location.href = '/';
+    window.location.href = '/404.html';
   });
 };
 var renderRoute = function renderRoute(route) {
@@ -17838,11 +17855,7 @@ var createMainPage = function createMainPage() {
 };
 var main_page_createArticles = function createArticles() {
   var url = new URL(window.location);
-  var id = parseInt(url.searchParams.get('id'), 10);
   fetchArticles().then(function (articles) {
-    articles = articles.filter(function (article) {
-      return article.id !== id;
-    });
     if (articles.length <= 2) {
       renderArticles(articles);
       return;
@@ -17862,19 +17875,15 @@ var main_page_createArticles = function createArticles() {
 };
 var createLifehacks = function createLifehacks() {
   var url = new URL(window.location);
-  var id = parseInt(url.searchParams.get('id'), 10);
   fetchLifehacks().then(function (lifehacks) {
-    var uniqueLifehacks = lifehacks.filter(function (lifehack) {
-      return lifehack.id !== id;
-    });
-    if (uniqueLifehacks.length > 4) {
-      var limit = uniqueLifehacks.length - 3;
+    if (lifehacks.length > 4) {
+      var limit = lifehacks.length - 3;
       var randomNumber = getRandomNumber(limit);
       var randomLifehacks = lifehacks.slice(randomNumber, randomNumber + 4);
       renderLifehacks(randomLifehacks);
       return;
     }
-    renderLifehacks(uniqueLifehacks);
+    renderLifehacks(lifehacks);
   });
 };
 ;// ./src/js/common/search.js
@@ -17928,6 +17937,7 @@ function HeaderMain_arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+
 function HeaderMain(_ref) {
   var _ref$theme = _ref.theme,
     theme = _ref$theme === void 0 ? 'light' : _ref$theme,
@@ -17959,21 +17969,11 @@ function HeaderMain(_ref) {
   }, /*#__PURE__*/React.createElement("img", {
     src: logoUrl,
     alt: ""
-  })), /*#__PURE__*/React.createElement("div", {
-    className: "".concat(tabsClass, " Q_HideOnMobile")
-  }, /*#__PURE__*/React.createElement("a", {
-    href: "articles.html",
-    className: tabClass
-  }, "\u0441\u0442\u0430\u0442\u044C\u0438"), /*#__PURE__*/React.createElement("a", {
-    href: "lifehacks.html",
-    className: tabClass
-  }, "\u043B\u0430\u0439\u0444\u0445\u0430\u043A\u0438"), /*#__PURE__*/React.createElement("a", {
-    href: "routes.html",
-    className: tabClass
-  }, "\u043C\u0430\u0440\u0448\u0440\u0443\u0442\u044B"), /*#__PURE__*/React.createElement("a", {
-    href: "about-us.html",
-    className: tabClass
-  }, "\u043E \u043D\u0430\u0441")), /*#__PURE__*/React.createElement(SocialLinks, null)), isMenuOpen && /*#__PURE__*/React.createElement(NavSideBar, {
+  })), !hideNavigation ? /*#__PURE__*/React.createElement(NavLinks, {
+    theme: theme
+  }) : /*#__PURE__*/React.createElement("span", {
+    className: "Q_HideOnMobile"
+  }), /*#__PURE__*/React.createElement(SocialLinks, null)), isMenuOpen && /*#__PURE__*/React.createElement(NavSideBar, {
     onClose: function onClose() {
       return setIsMenuOpen(false);
     }
@@ -17998,15 +17998,16 @@ window.React = react;
 var url = new URL(window.location).pathname;
 var loadPages = function loadPages() {
   var header = document.getElementById('navigation');
-  var footer = (0,client.createRoot)(document.getElementById('footer'));
+  var footer = document.getElementById('footer');
   if (footer) {
-    footer.render(/*#__PURE__*/react.createElement(Footer, null));
+    (0,client.createRoot)(footer).render(/*#__PURE__*/react.createElement(Footer, null));
   }
-  if (url.includes(MAIN_PATH) || url.endsWith('/')) {
+  if (url.includes(MAIN_PATH) || url.endsWith('/') || url.includes('landing.html')) {
     createMainPage();
     if (header) {
       (0,client.createRoot)(header).render(/*#__PURE__*/react.createElement(HeaderMain, {
-        theme: url.includes(lifehack_page_LIFEHACK_PATH) || url.includes(SEARCH_PATH) ? 'dark' : 'light'
+        theme: url.includes(lifehack_page_LIFEHACK_PATH) || url.includes(SEARCH_PATH) ? 'dark' : 'light',
+        hideNavigation: url.includes('landing.html')
       }));
     }
     return;

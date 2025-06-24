@@ -164,3 +164,116 @@
 
     margin-bottom: 90px;
 }
+
+.S_CoverLandingPage {
+    width: 100%;
+    margin-top: -78px;
+    padding: 240px 20px 200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+
+    background-color: var(--main-dark);
+    background-image: url('../../images/landing/главный экран 3.webm');
+
+    @media (orientation: portrait) {
+        padding: 200px 20px 150px;
+    }
+
+    #video-container {
+        top: 0;
+        left: 0;
+        max-height: 100%;
+        height: 100%;
+        max-width: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        z-index: 1;
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.S_BlockLanding {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    margin-top: 90px;
+
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+
+    @media (max-width: 600px) {
+        margin-top: 64px;
+    }
+
+    .C_AllLifehacks {
+        .M_LifehackCard {
+            background-color: var(--white);
+        }
+    }
+}
+
+.S_LifehackBlockLanding {
+    width: 100%;
+    background-color: var(--dark-white);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 90px;
+
+    @media (max-width: 600px) {
+        margin-top: 64px;
+    }
+}
+
+.S_CommunityBlockLanding {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (max-width: 600px) {
+        gap: 20px;
+    }
+}
+
+.S_StyleGuideBlock {
+    padding: 90px 20px;
+    width: 100%;
+
+    &.Q_LineDecorate {
+        background-size: auto 550px;
+        background-position: bottom right -400px;
+        background-repeat: no-repeat;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 90px;
+
+    @media (max-width: 675px) {
+        padding: 48px 20px;
+        gap: 48px;
+    }
+}
+
+.S_LogoBlockGuide {
+    background-color: var(--dark-white);
+}
+
+.S_GridsBlockGuide {
+    background-color: var(--green);
+}

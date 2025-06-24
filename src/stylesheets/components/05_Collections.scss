@@ -217,3 +217,38 @@
         max-width: 208px;
     }
 }
+
+.C_AllLandingCard, .C_AllCardsReview {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    @media (max-width: 675px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.C_CardArticleLanding {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-between;
+
+    .M_ArticleCard {
+        background-color: var(--green);
+        max-width: 700px;
+        max-height: 265px;
+        height: 100%;
+
+        img {
+            max-width: 30%;
+        }
+
+        .A_H3, .A_Text {
+            color: var(--white);
+        }
+    }
+}
