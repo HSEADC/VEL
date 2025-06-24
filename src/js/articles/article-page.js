@@ -14,14 +14,14 @@ export const createArticle = () => {
     const id = url.searchParams.get('id');
 
     if (!id) {
-        window.location.href = '/404.html';
+        window.location.href = '404.html';
     }
 
     void fetch(`api/articles/${id}.json`)
         .then((response) => response.json())
         .then((article) => renderArticle(article))
         .catch(() => {
-            window.location.href = '/404.html';
+            window.location.href = '404.html';
         });
 }
 

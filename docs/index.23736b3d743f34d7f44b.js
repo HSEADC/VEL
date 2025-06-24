@@ -17340,14 +17340,14 @@ var createArticle = function createArticle() {
   }
   var id = url.searchParams.get('id');
   if (!id) {
-    window.location.href = '/404.html';
+    window.location.href = '404.html';
   }
   void fetch("api/articles/".concat(id, ".json")).then(function (response) {
     return response.json();
   }).then(function (article) {
     return renderArticle(article);
   })["catch"](function () {
-    window.location.href = '/404.html';
+    window.location.href = '404.html';
   });
 };
 var renderArticle = function renderArticle(article) {
@@ -17650,14 +17650,14 @@ var createLifehack = function createLifehack() {
   }
   var id = url.searchParams.get('id');
   if (!id) {
-    window.location.href = '/404.html';
+    window.location.href = '404.html';
   }
   void fetch("api/lifehacks/".concat(id, ".json")).then(function (response) {
     return response.json();
   }).then(function (lifehack) {
     return renderLifehack(lifehack);
   })["catch"](function () {
-    window.location.href = '/404.html';
+    window.location.href = '404.html';
   });
 };
 var renderLifehack = function renderLifehack(lifehack) {
@@ -17724,14 +17724,14 @@ var createRoute = function createRoute() {
   var url = new URL(window.location);
   var id = url.searchParams.get('id');
   if (!id) {
-    window.location.href = '/404.html';
+    window.location.href = '404.html';
   }
   void fetch("api/routes/".concat(id, ".json")).then(function (response) {
     return response.json();
   }).then(function (route) {
     return renderRoute(route);
   })["catch"](function () {
-    window.location.href = '/404.html';
+    window.location.href = '404.html';
   });
 };
 var renderRoute = function renderRoute(route) {
